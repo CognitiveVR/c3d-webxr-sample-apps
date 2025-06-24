@@ -1,0 +1,19 @@
+{
+  "name": "c3d-webxr-threejs-pwa-sample-app",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "three": "^0.165.0",
+    "vite": "^4.5.14"
+  },
+  "description": "",
+  "dependencies": {
+    "@cognitive3d/analytics": "file:../c3d-sdk-webxr"
+  }
+}
