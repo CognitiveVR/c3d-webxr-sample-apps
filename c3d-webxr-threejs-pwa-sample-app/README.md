@@ -12,7 +12,7 @@ This application can be accessed within a VR browser so through a desktop browse
 * Node.js (LTS version) and npm.
 * A modern WebXR-compatible browser (Meta Quest Browser, Chrome, Edge, etc...)
 * A VR headset for testing the immersive features (Meta Quest 2).
-* You must have downloaded and built the cd3-sdlk-webxr (url to webxr sdk: https://github.com/CognitiveVR/c3d-sdk-webxr) This sdk should be placed in a directory one level above this project, or you can change the directory [~ "@cognitive3d/analytics": "file:../c3d-sdk-webxr"] of the local sdk in package.json. 
+* You must have downloaded and built the cd3-sdlk-webxr (url to webxr sdk: https://github.com/CognitiveVR/c3d-sdk-webxr). You can change the directory [~ "@cognitive3d/analytics": "file:../c3d-sdk-webxr"] of the local sdk in package.json. 
 
 ## INSTALLATION
 Run the standard install command 
