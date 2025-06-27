@@ -4,7 +4,8 @@
   "main": "main.js",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,6 @@
   },
   "description": "",
   "dependencies": {
-    "@cognitive3d/analytics": "file:../c3d-sdk-webxr"
+    "@cognitive3d/analytics": "^1.1.1"
   }
 }

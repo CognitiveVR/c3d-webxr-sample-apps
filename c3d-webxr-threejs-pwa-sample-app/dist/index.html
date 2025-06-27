@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cog3D WebXR ThreeJS VR Project with PWA support</title>
+    <link rel="manifest" href="data:application/json;base64,ew0KICAibmFtZSI6ICJDb2czRCBXZWJYUiAtIFRocmVlSlMgVlIgUHJvamVjdCB3aXRoIFBXQSBzdXBwb3J0IiwNCiAgInNob3J0X25hbWUiOiAiVGhyZWVKUyBWUiIsDQogICJzdGFydF91cmwiOiAiL2luZGV4Lmh0bWwiLA0KICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwNCiAgImJhY2tncm91bmRfY29sb3IiOiAiIzUwNTA1MCIsDQogICJ0aGVtZV9jb2xvciI6ICIjNTA1MDUwIiwNCiAgIm9yaWVudGF0aW9uIjogImxhbmRzY2FwZS1wcmltYXJ5IiwNCiAgImljb25zIjogWw0KICAgIHsNCiAgICAgICJzcmMiOiAiL2ljb25zL2NvZzNkX2ljb24tMTkyeDE5Mi5wbmciLA0KICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIiwNCiAgICAgICJzaXplcyI6ICIxOTJ4MTkyIiwNCiAgICAgICJwdXJwb3NlIjogImFueSBtYXNrYWJsZSINCiAgICB9LA0KICAgIHsNCiAgICAgICJzcmMiOiAiL2ljb25zL2NvZzNkX2ljb24tNTEyeDUxMi5wbmciLA0KICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIiwNCiAgICAgICJzaXplcyI6ICI1MTJ4NTEyIiwNCiAgICAgICAgInB1cnBvc2UiOiAiYW55IG1hc2thYmxlIg0KICAgIH0NCiAgXQ0KfQ==">
+    <style>
+        body { 
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+
+        }
+        canvas { 
+            display: block; 
+        }
+
+        #welcome-container {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(156,77,238,1);
+            
+        }
+
+        #welcome-container img {
+            width: 689px;
+            height: 200px;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            padding-bottom: 80px;
+        }
+
+        #welcome-container h1 {
+            font-size: 3rem;
+            margin: 0;
+            font: 'Courier New', monospace;
+        }
+
+
+        #VRButton {
+            position: absolute !important;
+            bottom: 500px !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            
+            width: auto !important;
+            height: auto !important;
+
+            padding: 15px 30px !important;
+            font-size: 50px !important;
+            font-weight: normal !important;
+            border-radius: 10px !important;
+            border: 2px solid rgba(156,77,238,255) !important;
+            background-color: rgb(56, 0, 154) !important;
+            color: white !important;
+            cursor: pointer !important;
+            z-index: 999 !important;
+        }
+    </style>
+  <script type="module" crossorigin src="/assets/index-cff7aedb.js"></script>
+</head>
+<body>
+        <div id="welcome-container">
+        <img src="/assets/cog3d_full_logo-8cab120a.png" alt="Cognitive3D Logo">
+        <h1>Welcome to c3d-sdk-webxr demo, check browser console for network calls</h1>
+    </div>
+    
+</body>
+</html>

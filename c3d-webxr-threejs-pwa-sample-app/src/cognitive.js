@@ -2,11 +2,11 @@ import C3DAnalytics from '@cognitive3d/analytics';
 
 export const c3d = new C3DAnalytics({
     config: {
-        APIKey: "YOUR_API_KEY", // SET YOUR INFORMATION HERE *********************************************
+        APIKey: import.meta.env.VITE_APPLICATION_KEY,
         allSceneData: [{
-            sceneName: "YOUR_SCENE_NAME", 
-            sceneId: "YOUR_SCENE_ID",
-            versionNumber: "YOUR_SCENE_VERSION"
+            sceneName: "BasicScene", 
+            sceneId: "93f486e4-0e22-4650-946a-e64ce527f915",
+            versionNumber: "1"
         }]
     }
 });
@@ -14,7 +14,7 @@ export const c3d = new C3DAnalytics({
 // All these properties are required for session data to appear on Cog3d dashboard. 
 // Ensure no spaces are present in the following parameters
 
-c3d.setScene('YOUR_SCENE_NAME');                     // Replace with your Scene name here as we;; s********
+c3d.setScene('BasicScene');                     // Replace with your Scene name
 c3d.userId = 'threejs_user_' + Date.now();
 c3d.setUserName('ThreeJS_SDK_Test_User');
 c3d.setDeviceName('WindowsPCBrowserVR');
