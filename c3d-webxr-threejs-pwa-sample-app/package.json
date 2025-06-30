@@ -1,6 +1,6 @@
 {
   "name": "c3d-webxr-threejs-pwa-sample-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "main.js",
   "scripts": {
     "dev": "vite",
@@ -11,7 +11,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vite": "^4.5.14"
+    "vite": "^4.5.14",
+    "vite-plugin-pwa": "^1.0.0"
   },
   "description": "",
   "dependencies": {
