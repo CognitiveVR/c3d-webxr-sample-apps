@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cog3D WebXR ThreeJS VR Project with PWA support</title>
 
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any">
+    <link rel="icon" href="/favicon.webp" type="image/x-icon">
+    <link rel="icon" href="/favicon.webp" type="image/x-icon" sizes="any">
 
 
     <style>
@@ -28,16 +28,24 @@
             z-index: 1000;
             text-align: center;
             color: white;
-            text-shadow: 2px 2px 4px rgba(156,77,238,1);
-            
+            text-shadow:
+            -1px -1px 0 #25116A,
+             1px -1px 0 #25116A,
+            -1px  1px 0 #25116A,
+             1px  1px 0 #25116A;             
         }
 
         #welcome-container img {
-            width: 689px;
-            height: 200px;
+            width: 1000px;
+            height: 180px;
             margin-bottom: 20px;
-            opacity: 0.95;
-            padding-bottom: 80px;
+            opacity: 1;
+            padding-bottom: 25px;
+            padding-top: 25px;
+            padding-right: 25px;
+            padding-left: 25px;
+            border-radius: 10px;
+            background-color: #25116A; 
         }
 
         #welcome-container h1 {

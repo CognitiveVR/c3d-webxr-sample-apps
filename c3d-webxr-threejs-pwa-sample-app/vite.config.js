@@ -15,14 +15,8 @@ export default defineConfig({
         orientation: 'landscape-primary',
         icons: [
           {
-            src: '/icons/cog3d_icon-192x192.png',
-            sizes: '192x192',
-            type: 'image/png',
-            purpose: 'any maskable'
-          },
-          {
-            src: '/icons/cog3d_icon-512x512.png',
-            sizes: '512x512',
+            src: '/icons/Eye-Transparent.png',
+            sizes: '250x250',
             type: 'image/png',
             purpose: 'any maskable'
           }
