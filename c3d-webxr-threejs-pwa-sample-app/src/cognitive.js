@@ -2,7 +2,7 @@ import C3DAnalytics from '@cognitive3d/analytics';
 
 export const c3d = new C3DAnalytics({
     config: {
-        APIKey: import.meta.env.VITE_APPLICATION_KEY,
+        APIKey: import.meta.env.VITE_C3D_APPLICATION_KEY,
         allSceneData: [{
             sceneName: "BasicScene", 
             sceneId: "93f486e4-0e22-4650-946a-e64ce527f915",
