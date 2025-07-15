@@ -1,4 +1,5 @@
 import C3DAnalytics from '@cognitive3d/analytics';
+import C3DThreeAdapter from '@cognitive3d/analytics/adapters/threejs';
 
 export const c3d = new C3DAnalytics({
     config: {
@@ -11,23 +12,24 @@ export const c3d = new C3DAnalytics({
     }
 });
 
-// All these properties are required for session data to appear on Cog3d dashboard. 
-// Ensure no spaces are present in the following parameters
-
-c3d.setScene('BasicScene');                     // Replace with your Scene name
+c3d.setScene('BasicScene');
 c3d.userId = 'threejs_user_' + Date.now();
 c3d.setUserName('ThreeJS_SDK_Test_User');
 c3d.setDeviceName('WindowsPCBrowserVR');
 c3d.setDeviceProperty("AppName", "ThreeJS_WebXR_SDK_Test_App");
-c3d.setUserProperty("c3d.version", "1.0");
 c3d.setUserProperty("c3d.app.version", "0.2");
-c3d.setUserProperty("c3d.app.engine", "Three.js");
+//c3d.setUserProperty("c3d.app.engine", "three.js");
+
 c3d.setUserProperty("c3d.deviceid", 'threejs_windows_device_' + Date.now());
+const c3dAdapter = new C3DThreeAdapter(c3d);
 
 export function setupCognitive3DSession(renderer) {
     renderer.xr.addEventListener('sessionstart', () => {
         console.log('Cognitive3D: VR Session Started');
-        if (c3d.startSession()) {
+        
+        const xrSession = renderer.xr.getSession();
+           
+        if (c3d.startSession(xrSession)) {
             console.log('Cognitive3D SDK session successfully started.');
         }
     });

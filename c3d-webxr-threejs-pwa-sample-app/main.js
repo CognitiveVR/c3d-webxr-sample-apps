@@ -1,9 +1,11 @@
 import * as THREE from 'three';
+import WebXRPolyfill from 'webxr-polyfill';
 import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
 import { c3d, setupCognitive3DSession } from './src/cognitive.js';
 import { createInteractableObjects } from './src/objects.js';
 import { setupControllers, handleControllerIntersections } from './src/controllers.js';
 
+const polyfill = new WebXRPolyfill();
 let camera, scene, renderer;
 let controller1, controller2;
 let interactableGroup;
@@ -24,7 +26,10 @@ function init() {
     scene.add(light);
 
     // Create renderer
-    renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer = new THREE.WebGLRenderer({ antialias: true,
+         xrCompatible: true});
+
+    
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.outputEncoding = THREE.SRGBColorSpace;
@@ -79,11 +84,12 @@ function animate() {
 function render() {  // Handle controller interactions
     handleControllerIntersections(controller1, interactableGroup);
     handleControllerIntersections(controller2, interactableGroup);
-
+    /* Gaze tracking is automatically done by the sdk if a live XR session is passed to C3d
     if (c3d.isSessionActive()) {     // Record Cognitive3D gaze data
         const pos = camera.position.toArray();
         const rot = camera.quaternion.toArray();
         c3d.gaze.recordGaze(pos, rot);
     }
+    */
     renderer.render(scene, camera);     // Render the scene
 }
