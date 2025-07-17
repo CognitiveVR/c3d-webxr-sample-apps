@@ -18,17 +18,23 @@ c3d.setUserName('ThreeJS_SDK_Test_User');
 c3d.setDeviceName('WindowsPCBrowserVR');
 c3d.setDeviceProperty("AppName", "ThreeJS_WebXR_SDK_Test_App");
 c3d.setUserProperty("c3d.app.version", "0.2");
-//c3d.setUserProperty("c3d.app.engine", "three.js");
 
 c3d.setUserProperty("c3d.deviceid", 'threejs_windows_device_' + Date.now());
 const c3dAdapter = new C3DThreeAdapter(c3d);
 
 export function setupCognitive3DSession(renderer) {
-    renderer.xr.addEventListener('sessionstart', () => {
+    renderer.xr.addEventListener('sessionstart', async () => {
         console.log('Cognitive3D: VR Session Started');
         
         const xrSession = renderer.xr.getSession();
-           
+        if (xrSession.supportedFrameRates && xrSession.supportedFrameRates.includes(120)) {
+            try {
+                await xrSession.updateTargetFrameRate(120);
+                console.log('Target frame rate set to 120Hz');
+            } catch (e) {
+                console.error('Failed to set target frame rate to 120Hz:', e);
+            }
+        }  
         if (c3d.startSession(xrSession)) {
             console.log('Cognitive3D SDK session successfully started.');
         }
