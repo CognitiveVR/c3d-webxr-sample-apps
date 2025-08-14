@@ -1,21 +1,19 @@
 import * as THREE from 'three';
-import WebXRPolyfill from 'webxr-polyfill';
-import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
-import { c3d, setupCognitive3DSession } from './src/cognitive.js';
-import { createInteractableObjects } from './src/objects.js';
+import { setupCognitive3DSession } from './src/cognitive.js';
+import { createInteractableObjects, updateObjectMomentum } from './src/objects.js'; 
 import { setupControllers, handleControllerIntersections } from './src/controllers.js';
 
-const polyfill = new WebXRPolyfill();
 let camera, scene, renderer;
 let controller1, controller2;
 let interactableGroup;
+const clock = new THREE.Clock(); 
 
 init();
 animate();
 
-function init() {
+async function init() {
     scene = new THREE.Scene();
-    scene.background = new THREE.Color('lightblue');
+    scene.background = new THREE.Color('white');
 
     camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 10);
     camera.position.set(0, 1.6, 3);
@@ -25,32 +23,57 @@ function init() {
     light.position.set(0, 4, 0);
     scene.add(light);
 
-    // Create renderer
-    renderer = new THREE.WebGLRenderer({ antialias: true,
-         xrCompatible: true});
-
-    
+    renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.outputEncoding = THREE.SRGBColorSpace;
+    renderer.outputEncoding = THREE.sRGBEncoding;
     renderer.xr.enabled = true;
     document.body.appendChild(renderer.domElement);
-    document.body.appendChild(VRButton.createButton(renderer));
 
-    // Modules
-    // Create interactable objects
+    //  Custom VR Button with optional Features (eye tracking, handtracking)
+    if ('xr' in navigator) {
+        const button = document.createElement('button');
+        button.id = 'VRButton'; // Use the same ID for styling
+        button.textContent = 'ENTER VR';
+
+        button.onclick = async () => {
+            if (renderer.xr.isPresenting) {
+                renderer.xr.getSession().end();
+            } else {
+                try {
+                    // Request the session with optional features
+                    const session = await navigator.xr.requestSession('immersive-vr', {
+                        optionalFeatures: [
+                            'local-floor',
+                            'bounded-floor',
+                            'hand-tracking',
+                            'eye-tracking'
+                        ]
+                    });
+                    renderer.xr.setSession(session);
+                } catch (e) {
+                    console.error("Failed to start XR session:", e);
+                }
+            }
+        };
+
+        document.body.appendChild(button);
+    } else {
+        // Handle case where WebXR is not supported
+        const message = document.createElement('a');
+        message.href = 'https://immersiveweb.dev/';
+        message.innerHTML = 'VR NOT SUPPORTED';
+        document.body.appendChild(message);
+    }
+    
+
     interactableGroup = createInteractableObjects();
     scene.add(interactableGroup);
 
-    // Setup VR controllers
     [controller1, controller2] = setupControllers(scene, renderer, interactableGroup);
-
-    // Setup Cog3D session management
     setupCognitive3DSession(renderer);
+    window.addEventListener('resize', onWindowResize);
 
-    window.addEventListener('resize', onWindowResize); // Window resize listener
-
-    // Listener for ESC key to end VR
     window.addEventListener('keydown', (event) => {
         if (event.key === 'Escape') {
             if (renderer.xr.isPresenting) {
@@ -59,7 +82,6 @@ function init() {
         }
     });
 
-    // Register Service Worker
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
             navigator.serviceWorker.register('/service-worker.js').then(registration => {
@@ -81,15 +103,10 @@ function animate() {
     renderer.setAnimationLoop(render);
 }
 
-function render() {  // Handle controller interactions
+function render() {
+    const deltaTime = clock.getDelta();
+    updateObjectMomentum(interactableGroup, deltaTime); // Add this line for momentum
     handleControllerIntersections(controller1, interactableGroup);
     handleControllerIntersections(controller2, interactableGroup);
-    /* Gaze tracking is automatically done by the sdk if a live XR session is passed to C3d
-    if (c3d.isSessionActive()) {     // Record Cognitive3D gaze data
-        const pos = camera.position.toArray();
-        const rot = camera.quaternion.toArray();
-        c3d.gaze.recordGaze(pos, rot);
-    }
-    */
-    renderer.render(scene, camera);     // Render the scene
+    renderer.render(scene, camera);
 }
