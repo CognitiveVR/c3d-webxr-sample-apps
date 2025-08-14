@@ -1,8 +1,13 @@
 import * as THREE from 'three';
+import { createDynamicObject } from './dynamicObject';
 
 export function createInteractableObjects() {
     const interactableGroup = new THREE.Group();
     interactableGroup.position.z = -5;
+
+    // Dynamic object
+    const dynamicObject = createDynamicObject();
+    interactableGroup.add(dynamicObject);
 
     const geometries = [
         new THREE.BoxGeometry(0.2, 0.2, 0.2),
@@ -19,7 +24,7 @@ export function createInteractableObjects() {
         color.setHSL(Math.random(), 0.9, 0.5);
 
         const material = new THREE.MeshStandardMaterial({
-            color: color, 
+            color: color,
             roughness: 0,
             metalness: 0
         });
@@ -60,13 +65,15 @@ export function createInteractableObjects() {
     
     return interactableGroup;
 }
+
 export function updateObjectMomentum(group, deltaTime) {
     const bounds = 5;
     const objects = group.children;
     const restitution = 0.8;
 
-    // Update object positions first
     for (const object of objects) {
+        if (object.userData.isDynamic) continue; // Skip momentum update for the dynamic object
+
         object.position.add(object.userData.velocity.clone().multiplyScalar(deltaTime));
         object.rotation.x += object.userData.angularVelocity.x * deltaTime;
         object.rotation.y += object.userData.angularVelocity.y * deltaTime;
@@ -78,9 +85,11 @@ export function updateObjectMomentum(group, deltaTime) {
     // Collision detection and response
     for (let i = 0; i < objects.length; i++) {
         const obj1 = objects[i];
+        if (obj1.userData.isDynamic) continue;
 
         for (let j = i + 1; j < objects.length; j++) {
             const obj2 = objects[j];
+            if (obj2.userData.isDynamic) continue;
 
             if (obj1.userData.collider.intersectsSphere(obj2.userData.collider)) {
                 
@@ -97,6 +106,8 @@ export function updateObjectMomentum(group, deltaTime) {
 
     // Wrap objects around the bounds after handling collisions
     for (const object of objects) {
+        if (object.userData.isDynamic) continue;
+        
         if (object.position.x > bounds) object.position.x = -bounds;
         if (object.position.x < -bounds) object.position.x = bounds;
         if (object.position.y > bounds) object.position.y = -bounds;

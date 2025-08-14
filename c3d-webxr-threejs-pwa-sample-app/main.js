@@ -1,12 +1,12 @@
 import * as THREE from 'three';
-import { setupCognitive3DSession } from './src/cognitive.js';
-import { createInteractableObjects, updateObjectMomentum } from './src/objects.js'; 
+import { c3d, initializeC3D, setupCognitive3DSession } from './src/cognitive.js';
+import { createInteractableObjects, updateObjectMomentum } from './src/objects.js';
 import { setupControllers, handleControllerIntersections } from './src/controllers.js';
 
 let camera, scene, renderer;
 let controller1, controller2;
 let interactableGroup;
-const clock = new THREE.Clock(); 
+const clock = new THREE.Clock();
 
 init();
 animate();
@@ -29,6 +29,9 @@ async function init() {
     renderer.outputEncoding = THREE.sRGBEncoding;
     renderer.xr.enabled = true;
     document.body.appendChild(renderer.domElement);
+
+    // Initialize Cognitive3D
+    initializeC3D(renderer);
 
     //  Custom VR Button with optional Features (eye tracking, handtracking)
     if ('xr' in navigator) {
@@ -65,7 +68,7 @@ async function init() {
         message.innerHTML = 'VR NOT SUPPORTED';
         document.body.appendChild(message);
     }
-    
+
 
     interactableGroup = createInteractableObjects();
     scene.add(interactableGroup);
@@ -108,5 +111,16 @@ function render() {
     updateObjectMomentum(interactableGroup, deltaTime); // Add this line for momentum
     handleControllerIntersections(controller1, interactableGroup);
     handleControllerIntersections(controller2, interactableGroup);
+
+    // Update dynamic object's position for tracking
+    const dynamicObject = interactableGroup.children.find(child => child.userData.isDynamic);
+    if (dynamicObject && dynamicObject.userData.c3dId) {
+        c3d.dynamicObject.addSnapshot(
+            dynamicObject.userData.c3dId,
+            dynamicObject.position.toArray(),
+            dynamicObject.quaternion.toArray()
+        );
+    }
+
     renderer.render(scene, camera);
 }
