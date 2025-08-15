@@ -1,31 +1,32 @@
 import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { c3d } from './cognitive.js';
 
-export function createDynamicObject() {
-    const geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
-    const material = new THREE.MeshStandardMaterial({
-        color: 0xff0000, // Red color
-        roughness: 0.1,
-        metalness: 0.9
-    });
-    const dynamicObject = new THREE.Mesh(geometry, material);
+export async function createDynamicObject() {
+    const loader = new GLTFLoader();
+    
+    // Load the GLTF model
+    const gltf = await loader.loadAsync('/models/meta_quest_3/scene.gltf'); 
+    const dynamicObject = gltf.scene;
 
-    dynamicObject.position.set(0, 1, -2); // Centered position
-    dynamicObject.name = "DynamicObject";
+    dynamicObject.position.set(0, 1, -2);
+    dynamicObject.scale.set(2, 2, 2); // scale of obj
+    
+    dynamicObject.name = "DynamicObject_quest";
     dynamicObject.userData.isDynamic = true;
 
-    const meshName = "MyRedDynamicCube";
+    const meshName = "MyCustomGLTF";
 
-    // Register dynamic obj with Cognitive3D
+    // Register with Cognitive3D
     const objectId = c3d.dynamicObject.registerObject(
         dynamicObject.name,
-        meshName, // Use the new, unique mesh name
+        meshName,
         dynamicObject.position.toArray(),
         dynamicObject.quaternion.toArray()
     );
 
     console.log(`Registered dynamic object "${dynamicObject.name}" with Mesh Name "${meshName}" and ID: ${objectId}`);
-
+    
     dynamicObject.userData.c3dId = objectId;
 
     return dynamicObject;

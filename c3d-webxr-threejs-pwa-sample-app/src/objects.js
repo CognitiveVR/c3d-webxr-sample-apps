@@ -1,12 +1,11 @@
 import * as THREE from 'three';
 import { createDynamicObject } from './dynamicObject';
 
-export function createInteractableObjects() {
+export async function createInteractableObjects() { 
     const interactableGroup = new THREE.Group();
     interactableGroup.position.z = -5;
 
-    // Dynamic object
-    const dynamicObject = createDynamicObject();
+    const dynamicObject = await createDynamicObject(); 
     interactableGroup.add(dynamicObject);
 
     const geometries = [
@@ -71,25 +70,29 @@ export function updateObjectMomentum(group, deltaTime) {
     const objects = group.children;
     const restitution = 0.8;
 
+    // Update object positions first
     for (const object of objects) {
-        if (object.userData.isDynamic) continue; // Skip momentum update for the dynamic object
+        if (object.userData.velocity) {
+            object.position.add(object.userData.velocity.clone().multiplyScalar(deltaTime));
+            object.rotation.x += object.userData.angularVelocity.x * deltaTime;
+            object.rotation.y += object.userData.angularVelocity.y * deltaTime;
+            object.rotation.z += object.userData.angularVelocity.z * deltaTime;
 
-        object.position.add(object.userData.velocity.clone().multiplyScalar(deltaTime));
-        object.rotation.x += object.userData.angularVelocity.x * deltaTime;
-        object.rotation.y += object.userData.angularVelocity.y * deltaTime;
-        object.rotation.z += object.userData.angularVelocity.z * deltaTime;
-
-        object.userData.collider.center.copy(object.position);
+            if (object.userData.collider) {
+                object.userData.collider.center.copy(object.position);
+            }
+        }
     }
 
     // Collision detection and response
     for (let i = 0; i < objects.length; i++) {
         const obj1 = objects[i];
-        if (obj1.userData.isDynamic) continue;
+        // --- FIX: Ensure both objects have colliders before checking ---
+        if (!obj1.userData.collider) continue;
 
         for (let j = i + 1; j < objects.length; j++) {
             const obj2 = objects[j];
-            if (obj2.userData.isDynamic) continue;
+            if (!obj2.userData.collider) continue;
 
             if (obj1.userData.collider.intersectsSphere(obj2.userData.collider)) {
                 
@@ -106,13 +109,13 @@ export function updateObjectMomentum(group, deltaTime) {
 
     // Wrap objects around the bounds after handling collisions
     for (const object of objects) {
-        if (object.userData.isDynamic) continue;
-        
-        if (object.position.x > bounds) object.position.x = -bounds;
-        if (object.position.x < -bounds) object.position.x = bounds;
-        if (object.position.y > bounds) object.position.y = -bounds;
-        if (object.position.y < -bounds) object.position.y = bounds;
-        if (object.position.z > bounds) object.position.z = -bounds;
-        if (object.position.z < -bounds) object.position.z = bounds;
+        if (object.userData.velocity) {
+            if (object.position.x > bounds) object.position.x = -bounds;
+            if (object.position.x < -bounds) object.position.x = bounds;
+            if (object.position.y > bounds) object.position.y = -bounds;
+            if (object.position.y < -bounds) object.position.y = bounds;
+            if (object.position.z > bounds) object.position.z = -bounds;
+            if (object.position.z < -bounds) object.position.z = bounds;
+        }
     }
 }

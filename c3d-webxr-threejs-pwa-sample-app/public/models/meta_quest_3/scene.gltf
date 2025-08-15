@@ -1,0 +1,367 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 47622,
+      "max": [
+        9.706976890563965,
+        12.807297706604004,
+        8.47028636932373
+      ],
+      "min": [
+        -9.717714309692383,
+        -13.158504486083984,
+        -8.580516815185547
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 571464,
+      "componentType": 5126,
+      "count": 47622,
+      "max": [
+        1.0,
+        0.9999887943267822,
+        0.9999974966049194
+      ],
+      "min": [
+        -1.0,
+        -0.9999991655349731,
+        -0.9999982118606567
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 47622,
+      "max": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 47622,
+      "max": [
+        0.9937556982040405,
+        0.9982511401176453
+      ],
+      "min": [
+        0.0039368197321891785,
+        0.0009770393371582031
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 380976,
+      "componentType": 5126,
+      "count": 47622,
+      "max": [
+        0.8760890364646912,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.5947548151016235
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 761952,
+      "componentType": 5126,
+      "count": 47622,
+      "max": [
+        0.9937556982040405,
+        0.9982511401176453
+      ],
+      "min": [
+        0.0039368197321891785,
+        0.0009770393371582031
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1142928,
+      "componentType": 5126,
+      "count": 47622,
+      "max": [
+        0.9937556982040405,
+        0.9982511401176453
+      ],
+      "min": [
+        0.0039368197321891785,
+        0.0009770393371582031
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1523904,
+      "componentType": 5126,
+      "count": 47622,
+      "max": [
+        0.9937556982040405,
+        0.9982511401176453
+      ],
+      "min": [
+        0.0039368197321891785,
+        0.0009770393371582031
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1904880,
+      "componentType": 5126,
+      "count": 47622,
+      "max": [
+        0.9937556982040405,
+        0.9982511401176453
+      ],
+      "min": [
+        0.0039368197321891785,
+        0.0009770393371582031
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 228780,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "Elin (https://sketchfab.com/ElinHohler)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/meta-quest-3-65a813833dc04eeeb7d33bdca58c184c",
+      "title": "Meta Quest 3"
+    },
+    "generator": "Sketchfab-15.65.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 915120,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 2285856,
+      "byteOffset": 915120,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1142928,
+      "byteOffset": 3200976,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 761952,
+      "byteOffset": 4343904,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 5105856,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/Quest3HMD_baseColor.png"
+    },
+    {
+      "uri": "textures/Quest3HMD_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/Quest3HMD_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "Quest3HMD",
+      "normalTexture": {
+        "index": 2
+      },
+      "occlusionTexture": {
+        "index": 1
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Object_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3,
+            "TEXCOORD_1": 4,
+            "TEXCOORD_2": 5,
+            "TEXCOORD_3": 6,
+            "TEXCOORD_4": 7,
+            "TEXCOORD_5": 8
+          },
+          "indices": 9,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.975856900215149,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        4.3872836479666975e-16,
+        -1.975856900215149,
+        0.0,
+        0.0,
+        1.975856900215149,
+        4.3872836479666975e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "root"
+    },
+    {
+      "children": [
+        3
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "GLTF_SceneRootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -3.3717478610448247e-09,
+        0.009999999776482013,
+        0.0,
+        0.0,
+        -0.009999999776482013,
+        -3.3717478610448247e-09,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Quest3HMD_0"
+    },
+    {
+      "mesh": 0,
+      "name": "Object_4"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    }
+  ]
+}
