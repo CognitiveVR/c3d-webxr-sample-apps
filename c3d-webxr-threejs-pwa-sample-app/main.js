@@ -109,12 +109,14 @@ function render() {
         handleControllerIntersections(controller2, interactableGroup);
 
         const dynamicObject = interactableGroup.children.find(child => child.userData.isDynamic);
-        if (dynamicObject && dynamicObject.userData.c3dId) {
-            c3d.dynamicObject.addSnapshot(
-                dynamicObject.userData.c3dId,
-                dynamicObject.position.toArray(),
-                dynamicObject.quaternion.toArray()
-            );
+           if (c3d.isSessionActive()) {
+            if (dynamicObject && dynamicObject.userData.c3dId) {
+                c3d.dynamicObject.addSnapshot(
+                    dynamicObject.userData.c3dId,
+                    dynamicObject.position.toArray(),
+                    dynamicObject.quaternion.toArray()
+                );
+            }
         }
     }
 

@@ -16,7 +16,7 @@ export function initializeC3D(renderer) {
                 versionNumber: "1"
             }]
         }
-    }, renderer); // << Pass the renderer to the constructor
+    }, renderer); 
 
     c3d.setScene('BasicScene');
     c3d.userId = 'threejs_user_' + Date.now();

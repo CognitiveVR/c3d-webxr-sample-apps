@@ -6,13 +6,13 @@ export async function createDynamicObject() {
     const loader = new GLTFLoader();
     
     // Load the GLTF model
-    const gltf = await loader.loadAsync('/models/meta_quest_3/scene.gltf'); 
+    const gltf = await loader.loadAsync('/models/meta_quest_3/MyCustomGLTF.gltf'); 
     const dynamicObject = gltf.scene;
 
     dynamicObject.position.set(0, 1, -2);
     dynamicObject.scale.set(2, 2, 2); // scale of obj
     
-    dynamicObject.name = "DynamicObject_quest";
+    dynamicObject.name = "MyCustomGLTF";
     dynamicObject.userData.isDynamic = true;
 
     const meshName = "MyCustomGLTF";

@@ -87,7 +87,6 @@ export function updateObjectMomentum(group, deltaTime) {
     // Collision detection and response
     for (let i = 0; i < objects.length; i++) {
         const obj1 = objects[i];
-        // --- FIX: Ensure both objects have colliders before checking ---
         if (!obj1.userData.collider) continue;
 
         for (let j = i + 1; j < objects.length; j++) {
