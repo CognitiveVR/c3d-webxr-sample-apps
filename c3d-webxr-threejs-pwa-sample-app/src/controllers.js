@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { c3d } from './cognitive.js';
 
 let INTERSECTED;
 const tempMatrix = new THREE.Matrix4();
@@ -21,6 +22,14 @@ function onSelectStart(event, interactableGroup) {
         object.material.emissive.b = 1;
         controller.attach(object);
         controller.userData.selected = object;
+        
+        if (object.userData.isDynamic) 
+            {
+                c3d.customEvent("Interaction", "Object Grabbed", {
+                objectId: object.userData.c3dId,
+                objectName: object.name
+            });
+        }
     }
 }
 

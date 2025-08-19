@@ -6,21 +6,23 @@ export async function createDynamicObject() {
     const loader = new GLTFLoader();
     
     // Load the GLTF model
-    const gltf = await loader.loadAsync('/models/meta_quest_3/MyCustomGLTF.gltf'); 
+    // const gltf = await loader.loadAsync('/models/meta_quest_3/MyCustomGLTF.gltf'); 
+    const gltf = await loader.loadAsync('/models/cube/cube.gltf'); 
     const dynamicObject = gltf.scene;
 
     dynamicObject.position.set(0, 1, -2);
     dynamicObject.scale.set(2, 2, 2); // scale of obj
     
-    dynamicObject.name = "MyCustomGLTF";
+    dynamicObject.name = "AwesomeCube";
     dynamicObject.userData.isDynamic = true;
 
-    const meshName = "MyCustomGLTF";
-
+    const meshName = "AwesomeCube";
+    const customId = "c27a0a07-8725-47c6-8793-63ee29bd26ad";
     // Register with Cognitive3D
-    const objectId = c3d.dynamicObject.registerObject(
+    const objectId = c3d.dynamicObject.registerObjectCustomId(
         dynamicObject.name,
         meshName,
+        customId, 
         dynamicObject.position.toArray(),
         dynamicObject.quaternion.toArray()
     );

@@ -197,13 +197,13 @@
   ],
   "images": [
     {
-      "uri": "textures/Quest3HMD_baseColor.png"
+      "uri": "Quest3HMD_baseColor.png"
     },
     {
-      "uri": "textures/Quest3HMD_metallicRoughness.png"
+      "uri": "Quest3HMD_metallicRoughness.png"
     },
     {
-      "uri": "textures/Quest3HMD_normal.png"
+      "uri": "Quest3HMD_normal.png"
     }
   ],
   "materials": [

@@ -6,19 +6,30 @@ export let c3d;
 export function initializeC3D(renderer) {
     if (c3d) return c3d; // Only initialize once
 
+    // c3d = new C3DAnalytics({
+    //     config: {
+    //         APIKey: import.meta.env.VITE_C3D_APPLICATION_KEY,
+    //         networkHost: "data.c3ddev.com",
+    //         allSceneData: [{
+    //             sceneName: "BasicScene",
+    //             sceneId: "0da68a5b-704e-42c3-a6f9-dffe54ac61c4",
+    //             versionNumber: "1"
+    //         }]
+    //     }
+    // }, renderer); 
+
     c3d = new C3DAnalytics({
         config: {
             APIKey: import.meta.env.VITE_C3D_APPLICATION_KEY,
-            networkHost: "data.c3ddev.com",
             allSceneData: [{
-                sceneName: "BasicScene",
-                sceneId: "0da68a5b-704e-42c3-a6f9-dffe54ac61c4",
+                sceneName: "SampleScene",
+                sceneId: "12371db8-dda6-4a55-9b15-c92fd53d5bc5",
                 versionNumber: "1"
             }]
         }
     }, renderer); 
 
-    c3d.setScene('BasicScene');
+    c3d.setScene('SampleScene');
     c3d.userId = 'threejs_user_' + Date.now();
     c3d.setUserName('ThreeJS_SDK_Test_User');
     c3d.setDeviceName('WindowsPCBrowserVR');
