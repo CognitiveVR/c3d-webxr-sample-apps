@@ -1,36 +1,53 @@
 # Wonderland Engine VR App with Cognitive3D Analytics
 
-## FEATURES: 
-This is a simple WebXR application built with Three.js, featuring an interactive VR scene. 
-The project is also configured as a Progressive Web App (PWA).  
+This project is a sample [Wonderland Engine](https://wonderlandengine.com/) application that demonstrates a full integration of the [Cognitive3D](https://cognitive3d.com/) analytics SDK. 
 
-Most importantly, it integrates Cognitive3D WEBXR SDK (c3d-webxr-sdk) within a javascript/ threeJS/ PWA project. The SDK currently tracks session and gaze tracking with the application. Please view the browser console for details on the network calls. 
-This application can be accessed within a VR browser so through a desktop browser (via Oculus Link)
+This repository includes a pre-configured Wonderland Engine project and a custom analytics component that handles the initialization and data-passing to the Cognitive3D platform.
+
+!
 
 
-## PREREQUISITES
-* Node.js (LTS version) and npm.
-* A modern WebXR-compatible browser (Meta Quest Browser, Chrome, Edge, etc...)
-* A VR headset for testing the immersive features (Meta Quest 2).
+---
 
-## INSTALLATION
-Run the standard install command 
-```
-npm install 
-```
-### Configure Cognitive3D with your own information  
-Navigate to src/cognitive.js 
-Replace YOUR_API_KEY and the scene data (SceneID, Scene Version, Scene Name) with your own from the Cog3D dashboard. 
+## 🚀 Getting Started
 
-Run the development server 
-```
-npm run dev
-```
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
-In your terminal, vite will output a local url. Open this url to view the application. 
+### Prerequisites
 
-## USAGE  
-* Click on the "ENTER VR" button to start an immersive session.
-* The cog3d session will start as soon as XR starts, and will end when the XR session ends.
-* To exit the program, either press on "EXIT VR" or press ESC key on your keyboard.
-* Inside of the VR scene, you can move objects by pointing your controller at an object and pressing the trigger button. If you cannot view the controllers in the scene, ensure both controllers are on. 
+Before you begin, ensure you have the following installed:
+* [Node.js and npm](https://nodejs.org/en/) (Node version 16+ recommended)
+* The [Wonderland Engine](https://wonderlandengine.com/downloads) editor
+
+### Installation & Setup
+
+1.  **Open in Wonderland Engine:**
+    Launch the Wonderland Engine editor and open the `Wonderland VR.wlp` project file from the cloned repository.
+
+2.  **Install dependencies:**
+    The Wonderland engine should take care of packages, if not. You can open a terminal in this projects directory.
+    ```sh
+    npm install
+    ```
+ This will download the Wonderland Engine API, the Cognitive3D SDK, and other necessary packages.
+
+3.  **Set Your API Key and Project:**
+    * In the Wonderland Editor, navigate to the **Assets** panel.
+    * Find the `c3d-analytics-component` and select the object it's attached to (e.g., "Player").
+    * In the **Properties** panel on the right, you will see fields for **`apiKey`**, **`Scene Name`**, **`Scene id`**, and **`Version Number`**.
+    * Paste your unique Application Key from your Cognitive3D dashboard into this field.
+
+---
+
+## ▶️ Usage
+
+To run the project, simply click the **Package** button (▶️ icon) in the top toolbar of the Wonderland Engine editor. This will build the project and open it in your default web browser, you can also specific the VR device if it is connected via usb cable.
+
+Once the application is running, you can enter VR (if you have a compatible device) to start a session. Analytics data will be sent to your Cognitive3D dashboard in real-time, check browser console for logs if session does not appear on the Cog3D Dashboard.
+
+---
+
+## 📂 Key Files
+
+* **`js/c3d-analytics-component.js`**: This is the core of the integration. This Wonderland component handles initializing the Cognitive3D SDK, creating the engine adapter, and managing the analytics session.
+* **`package.json`**: Defines the project's dependencies, including the `@cognitive3d/analytics` package.
