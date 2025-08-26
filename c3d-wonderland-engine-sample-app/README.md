@@ -4,8 +4,6 @@ This project is a sample [Wonderland Engine](https://wonderlandengine.com/) appl
 
 This repository includes a pre-configured Wonderland Engine project and a custom analytics component that handles the initialization and data-passing to the Cognitive3D platform.
 
-!
-
 
 ---
 
