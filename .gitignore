@@ -3,3 +3,7 @@ node_modules
 .env.local
 
 dist/ 
+
+cache/
+
+deploy/ 
