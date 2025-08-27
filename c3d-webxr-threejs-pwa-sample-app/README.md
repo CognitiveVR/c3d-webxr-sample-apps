@@ -11,7 +11,7 @@ This application can be accessed within a VR browser so through a desktop browse
 ## PREREQUISITES
 * Node.js (LTS version) and npm.
 * A modern WebXR-compatible browser (Meta Quest Browser, Chrome, Edge, etc...)
-* A VR headset for testing the immersive features (Meta Quest 2).
+* A modern VR headset (Meta Quest 3)
 
 ## INSTALLATION
 Run the standard install command 
@@ -19,8 +19,13 @@ Run the standard install command
 npm install 
 ```
 ### Configure Cognitive3D with your own information  
-Navigate to src/cognitive.js 
-Replace YOUR_API_KEY and the scene data (SceneID, Scene Version, Scene Name) with your own from the Cog3D dashboard. 
+Create a `.env.local` file in this projects root directory and add the following line with your application key:
+```
+VITE_C3D_APPLICATION_KEY="YOUR_APPLICATION_KEY"
+```
+Open `src/cognitive.js` and enter your Scene data: `SceneID`, `Scene Version`, `Scene Name` with your own from the Cog3D dashboard. 
+
+
 
 Run the development server 
 ```
