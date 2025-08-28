@@ -18,7 +18,7 @@ Before you begin, ensure you have the following installed:
 * The [Wonderland Engine](https://wonderlandengine.com/downloads) editor
 * Modern VR Headset such as a Meta Quest 3
 
-### Installation & Setup
+### 🔧 Installation & Setup
 
 1.  **Open in Wonderland Engine:**
     Launch the Wonderland Engine editor and open the `Wonderland VR.wlp` project file from the cloned repository.
@@ -30,10 +30,10 @@ Before you begin, ensure you have the following installed:
     ```
 
 3.  **Set Your API Key and Project:**
-    * In the Wonderland Editor, navigate to the **Assets** panel.
-    * Find the `c3d-analytics-component` and select the object it's attached to (e.g., "Player").
+    * In the Wonderland Editor, navigate to the **Scene Outline** panel.
+    * Find the `c3d-analytics-component` and select the object it's attached to **Player** object. 
     * In the **Properties** panel on the right, you will see fields for **`apiKey`**, **`Scene Name`**, **`Scene id`**, and **`Version Number`**.
-    * Paste your unique Application Key from your Cognitive3D dashboard into this field.
+    * Paste your unique Application Key and scene data from your Cognitive3D dashboard into these fields.
 
 ---
 
