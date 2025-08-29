@@ -108,6 +108,12 @@ let c3d = null;
 function initializeC3D(renderer) {
 	if (c3d) return c3d;
 
+	console.log(import.meta.env.VITE_C3D_APPLICATION_KEY);
+	console.log(import.meta.env.VITE_C3D_NETWORK_HOST);
+	console.log(import.meta.env.VITE_C3D_SCENE_NAME);
+	console.log(import.meta.env.VITE_C3D_SCENE_ID);
+	console.log(import.meta.env.VITE_C3D_VERSION_NUMBER);
+
 	c3d = new C3DAnalytics(
 		{
 			config: {
