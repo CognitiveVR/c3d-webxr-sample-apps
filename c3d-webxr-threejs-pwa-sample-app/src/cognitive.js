@@ -4,15 +4,15 @@ import C3DThreeAdapter from '@cognitive3d/analytics/adapters/threejs';
 export let c3d;
 
 export function initializeC3D(renderer) {
-    if (c3d) return c3d; // Only initialize once
+    if (c3d) return c3d; 
 
     // c3d = new C3DAnalytics({
     //     config: {
     //         APIKey: import.meta.env.VITE_C3D_APPLICATION_KEY,
     //         networkHost: "data.c3ddev.com",
     //         allSceneData: [{
-    //             sceneName: "BasicScene",
-    //             sceneId: "0da68a5b-704e-42c3-a6f9-dffe54ac61c4",
+    //             sceneName: "SceneFinal",
+    //             sceneId: "d1d34837-6d70-4b53-8459-9885e657db78",
     //             versionNumber: "1"
     //         }]
     //     }
@@ -23,7 +23,7 @@ export function initializeC3D(renderer) {
             APIKey: import.meta.env.VITE_C3D_APPLICATION_KEY,
             allSceneData: [{
                 sceneName: "SampleScene",
-                sceneId: "12371db8-dda6-4a55-9b15-c92fd53d5bc5",
+                sceneId: "50542ff3-4f51-4c9a-99d8-6082921953f9",
                 versionNumber: "1"
             }]
         }

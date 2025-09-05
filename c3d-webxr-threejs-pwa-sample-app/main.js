@@ -101,6 +101,11 @@ function animate() {
     renderer.setAnimationLoop(render);
 }
 
+
+const tempMatrix = new THREE.Matrix4();
+const worldPosition = new THREE.Vector3();
+const worldQuaternion = new THREE.Quaternion();
+
 function render() {
     const deltaTime = clock.getDelta();
     if (interactableGroup) {
@@ -109,28 +114,19 @@ function render() {
         handleControllerIntersections(controller2, interactableGroup);
 
         const dynamicObject = interactableGroup.children.find(child => child.userData.isDynamic);
+        
+        if (dynamicObject && dynamicObject.userData.c3dId && c3d.isSessionActive()) {
+            
+            tempMatrix.copy(dynamicObject.matrixWorld);
+            worldPosition.setFromMatrixPosition(tempMatrix);
+            worldQuaternion.setFromRotationMatrix(tempMatrix);
 
-            if (dynamicObject && dynamicObject.userData.c3dId) 
-                {
-                c3d.dynamicObject.addSnapshot(
-                    dynamicObject.userData.c3dId,
-                    dynamicObject.position.toArray(),
-                    dynamicObject.quaternion.toArray());
-                }
-        //    if (c3d.isSessionActive()) 
-        //     {
-        //         if (dynamicObject && dynamicObject.userData.c3dId) 
-        //             {
-        //             c3d.dynamicObject.addSnapshot(
-        //                 dynamicObject.userData.c3dId,
-        //                 dynamicObject.position.toArray(),
-        //                 dynamicObject.quaternion.toArray()
-        //             );
-        //         }
-        //     }
-        // else{
-        //     console.log('waiting for session to start')
-        // }
+            c3d.dynamicObject.addSnapshot(
+                dynamicObject.userData.c3dId,
+                worldPosition.toArray(),
+                worldQuaternion.toArray()
+            );
+        }
     }
 
     renderer.render(scene, camera);

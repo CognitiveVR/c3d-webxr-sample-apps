@@ -16,7 +16,7 @@
   },
   "description": "",
   "dependencies": {
-    "@cognitive3d/analytics": "dev",
+    "@cognitive3d/analytics": "^2.1.5-dev.d9d4d3f",
     "three": "^0.177.0",
     "webxr-polyfill": "^2.0.3"
   }

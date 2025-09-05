@@ -23,9 +23,8 @@ function onSelectStart(event, interactableGroup) {
         controller.attach(object);
         controller.userData.selected = object;
         
-        if (object.userData.isDynamic) 
-            {
-                c3d.customEvent("Interaction", "Object Grabbed", {
+        if (object.userData.isDynamic && c3d.isSessionActive()) {
+            c3d.customEvent("Interaction", "Object Grabbed", {
                 objectId: object.userData.c3dId,
                 objectName: object.name
             });
