@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { VRButton } from 'three/examples/jsm/webxr/VRButton.js'; // Standard VRButton
 import { c3d, initializeC3D, setupCognitive3DSession } from './src/cognitive.js'; 
 import { createInteractableObjects, updateObjectMomentum } from './src/objects.js'; 
 import { setupControllers, handleControllerIntersections } from './src/controllers.js';
@@ -31,38 +32,7 @@ async function init() {
 
     initializeC3D(renderer); 
 
-    if ('xr' in navigator) {
-        const button = document.createElement('button');
-        button.id = 'VRButton';
-        button.textContent = 'ENTER VR';
-
-        button.onclick = async () => {
-            if (renderer.xr.isPresenting) {
-                renderer.xr.getSession().end();
-            } else {
-                try {
-                    const session = await navigator.xr.requestSession('immersive-vr', {
-                        optionalFeatures: [
-                            'local-floor',
-                            'bounded-floor',
-                            'hand-tracking',
-                            'eye-tracking'
-                        ]
-                    });
-                    renderer.xr.setSession(session);
-                } catch (e) {
-                    console.error("Failed to start XR session:", e);
-                }
-            }
-        };
-
-        document.body.appendChild(button);
-    } else {
-        const message = document.createElement('a');
-        message.href = 'https://immersiveweb.dev/';
-        message.innerHTML = 'VR NOT SUPPORTED';
-        document.body.appendChild(message);
-    }
+    document.body.appendChild(VRButton.createButton(renderer));
     
     interactableGroup = await createInteractableObjects(); 
     scene.add(interactableGroup);
@@ -88,6 +58,7 @@ async function init() {
             });
         });
     }
+
     animate();
 }
 
@@ -109,28 +80,13 @@ function render() {
         handleControllerIntersections(controller2, interactableGroup);
 
         const dynamicObject = interactableGroup.children.find(child => child.userData.isDynamic);
-
-            if (dynamicObject && dynamicObject.userData.c3dId) 
-                {
-                c3d.dynamicObject.addSnapshot(
-                    dynamicObject.userData.c3dId,
-                    dynamicObject.position.toArray(),
-                    dynamicObject.quaternion.toArray());
-                }
-        //    if (c3d.isSessionActive()) 
-        //     {
-        //         if (dynamicObject && dynamicObject.userData.c3dId) 
-        //             {
-        //             c3d.dynamicObject.addSnapshot(
-        //                 dynamicObject.userData.c3dId,
-        //                 dynamicObject.position.toArray(),
-        //                 dynamicObject.quaternion.toArray()
-        //             );
-        //         }
-        //     }
-        // else{
-        //     console.log('waiting for session to start')
-        // }
+        if (dynamicObject && dynamicObject.userData.c3dId) {
+            c3d.dynamicObject.addSnapshot(
+                dynamicObject.userData.c3dId,
+                dynamicObject.position.toArray(),
+                dynamicObject.quaternion.toArray()
+            );
+        }
     }
 
     renderer.render(scene, camera);

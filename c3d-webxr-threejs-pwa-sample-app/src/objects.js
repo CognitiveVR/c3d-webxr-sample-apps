@@ -1,12 +1,12 @@
 import * as THREE from 'three';
-import { createDynamicObject } from './dynamicObject';
+//import { createDynamicObject } from './dynamicObject';
 
 export async function createInteractableObjects() { 
     const interactableGroup = new THREE.Group();
     interactableGroup.position.z = -5;
 
-    const dynamicObject = await createDynamicObject(); 
-    interactableGroup.add(dynamicObject);
+    // const dynamicObject = await createDynamicObject(); 
+    // interactableGroup.add(dynamicObject);
 
     const geometries = [
         new THREE.BoxGeometry(0.2, 0.2, 0.2),
@@ -16,7 +16,7 @@ export async function createInteractableObjects() {
         new THREE.TorusGeometry(0.2, 0.04, 64, 32)
     ];
 
-    let numOfObjects = 30;
+    let numOfObjects = 40;
     for (let i = 0; i < numOfObjects; i++) {
         const geometry = geometries[Math.floor(Math.random() * geometries.length)];
         const color = new THREE.Color();

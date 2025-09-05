@@ -4,7 +4,7 @@ import C3DThreeAdapter from '@cognitive3d/analytics/adapters/threejs';
 export let c3d;
 
 export function initializeC3D(renderer) {
-    if (c3d) return c3d; // Only initialize once
+    if (c3d) return c3d; 
 
     // c3d = new C3DAnalytics({
     //     config: {
@@ -22,14 +22,14 @@ export function initializeC3D(renderer) {
         config: {
             APIKey: import.meta.env.VITE_C3D_APPLICATION_KEY,
             allSceneData: [{
-                sceneName: "SampleScene",
-                sceneId: "12371db8-dda6-4a55-9b15-c92fd53d5bc5",
+                sceneName: "BasicScene",
+                sceneId: "93f486e4-0e22-4650-946a-e64ce527f915",
                 versionNumber: "1"
             }]
         }
     }, renderer); 
 
-    c3d.setScene('SampleScene');
+    c3d.setScene('BasicScene');
     c3d.userId = 'threejs_user_' + Date.now();
     c3d.setUserName('ThreeJS_SDK_Test_User');
     c3d.setDeviceName('WindowsPCBrowserVR');
