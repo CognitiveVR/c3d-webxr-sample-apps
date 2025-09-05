@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { c3d } from './cognitive.js';
 
 let INTERSECTED;
 const tempMatrix = new THREE.Matrix4();
@@ -21,6 +22,14 @@ function onSelectStart(event, interactableGroup) {
         object.material.emissive.b = 1;
         controller.attach(object);
         controller.userData.selected = object;
+        
+        if (object.userData.isDynamic) 
+            {
+                c3d.customEvent("Interaction", "Object Grabbed", {
+                objectId: object.userData.c3dId,
+                objectName: object.name
+            });
+        }
     }
 }
 
@@ -45,21 +54,50 @@ export function setupControllers(scene, renderer, interactableGroup) {
     controller2.addEventListener('selectend', (e) => onSelectEnd(e, interactableGroup));
     scene.add(controller2);
 
-    const geometry = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 0, -1)]); // Lines for controllers 
+    // Controller Model 
+    const geometry = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 0, -1)]);
     const line = new THREE.Line(geometry);
     line.name = 'line';
     line.scale.z = 5;
 
-    controller1.add(line.clone());
-    controller2.add(line.clone());
+    // Handle Connection Events, Line as visual feedback 
+    controller1.addEventListener('connected', (event) => {
+        console.log("Controller 1 Connected", event.data);
+        controller1.add(line.clone());
+    });
+    controller1.addEventListener('disconnected', () => {
+        console.log("Controller 1 Disconnected");
+        // Remove the line when the controller disconnects for visual feedback
+        const lineToRemove = controller1.getObjectByName('line');
+        if (lineToRemove) {
+            controller1.remove(lineToRemove);
+        }
+    });
+    // Handle Connection Events, Line as visual feedback 
+    controller2.addEventListener('connected', (event) => {
+        console.log("Controller 2 Connected", event.data);
+        controller2.add(line.clone());
+    });
+    controller2.addEventListener('disconnected', () => {
+        console.log("Controller 2 Disconnected");
+        // Remove the line when the controller disconnects for visual feedback
+        const lineToRemove = controller2.getObjectByName('line');
+        if (lineToRemove) {
+            controller2.remove(lineToRemove);
+        }
+    });
 
     return [controller1, controller2];
 }
 
 export function handleControllerIntersections(controller, interactableGroup) {
+    const line = controller.getObjectByName('line');
+    if (!line) {
+        return;
+    }
+
     if (controller.userData.selected !== undefined) return;
 
-    const line = controller.getObjectByName('line');
     const intersections = getIntersections(controller, interactableGroup);
 
     if (intersections.length > 0) {
