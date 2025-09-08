@@ -1,12 +1,12 @@
 import * as THREE from 'three';
-//import { createDynamicObject } from './dynamicObject';
+import { createDynamicObject } from './dynamicObject';
 
 export async function createInteractableObjects() { 
     const interactableGroup = new THREE.Group();
     interactableGroup.position.z = -5;
 
-    // const dynamicObject = await createDynamicObject(); 
-    // interactableGroup.add(dynamicObject);
+    const dynamicObject = await createDynamicObject(); 
+    interactableGroup.add(dynamicObject);
 
     const geometries = [
         new THREE.BoxGeometry(0.2, 0.2, 0.2),

@@ -9,6 +9,9 @@ let controller1, controller2;
 let interactableGroup;
 const clock = new THREE.Clock(); 
 
+let lastSnapshotTime = 0;
+const snapshotInterval = 1;
+
 init();
 
 async function init() {
@@ -74,18 +77,39 @@ function animate() {
 
 function render() {
     const deltaTime = clock.getDelta();
+    const elapsedTime = clock.getElapsedTime();
+
+
     if (interactableGroup) {
         updateObjectMomentum(interactableGroup, deltaTime); 
         handleControllerIntersections(controller1, interactableGroup);
         handleControllerIntersections(controller2, interactableGroup);
-
+        // if (c3d.isSessionActive()) {
+        //     const dynamicObject = interactableGroup.children.find(child => child.userData.isDynamic);
+        //     if (dynamicObject && dynamicObject.userData.c3dId) {
+        //         c3d.dynamicObject.addSnapshot(
+        //             dynamicObject.userData.c3dId,
+        //             dynamicObject.position.toArray(),
+        //             dynamicObject.quaternion.toArray()
+        //         );
+        //     }
+        // }
         const dynamicObject = interactableGroup.children.find(child => child.userData.isDynamic);
-        if (dynamicObject && dynamicObject.userData.c3dId) {
+
+        if (dynamicObject && dynamicObject.userData.c3dId && (elapsedTime - lastSnapshotTime > snapshotInterval)) {
+            const worldPosition = new THREE.Vector3();
+            const worldQuaternion = new THREE.Quaternion();
+
+            dynamicObject.getWorldPosition(worldPosition);
+            dynamicObject.getWorldQuaternion(worldQuaternion);
+            
             c3d.dynamicObject.addSnapshot(
                 dynamicObject.userData.c3dId,
-                dynamicObject.position.toArray(),
-                dynamicObject.quaternion.toArray()
+                worldPosition.toArray(),
+                worldQuaternion.toArray()
             );
+
+            lastSnapshotTime = elapsedTime;
         }
     }
 

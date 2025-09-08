@@ -22,14 +22,14 @@ export function initializeC3D(renderer) {
         config: {
             APIKey: import.meta.env.VITE_C3D_APPLICATION_KEY,
             allSceneData: [{
-                sceneName: "BasicScene",
-                sceneId: "93f486e4-0e22-4650-946a-e64ce527f915",
+                sceneName: "SampleScene",
+                sceneId: "50542ff3-4f51-4c9a-99d8-6082921953f9",
                 versionNumber: "1"
             }]
         }
     }, renderer); 
 
-    c3d.setScene('BasicScene');
+    c3d.setScene('SampleScene');
     c3d.userId = 'threejs_user_' + Date.now();
     c3d.setUserName('ThreeJS_SDK_Test_User');
     c3d.setDeviceName('WindowsPCBrowserVR');
