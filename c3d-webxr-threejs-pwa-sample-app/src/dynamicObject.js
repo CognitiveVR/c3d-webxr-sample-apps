@@ -8,14 +8,6 @@ export async function createDynamicObject() {
     const gltf = await loader.loadAsync('/models/cube/cube.gltf'); 
     const dynamicObject = gltf.scene;
 
-    // dynamicObject.traverse((object) => {
-    // if (object.isMesh) {
-    //         object.material.transparent = true;
-    //         object.material.opacity = 0.5;
-            
-    //     }
-    // });
-
     dynamicObject.traverse((object) => {
         if (object.isMesh) {
             // Create a new MeshStandardMaterial for better control
