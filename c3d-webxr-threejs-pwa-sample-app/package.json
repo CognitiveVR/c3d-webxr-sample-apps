@@ -18,6 +18,7 @@
   "dependencies": {
     "@cognitive3d/analytics": "../../c3d-sdk-webxr",
     "three": "^0.180.0",
+    "three-spritetext": "^1.10.0",
     "webxr-polyfill": "^2.0.3"
   }
 }
