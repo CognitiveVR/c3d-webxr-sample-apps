@@ -3,6 +3,10 @@
 Basketball free-throw demo using Three.js + WebXR with Cognitive3D Javascript SDK.
 
 ## Getting Started
+## Requirements
+- Node.js 22+
+- WebXR-capable device/browser
+- Cognitive3D Account
 ### 1. Scene upload
 Upload the scene to Cognitive3D using [c3d-upload-tools](https://github.com/CognitiveVR/).
 
@@ -33,7 +37,3 @@ ngrok http 5173
 ```
 Open the **https** URL that ngrok prints in your headset’s browser.
 
-## Requirements
-- Node.js 22+
-- WebXR-capable device/browser
-- Cognitive3D Account
