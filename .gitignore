@@ -7,3 +7,5 @@ dist/
 cache/
 
 deploy/ 
+
+c3d-webxr-babylon-sample-app/
