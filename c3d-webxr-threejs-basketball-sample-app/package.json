@@ -11,9 +11,9 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@cognitive3d/analytics": "^2.1.4",
-    "three": "^0.179.1"
-  },
+    "@cognitive3d/analytics": "dev",
+    "three": "^0.180.0"
+    },
   "devDependencies": {
     "vite": "^7.1.3"
   }

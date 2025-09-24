@@ -4,7 +4,6 @@
 
 // Three.js core and utilities
 import * as THREE from "three";
-import { GLTFExporter } from "three/examples/jsm/exporters/GLTFExporter.js";
 import * as BufferGeometryUtils from "three/examples/jsm/utils/BufferGeometryUtils.js";
 
 // WebXR components
@@ -134,14 +133,14 @@ function initializeC3D(renderer) {
 	c3d.setUserProperty("c3d.app.version", "0.2");
 	c3d.setUserProperty("c3d.deviceid", "threejs_windows_device_" + Date.now());
 
-	new C3DThreeAdapter(c3d);
+	const adapter = new C3DThreeAdapter(c3d); 
 
-	return c3d;
+	return {c3d, adapter};
 }
 
 function setupCognitive3DSession(renderer, getFinalStats = () => null) {
-	const c3dInstance = initializeC3D(renderer);
-
+	const { c3d: c3dInstance, adapter } = initializeC3D(renderer);
+	
 	renderer.xr.addEventListener("sessionstart", async () => {
 		const xrSession = renderer.xr.getSession();
 		if (xrSession?.supportedFrameRates?.includes?.(120)) {
@@ -169,6 +168,7 @@ function setupCognitive3DSession(renderer, getFinalStats = () => null) {
 	document.addEventListener("visibilitychange", () => {
 		if (document.visibilityState === "hidden") flushUserPropsAndEnd();
 	});
+	return { c3dInstance, adapter };
 }
 
 // ==============================================================================
@@ -737,6 +737,7 @@ class VRControllerManager {
 
 class VRBasketballGame {
 	constructor() {
+		this.c3dAdapter = null;
 		this.gameState = new GameState();
 		this.clock = new THREE.Clock();
 		this.setupRenderer();
@@ -748,7 +749,10 @@ class VRBasketballGame {
 
 	// Initialize WebGL renderer and VR setup
 	setupRenderer() {
-		this.renderer = new THREE.WebGLRenderer({ antialias: true });
+		this.renderer = new THREE.WebGLRenderer({
+			antialias: true,
+			preserveDrawingBuffer: true
+		});
 		this.renderer.setPixelRatio(window.devicePixelRatio);
 		this.renderer.setSize(window.innerWidth, window.innerHeight);
 		this.renderer.shadowMap.enabled = true;
@@ -759,15 +763,26 @@ class VRBasketballGame {
 		document.body.appendChild(VRButton.createButton(this.renderer));
 		window.addEventListener("resize", () => this.onResize());
 
-		setupCognitive3DSession(this.renderer, () => ({
+		// Store the adapter instance when the session is set up
+		const { adapter } = setupCognitive3DSession(this.renderer, () => ({
 			attempts: this.gameState.attempts,
 			made: this.gameState.score,
 		}));
+		this.c3dAdapter = adapter;
 
-		// Export scene on 'E' key press
+		// Export scene on 'E' key press using the new adapter method
 		document.addEventListener("keydown", (e) => {
-			if (e.key.toLowerCase() === "e") {
-				this.exportSceneGLTFWithBin();
+			if (e.key.toLowerCase() === "e" && this.c3dAdapter) {
+				// Create a group of the objects you want to export
+				const exportGroup = new THREE.Group();
+				exportGroup.name = "VRHoops_StaticScene";
+				if (this.floor) exportGroup.add(this.floor.clone());
+				if (this.hoop?.group) exportGroup.add(this.hoop.group.clone(true));
+				if (this.rack?.group) exportGroup.add(this.rack.group.clone(true));
+
+				// Call the adapter's export function
+				console.log("Exporting scene...");
+				this.c3dAdapter.exportScene(exportGroup, "VR Hoops", this.renderer, this.camera);
 			}
 		});
 	}
@@ -852,95 +867,6 @@ class VRBasketballGame {
 		this.camera.aspect = window.innerWidth / window.innerHeight;
 		this.camera.updateProjectionMatrix();
 		this.renderer.setSize(window.innerWidth, window.innerHeight);
-	}
-
-	// ==============================================================================
-	// GLTF EXPORT FUNCTIONALITY
-	// ==============================================================================
-
-	// Ensure export directory exists (File System Access API)
-	async ensureExportDir() {
-		if (this.exportDirHandle) return this.exportDirHandle;
-		if (!window.showDirectoryPicker) return null;
-		const root = await window.showDirectoryPicker();
-		const sceneDir = await root.getDirectoryHandle("scene", { create: true });
-		const perm = await sceneDir.requestPermission?.({ mode: "readwrite" });
-		if (perm && perm !== "granted") throw new Error("Write permission denied");
-		this.exportDirHandle = sceneDir;
-		return sceneDir;
-	}
-	// Write file using File System Access API
-	async writeFile(dirHandle, filename, blob) {
-		const fileHandle = await dirHandle.getFileHandle(filename, { create: true });
-		const writable = await fileHandle.createWritable();
-		await writable.write(blob);
-		await writable.close();
-	}
-
-	// Export current scene to GLTF with separate .bin file
-	exportSceneGLTFWithBin() {
-		const exporter = new GLTFExporter();
-
-		const exportGroup = new THREE.Group();
-		exportGroup.name = "VRHoops_StaticScene";
-		if (this.floor) exportGroup.add(this.floor.clone());
-		if (this.hoop?.group) exportGroup.add(this.hoop.group.clone(true));
-		if (this.rack?.group) exportGroup.add(this.rack.group.clone(true));
-
-		const balls = new THREE.Group();
-		balls.name = "Balls";
-		for (const b of this.gameState.balls) {
-			const c = b.mesh.clone();
-			c.position.copy(b.mesh.position);
-			c.quaternion.copy(b.mesh.quaternion);
-			c.scale.copy(b.mesh.scale);
-			balls.add(c);
-		}
-		exportGroup.add(balls);
-
-		exporter.parse(
-			exportGroup,
-			async (gltf) => {
-				const prefix = "data:application/octet-stream;base64,";
-				const uri = gltf.buffers?.[0]?.uri || "";
-				let binBlob = null;
-				if (uri.startsWith(prefix)) {
-					const b64 = uri.slice(prefix.length);
-					const raw = atob(b64);
-					const bytes = new Uint8Array(raw.length);
-					for (let i = 0; i < raw.length; i++) bytes[i] = raw.charCodeAt(i);
-					binBlob = new Blob([bytes.buffer], { type: "application/octet-stream" });
-					gltf.buffers[0].uri = "scene.bin";
-				}
-				const gltfBlob = new Blob([JSON.stringify(gltf, null, 2)], { type: "model/gltf+json" });
-
-				const dir = await this.ensureExportDir().catch(() => null);
-				if (dir) {
-					if (binBlob) await this.writeFile(dir, "scene.bin", binBlob);
-					await this.writeFile(dir, "scene.gltf", gltfBlob);
-					console.log("Saved to directory: scene/scene.gltf + scene/scene.bin");
-				} else {
-					if (binBlob) this._downloadBlob(binBlob, "scene.bin");
-					this._downloadBlob(gltfBlob, "scene.gltf");
-					console.warn("File System Access API not available; used downloads instead.");
-				}
-			},
-			(err) => console.error("GLTF export failed:", err),
-			{ binary: false, embedImages: true, onlyVisible: true, truncateDrawRange: true, maxTextureSize: 4096 }
-		);
-	}
-
-	// Fallback download for browsers without File System Access API
-	_downloadBlob(blob, filename) {
-		const a = document.createElement("a");
-		a.href = URL.createObjectURL(blob);
-		a.download = filename;
-		document.body.appendChild(a);
-		a.click();
-		setTimeout(() => {
-			URL.revokeObjectURL(a.href);
-			a.remove();
-		}, 800);
 	}
 }
 
