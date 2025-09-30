@@ -1,12 +1,12 @@
 import * as THREE from 'three';
-//import { createDynamicObject } from './dynamicObject';
+import { createDynamicObject } from './dynamicObject';
 
-export async function createInteractableObjects() { 
+export async function createInteractableObjects(c3d) { 
     const interactableGroup = new THREE.Group();
     interactableGroup.position.z = -5;
 
-    // const dynamicObject = await createDynamicObject(); 
-    // interactableGroup.add(dynamicObject);
+    const dynamicObject = await createDynamicObject(c3d); 
+    interactableGroup.add(dynamicObject);
 
     const geometries = [
         new THREE.BoxGeometry(0.2, 0.2, 0.2),
@@ -16,7 +16,7 @@ export async function createInteractableObjects() {
         new THREE.TorusGeometry(0.2, 0.04, 64, 32)
     ];
 
-    let numOfObjects = 40;
+    let numOfObjects = 0; 
     for (let i = 0; i < numOfObjects; i++) {
         const geometry = geometries[Math.floor(Math.random() * geometries.length)];
         const color = new THREE.Color();
@@ -46,7 +46,7 @@ export async function createInteractableObjects() {
 
         object.geometry.computeBoundingSphere();
         object.userData.collider = object.geometry.boundingSphere.clone();
-        object.userData.collider.radius *= scale; // Apply scale to the collider radius
+        object.userData.collider.radius *= scale;
 
         object.userData.velocity = new THREE.Vector3(
             (Math.random() - 0.5) * 0.5,
@@ -70,7 +70,6 @@ export function updateObjectMomentum(group, deltaTime) {
     const objects = group.children;
     const restitution = 0.8;
 
-    // Update object positions first
     for (const object of objects) {
         if (object.userData.velocity) {
             object.position.add(object.userData.velocity.clone().multiplyScalar(deltaTime));
@@ -84,7 +83,6 @@ export function updateObjectMomentum(group, deltaTime) {
         }
     }
 
-    // Collision detection and response
     for (let i = 0; i < objects.length; i++) {
         const obj1 = objects[i];
         if (!obj1.userData.collider) continue;
@@ -106,7 +104,6 @@ export function updateObjectMomentum(group, deltaTime) {
         }
     }
 
-    // Wrap objects around the bounds after handling collisions
     for (const object of objects) {
         if (object.userData.velocity) {
             if (object.position.x > bounds) object.position.x = -bounds;

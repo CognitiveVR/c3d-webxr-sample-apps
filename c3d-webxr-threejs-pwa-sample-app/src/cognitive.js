@@ -2,34 +2,23 @@ import C3DAnalytics from '@cognitive3d/analytics';
 import C3DThreeAdapter from '@cognitive3d/analytics/adapters/threejs';
 
 export let c3d;
+let c3dAdapter;
 
 export function initializeC3D(renderer) {
     if (c3d) return c3d; 
-
-    // c3d = new C3DAnalytics({
-    //     config: {
-    //         APIKey: import.meta.env.VITE_C3D_APPLICATION_KEY,
-    //         networkHost: "data.c3ddev.com",
-    //         allSceneData: [{
-    //             sceneName: "BasicScene",
-    //             sceneId: "0da68a5b-704e-42c3-a6f9-dffe54ac61c4",
-    //             versionNumber: "1"
-    //         }]
-    //     }
-    // }, renderer); 
 
     c3d = new C3DAnalytics({
         config: {
             APIKey: import.meta.env.VITE_C3D_APPLICATION_KEY,
             allSceneData: [{
-                sceneName: "BasicScene",
-                sceneId: "93f486e4-0e22-4650-946a-e64ce527f915",
+                sceneName: "SampleScene",
+                sceneId: "50542ff3-4f51-4c9a-99d8-6082921953f9",
                 versionNumber: "1"
             }]
         }
     }, renderer); 
 
-    c3d.setScene('BasicScene');
+    c3d.setScene('SampleScene');
     c3d.userId = 'threejs_user_' + Date.now();
     c3d.setUserName('ThreeJS_SDK_Test_User');
     c3d.setDeviceName('WindowsPCBrowserVR');
@@ -37,13 +26,27 @@ export function initializeC3D(renderer) {
     c3d.setUserProperty("c3d.app.version", "0.2");
     c3d.setUserProperty("c3d.deviceid", 'threejs_windows_device_' + Date.now());
 
-    new C3DThreeAdapter(c3d);
+    c3dAdapter = new C3DThreeAdapter(c3d);
+    
     return c3d;
 }
 
-export function setupCognitive3DSession(renderer) {
-    const c3dInstance = initializeC3D(renderer);
+export function setupTracking(camera, interactableGroup) {
+    if (!c3dAdapter) return;
 
+    // Setup gaze raycasting
+    if (camera && interactableGroup) {
+        c3dAdapter.setupGazeRaycasting(camera, interactableGroup);
+    }
+    
+    // Find the dynamic object and start tracking it
+    const dynamicObject = interactableGroup.children.find(child => child.userData.isDynamic);
+    if (dynamicObject) {
+        c3dAdapter.trackDynamicObject(dynamicObject, dynamicObject.userData.c3dId); // auto track dynamic object if pos, rot or scale changes 
+    }
+}
+
+export function setupCognitive3DSession(renderer) {
     renderer.xr.addEventListener('sessionstart', async () => {
         console.log('Cognitive3D: VR Session Started');
 
@@ -57,8 +60,7 @@ export function setupCognitive3DSession(renderer) {
             }
         }
 
-        // Use await to call the async startSession method
-        const success = await c3dInstance.startSession(xrSession);
+        const success = await c3d.startSession(xrSession);
         if (success) {
             console.log('Cognitive3D SDK session successfully started.');
         }
@@ -66,7 +68,7 @@ export function setupCognitive3DSession(renderer) {
 
     renderer.xr.addEventListener('sessionend', () => {
         console.log('Cognitive3D: VR Session Ended');
-        c3dInstance.endSession().then(status => {
+        c3d.endSession().then(status => {
             console.log('Cognitive3D SDK session ended with status:', status);
         });
     });

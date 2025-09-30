@@ -25,7 +25,8 @@ function onSelectStart(event, interactableGroup) {
         
         if (object.userData.isDynamic) 
             {
-                c3d.customEvent("Interaction", "Object Grabbed", {
+            c3d.customEvent.send("Interaction", object.position.toArray(), {
+                action: "Object Grabbed",
                 objectId: object.userData.c3dId,
                 objectName: object.name
             });

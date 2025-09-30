@@ -1,6 +1,7 @@
 import * as THREE from 'three';
-import { VRButton } from 'three/examples/jsm/webxr/VRButton.js'; // Standard VRButton
-import { c3d, initializeC3D, setupCognitive3DSession } from './src/cognitive.js'; 
+import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
+// We now need more functions from cognitive.js
+import { initializeC3D, setupTracking, setupCognitive3DSession } from './src/cognitive.js'; 
 import { createInteractableObjects, updateObjectMomentum } from './src/objects.js'; 
 import { setupControllers, handleControllerIntersections } from './src/controllers.js';
 
@@ -26,19 +27,28 @@ async function init() {
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.outputEncoding = THREE.sRGBEncoding;
+    // FIX: Updated for modern Three.js versions
+    renderer.outputColorSpace = THREE.SRGBColorSpace; 
     renderer.xr.enabled = true;
     document.body.appendChild(renderer.domElement);
+    
+    // 1. Initialize C3D to get the instance
+    const c3d = initializeC3D(renderer);
 
-    initializeC3D(renderer); 
+    // 2. Create objects, passing in the c3d instance
+    interactableGroup = await createInteractableObjects(c3d); 
+    scene.add(interactableGroup);
+
+    // 3. Finish setting up tracking now that objects exist
+    setupTracking(camera, interactableGroup);
 
     document.body.appendChild(VRButton.createButton(renderer));
     
-    interactableGroup = await createInteractableObjects(); 
-    scene.add(interactableGroup);
-
     [controller1, controller2] = setupControllers(scene, renderer, interactableGroup);
+    
+    // 4. Setup session listeners
     setupCognitive3DSession(renderer);
+    
     window.addEventListener('resize', onWindowResize);
 
     window.addEventListener('keydown', (event) => {
@@ -78,15 +88,6 @@ function render() {
         updateObjectMomentum(interactableGroup, deltaTime); 
         handleControllerIntersections(controller1, interactableGroup);
         handleControllerIntersections(controller2, interactableGroup);
-
-        const dynamicObject = interactableGroup.children.find(child => child.userData.isDynamic);
-        if (dynamicObject && dynamicObject.userData.c3dId) {
-            c3d.dynamicObject.addSnapshot(
-                dynamicObject.userData.c3dId,
-                dynamicObject.position.toArray(),
-                dynamicObject.quaternion.toArray()
-            );
-        }
     }
 
     renderer.render(scene, camera);
