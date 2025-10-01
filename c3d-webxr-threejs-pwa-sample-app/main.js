@@ -4,11 +4,14 @@ import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
 import { initializeC3D, setupTracking, setupCognitive3DSession } from './src/cognitive.js'; 
 import { createInteractableObjects, updateObjectMomentum } from './src/objects.js'; 
 import { setupControllers, handleControllerIntersections } from './src/controllers.js';
+import { c3d } from './src/cognitive.js';
+import C3DThreeAdapter from '@cognitive3d/analytics/adapters/threejs';
 
 let camera, scene, renderer;
 let controller1, controller2;
 let interactableGroup;
 const clock = new THREE.Clock(); 
+let c3dAdapter; 
 
 init();
 
@@ -34,6 +37,7 @@ async function init() {
     
     // 1. Initialize C3D to get the instance
     const c3d = initializeC3D(renderer);
+    c3dAdapter = new C3DThreeAdapter(c3d); 
 
     // 2. Create objects, passing in the c3d instance
     interactableGroup = await createInteractableObjects(c3d); 
@@ -88,6 +92,9 @@ function render() {
         updateObjectMomentum(interactableGroup, deltaTime); 
         handleControllerIntersections(controller1, interactableGroup);
         handleControllerIntersections(controller2, interactableGroup);
+    }
+    if (c3dAdapter) {
+        c3dAdapter.updateTrackedObjectTransforms();
     }
 
     renderer.render(scene, camera);
