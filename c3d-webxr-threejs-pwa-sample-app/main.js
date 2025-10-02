@@ -30,27 +30,26 @@ async function init() {
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
-    // FIX: Updated for modern Three.js versions
     renderer.outputColorSpace = THREE.SRGBColorSpace; 
     renderer.xr.enabled = true;
     document.body.appendChild(renderer.domElement);
     
-    // 1. Initialize C3D to get the instance
+    // Initialize C3D to get the instance
     const c3d = initializeC3D(renderer);
     c3dAdapter = new C3DThreeAdapter(c3d); 
 
-    // 2. Create objects, passing in the c3d instance
+    // Create objects, passing in the c3d instance
     interactableGroup = await createInteractableObjects(c3d); 
     scene.add(interactableGroup);
 
-    // 3. Finish setting up tracking now that objects exist
+    // Finish setting up tracking now that objects exist
     setupTracking(camera, interactableGroup);
 
     document.body.appendChild(VRButton.createButton(renderer));
     
     [controller1, controller2] = setupControllers(scene, renderer, interactableGroup);
     
-    // 4. Setup session listeners
+    // Setup session listeners
     setupCognitive3DSession(renderer);
     
     window.addEventListener('resize', onWindowResize);
@@ -62,6 +61,17 @@ async function init() {
             }
         }
     });
+
+    window.addEventListener('keydown', async (event) => {
+        if (event.key.toLowerCase() === 'o') {
+            const cube = interactableGroup.children.find(obj => obj.name === "Cube");
+            if (cube && c3dAdapter) {
+                await c3dAdapter.exportObject(cube, "Cube", renderer, camera);
+                console.log("Exported Cube.");
+            }
+        }
+    });
+
 
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {

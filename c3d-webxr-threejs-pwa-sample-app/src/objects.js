@@ -16,7 +16,7 @@ export async function createInteractableObjects(c3d) {
         new THREE.TorusGeometry(0.2, 0.04, 64, 32)
     ];
 
-    let numOfObjects = 0; 
+    let numOfObjects = 20; 
     for (let i = 0; i < numOfObjects; i++) {
         const geometry = geometries[Math.floor(Math.random() * geometries.length)];
         const color = new THREE.Color();
