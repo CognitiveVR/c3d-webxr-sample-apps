@@ -19,12 +19,22 @@ export function initializeC3D(renderer) {
     }, renderer); 
 
     c3d.setScene('SampleScene');
-    c3d.userId = 'threejs_user_' + Date.now();
-    c3d.setUserName('ThreeJS_SDK_Test_User');
+    
+    //  PARTICIPANT SETUP 
+    c3d.setParticipantFullName('ThreeJS_SDK_Test_User');  
+    c3d.setParticipantId('participant_' + Date.now());   
+    
+    //  DEVICE PROPERTIES 
     c3d.setDeviceName('WindowsPCBrowserVR');
-    c3d.setDeviceProperty("AppName", "ThreeJS_WebXR_SDK_Test_App");
-    c3d.setUserProperty("c3d.app.version", "0.2");
+    c3d.setDeviceProperty("AppName", "c3d-webxr-threejs-pwa-sample-app");
+    
+    //  USER PROPERTIES 
+    c3d.setUserProperty("c3d.app.version", "0.5");
     c3d.setUserProperty("c3d.deviceid", 'threejs_windows_device_' + Date.now());
+    
+    
+    //  SESSION PROPERTIES  
+    c3d.setSessionProperty("platform", "webxr");
 
     c3dAdapter = new C3DThreeAdapter(c3d);
     
