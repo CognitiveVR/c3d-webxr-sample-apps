@@ -3,10 +3,10 @@ import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
 // We now need more functions from cognitive.js
 import { initializeC3D, setupTracking, setupCognitive3DSession } from './src/cognitive.js'; 
 import { createInteractableObjects, updateObjectMomentum } from './src/objects.js'; 
-import { setupControllers, handleControllerIntersections } from './src/controllers.js';
+import { setupControllers, handleControllerIntersections, adjustObjectScaleWithGamepad } from './src/controllers.js';
 import { c3d } from './src/cognitive.js';
 import C3DThreeAdapter from '@cognitive3d/analytics/adapters/threejs';
-
+ 
 let camera, scene, renderer;
 let controller1, controller2;
 let interactableGroup;
@@ -102,6 +102,9 @@ function render() {
         updateObjectMomentum(interactableGroup, deltaTime); 
         handleControllerIntersections(controller1, interactableGroup);
         handleControllerIntersections(controller2, interactableGroup);
+
+        adjustObjectScaleWithGamepad(controller1);
+        adjustObjectScaleWithGamepad(controller2);
     }
     if (c3dAdapter) {
         c3dAdapter.updateTrackedObjectTransforms();

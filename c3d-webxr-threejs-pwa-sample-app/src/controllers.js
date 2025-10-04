@@ -55,33 +55,39 @@ export function setupControllers(scene, renderer, interactableGroup) {
     controller2.addEventListener('selectend', (e) => onSelectEnd(e, interactableGroup));
     scene.add(controller2);
 
-    // Controller Model 
     const geometry = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 0, -1)]);
     const line = new THREE.Line(geometry);
     line.name = 'line';
     line.scale.z = 5;
 
-    // Handle Connection Events, Line as visual feedback 
+    // Handle Connection Events for Controller 1
     controller1.addEventListener('connected', (event) => {
         console.log("Controller 1 Connected", event.data);
+        // IMPORTANT: Store the gamepad object when it's ready
+        controller1.userData.gamepad = event.data.gamepad;
         controller1.add(line.clone());
     });
     controller1.addEventListener('disconnected', () => {
         console.log("Controller 1 Disconnected");
-        // Remove the line when the controller disconnects for visual feedback
+        // Clean up the gamepad reference
+        delete controller1.userData.gamepad;
         const lineToRemove = controller1.getObjectByName('line');
         if (lineToRemove) {
             controller1.remove(lineToRemove);
         }
     });
-    // Handle Connection Events, Line as visual feedback 
+
+    // Handle Connection Events for Controller 2
     controller2.addEventListener('connected', (event) => {
         console.log("Controller 2 Connected", event.data);
+        // IMPORTANT: Store the gamepad object when it's ready
+        controller2.userData.gamepad = event.data.gamepad;
         controller2.add(line.clone());
     });
     controller2.addEventListener('disconnected', () => {
         console.log("Controller 2 Disconnected");
-        // Remove the line when the controller disconnects for visual feedback
+        // Clean up the gamepad reference
+        delete controller2.userData.gamepad;
         const lineToRemove = controller2.getObjectByName('line');
         if (lineToRemove) {
             controller2.remove(lineToRemove);
@@ -117,4 +123,35 @@ export function handleControllerIntersections(controller, interactableGroup) {
         }
         line.scale.z = 5;
     }
+}
+
+export function adjustObjectScaleWithGamepad(controller) {
+  const object = controller.userData.selected;
+  if (!object) return;
+
+  // Check for the gamepad we stored in connected event listener
+  const gamepad = controller.userData.gamepad;
+
+  // Gamepad maybe missing until the controller fully connects ~ return
+  if (!gamepad || !gamepad.axes) {
+    return;
+  }
+
+  const yAxisIndex = gamepad.axes.length - 1;
+  if (yAxisIndex < 1) return; 
+
+  const yAxis = gamepad.axes[yAxisIndex];
+  const deadzone = 0.1;
+
+  if (Math.abs(yAxis) > deadzone) {
+    const scaleAmount = 1 - yAxis * 0.03;
+    object.scale.multiplyScalar(scaleAmount);
+    clampScale(object);
+  }
+}
+
+function clampScale(object) {
+  object.scale.x = Math.min(Math.max(0.1, object.scale.x), 5);
+  object.scale.y = Math.min(Math.max(0.1, object.scale.y), 5);
+  object.scale.z = Math.min(Math.max(0.1, object.scale.z), 5);
 }

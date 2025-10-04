@@ -50,7 +50,7 @@ In your terminal, vite will output a local url. Open this url to view the applic
 
 1. Click on the "ENTER VR" button to start an immersive session. 
 2. The C3D session will start as soon as XR starts, and will end when the XR session ends.
-3. Inside of the VR scene, you can move objects by pointing your controller at an object and pressing the trigger button, only the purple cube in the center is a Cognitive3D Dynamic object. 
+3. Inside of the VR scene, you can move objects by pointing your controller at an object and pressing the trigger button. You can also scale the object by selecting them with the trigger button and pointing the joystick up/down. 
 4. To exit the program, either press on "EXIT VR" or press ESC key on your keyboard.
 
 If you cannot view the controllers in the scene, ensure the controllers are on.
