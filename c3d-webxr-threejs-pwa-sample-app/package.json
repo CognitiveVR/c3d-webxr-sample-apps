@@ -16,7 +16,7 @@
   },
   "description": "",
   "dependencies": {
-    "@cognitive3d/analytics": "dev",
+    "@cognitive3d/analytics": "../../c3d-sdk-webxr",
     "three": "^0.180.0",
     "webxr-polyfill": "^2.0.3"
   }
