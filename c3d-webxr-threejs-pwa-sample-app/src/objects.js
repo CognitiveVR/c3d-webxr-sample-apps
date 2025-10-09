@@ -1,11 +1,11 @@
 import * as THREE from 'three';
-import { createDynamicObject } from './dynamicObject';
+import { createDynamicCube, createDynamicSphere } from './dynamicObject';
 
 export async function createInteractableObjects(c3d) { 
     const interactableGroup = new THREE.Group();
     interactableGroup.position.z = -5;
 
-    const dynamicObject = await createDynamicObject(c3d); 
+    const dynamicObject = createDynamicCube(c3d); 
     interactableGroup.add(dynamicObject);
 
     const geometries = [

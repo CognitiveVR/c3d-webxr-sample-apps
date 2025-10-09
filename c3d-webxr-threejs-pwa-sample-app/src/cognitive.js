@@ -41,29 +41,6 @@ export function initializeC3D(renderer) {
     return { c3d, c3dAdapter };  
 }
 
-export function setupTracking(camera, interactableGroup) {
-    if (!c3dAdapter) return;
-    
-    // Setup gaze raycasting
-    if (camera && interactableGroup) {
-        c3dAdapter.setupGazeRaycasting(camera, interactableGroup);
-        console.log('Cognitive3D: Gaze raycasting enabled for', interactableGroup.children.length, 'objects');
-        
-        // Log positions for debugging
-        interactableGroup.children.forEach(child => {
-            const worldPos = new THREE.Vector3();
-            child.getWorldPosition(worldPos);
-            console.log(`Object: ${child.name}, Local: ${child.position.toArray()}, World: ${worldPos.toArray()}, c3dId: ${child.userData.c3dId}`);
-        });
-    }
-    
-    // Find the dynamic object and start tracking it
-    const dynamicObject = interactableGroup.children.find(child => child.userData.isDynamic);
-    if (dynamicObject) {
-        c3dAdapter.trackDynamicObject(dynamicObject, dynamicObject.userData.c3dId);
-        console.log('Cognitive3D: Tracking dynamic object:', dynamicObject.name);
-    }
-}
 
 export function setupCognitive3DSession(renderer) {
     renderer.xr.addEventListener('sessionstart', async () => {
