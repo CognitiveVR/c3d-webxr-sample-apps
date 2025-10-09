@@ -1,17 +1,13 @@
 import * as THREE from 'three';
 import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
-// We now need more functions from cognitive.js
-import { initializeC3D, setupTracking, setupCognitive3DSession } from './src/cognitive.js'; 
+import { initializeC3D, setupCognitive3DSession } from './src/cognitive.js'; 
 import { createInteractableObjects, updateObjectMomentum } from './src/objects.js'; 
 import { setupControllers, handleControllerIntersections, adjustObjectScaleWithGamepad } from './src/controllers.js';
-import { c3d } from './src/cognitive.js';
-import C3DThreeAdapter from '@cognitive3d/analytics/adapters/threejs';
- 
+
 let camera, scene, renderer;
 let controller1, controller2;
 let interactableGroup;
 const clock = new THREE.Clock(); 
-let c3dAdapter; 
 
 init();
 
@@ -34,16 +30,12 @@ async function init() {
     renderer.xr.enabled = true;
     document.body.appendChild(renderer.domElement);
     
-    // Initialize C3D to get the instance
-    const c3d = initializeC3D(renderer);
-    c3dAdapter = new C3DThreeAdapter(c3d); 
+    // Get the adapter directly from the initialization
+    const { c3d, c3dAdapter } = initializeC3D(renderer);
 
-    // Create objects, passing in the c3d instance
     interactableGroup = await createInteractableObjects(c3d); 
     scene.add(interactableGroup);
 
-    // Finish setting up tracking now that objects exist
-    setupTracking(camera, interactableGroup);
 
     document.body.appendChild(VRButton.createButton(renderer));
     
@@ -62,7 +54,7 @@ async function init() {
         }
     });
 
-    window.addEventListener('keydown', async (event) => {
+    window.addEventListener('keydown', async (event) => { // Export object (cube) functionality of the c3d-sdk-webxr 
         if (event.key.toLowerCase() === 'o') {
             const cube = interactableGroup.children.find(obj => obj.name === "Cube");
             if (cube && c3dAdapter) {
@@ -71,7 +63,6 @@ async function init() {
             }
         }
     });
-
 
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
@@ -83,17 +74,15 @@ async function init() {
         });
     }
 
-    animate();
+    // A single call to start all tracking and the render loop.
+    // Pass the top-level 'render' function as the callback.
+    c3dAdapter.startTracking(renderer, camera, interactableGroup, render);
 }
 
 function onWindowResize() {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
-}
-
-function animate() {
-    renderer.setAnimationLoop(render);
 }
 
 function render() {
@@ -105,9 +94,6 @@ function render() {
 
         adjustObjectScaleWithGamepad(controller1);
         adjustObjectScaleWithGamepad(controller2);
-    }
-    if (c3dAdapter) {
-        c3dAdapter.updateTrackedObjectTransforms();
     }
 
     renderer.render(scene, camera);
