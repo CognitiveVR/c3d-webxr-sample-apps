@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
 import { initializeC3D, setupCognitive3DSession } from './src/cognitive.js'; 
 import { createInteractableObjects, updateObjectMomentum } from './src/objects.js'; 
-import { setupControllers, handleControllerIntersections, adjustObjectScaleWithGamepad } from './src/controllers.js';
+import { setupControllers, handleControllerIntersections, adjustObjectWithGamepad } from './src/controllers.js';
 
 let camera, scene, renderer;
 let controller1, controller2;
@@ -92,8 +92,8 @@ function render() {
         handleControllerIntersections(controller1, interactableGroup);
         handleControllerIntersections(controller2, interactableGroup);
 
-        adjustObjectScaleWithGamepad(controller1);
-        adjustObjectScaleWithGamepad(controller2);
+        adjustObjectWithGamepad(controller1);
+        adjustObjectWithGamepad(controller2);
     }
 
     renderer.render(scene, camera);
