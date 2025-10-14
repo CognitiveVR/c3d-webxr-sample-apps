@@ -125,25 +125,23 @@ export function handleControllerIntersections(controller, interactableGroup) {
     }
 }
 
-export function adjustObjectScaleWithGamepad(controller) {
+export function adjustObjectWithGamepad(controller) {
   const object = controller.userData.selected;
   if (!object) return;
 
-  // Check for the gamepad we stored in connected event listener
   const gamepad = controller.userData.gamepad;
-
-  // Gamepad maybe missing until the controller fully connects ~ return
   if (!gamepad || !gamepad.axes) {
     return;
   }
 
-  const yAxisIndex = gamepad.axes.length - 1;
-  if (yAxisIndex < 1) return; 
-
-  const yAxis = gamepad.axes[yAxisIndex];
+  const xAxis = gamepad.axes[gamepad.axes.length - 2];
+  const yAxis = gamepad.axes[gamepad.axes.length - 1];
   const deadzone = 0.1;
 
-  if (Math.abs(yAxis) > deadzone) {
+  if (Math.abs(xAxis) > deadzone && Math.abs(xAxis) > Math.abs(yAxis)) { // rotate if horizontal movement is greater
+    const rotationAmount = -xAxis * 0.05;
+    object.rotation.y += rotationAmount;
+  } else if (Math.abs(yAxis) > deadzone) { // Otherwise, scale if there's vertical movement
     const scaleAmount = 1 - yAxis * 0.03;
     object.scale.multiplyScalar(scaleAmount);
     clampScale(object);
