@@ -8,7 +8,10 @@ export function createDynamicCube(c3d) { // Creates a dynamic cube
     
     dynamicObject.name = "Cube";
     dynamicObject.userData.isDynamic = true;
-    
+    dynamicObject.userData.positionThreshold = 1;
+    dynamicObject.userData.rotationThreshold = 5;
+    dynamicObject.userData.scaleThreshold = 0.5; 
+     
     const meshName = "cube";
     const customId = "eedd0384-0989-4a95-955a-ca297fa37db4";
 
