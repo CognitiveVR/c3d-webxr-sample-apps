@@ -1,13 +1,39 @@
 import * as THREE from 'three';
-import { createDynamicCube, createDynamicSphere } from './dynamicObject';
+import { createDynamicCube } from './dynamicObject';
 
 export async function createInteractableObjects(c3d) { 
     const interactableGroup = new THREE.Group();
     interactableGroup.position.z = -5;
 
-    const dynamicObject = createDynamicCube(c3d); 
-    interactableGroup.add(dynamicObject);
+    // =================================================================
+    // PERFORMANCE TEST SETTINGS 
+    // =================================================================
 
+    const NUM_DYNAMIC_OBJECTS = 20;    // Set the number of dynamic objects (cubes) to test ****** 
+    const ARE_OBJECTS_MOVING = false;     // Set to true for moving objects, false for stationary ******
+
+    const grid_size = Math.ceil(Math.sqrt(NUM_DYNAMIC_OBJECTS));
+    const spacing = 3; // Spacing between cubes ******
+    const offset = (grid_size - 1) * spacing / 2;
+
+    for (let i = 0; i < NUM_DYNAMIC_OBJECTS; i++) {
+        const customId = String(i + 1); // Sequential ID for multiple cubes
+
+        // Position cubes in a grid
+        const x = (i % grid_size) * spacing - offset;
+        const y = Math.floor(i / grid_size) * spacing - (offset / 2); 
+        const z = 0; 
+        const position = new THREE.Vector3(x, y, z);
+
+        const dynamicObject = createDynamicCube(c3d, customId, position);
+        
+        if (ARE_OBJECTS_MOVING) {
+            dynamicObject.userData.isMoving = true;
+            dynamicObject.userData.movePhase = Math.random() * Math.PI * 2; // Random start phase for movement
+        }
+
+        interactableGroup.add(dynamicObject);
+    }
     const geometries = [
         new THREE.BoxGeometry(0.2, 0.2, 0.2),
         new THREE.ConeGeometry(0.2, 0.2, 64),
@@ -16,102 +42,23 @@ export async function createInteractableObjects(c3d) {
         new THREE.TorusGeometry(0.2, 0.04, 64, 32)
     ];
 
-    let numOfObjects = 20; 
-    for (let i = 0; i < numOfObjects; i++) {
-        const geometry = geometries[Math.floor(Math.random() * geometries.length)];
-        const color = new THREE.Color();
-        color.setHSL(Math.random(), 0.9, 0.5);
 
-        const material = new THREE.MeshStandardMaterial({
-            color: color,
-            roughness: 0,
-            metalness: 0
-        });
-        const object = new THREE.Mesh(geometry, material);
-
-        object.position.set(
-            Math.random() * 10 - 5,
-            Math.random() * 10 - 5,
-            Math.random() * 10 - 5
-        );
-
-        object.rotation.set(
-            Math.random() * 2 * Math.PI,
-            Math.random() * 2 * Math.PI,
-            Math.random() * 2 * Math.PI
-        );
-
-        const scale = Math.random() * 0.7 + 0.7;
-        object.scale.setScalar(scale);
-
-        object.geometry.computeBoundingSphere();
-        object.userData.collider = object.geometry.boundingSphere.clone();
-        object.userData.collider.radius *= scale;
-
-        object.userData.velocity = new THREE.Vector3(
-            (Math.random() - 0.5) * 0.5,
-            (Math.random() - 0.5) * 0.5,
-            (Math.random() - 0.5) * 0.5
-        );
-        object.userData.angularVelocity = new THREE.Vector3(
-            (Math.random() - 0.5) * 1,
-            (Math.random() - 0.5) * 1,
-            (Math.random() - 0.5) * 1
-        );
-
-        interactableGroup.add(object);
-    }
     
     return interactableGroup;
 }
 
-export function updateObjectMomentum(group, deltaTime) {
-    const bounds = 5;
+// Modified to accept elapsedTime for movement
+export function updateObjectMomentum(group, deltaTime, elapsedTime) {
+    const bounds = 100;
     const objects = group.children;
     const restitution = 0.8;
 
     for (const object of objects) {
-        if (object.userData.velocity) {
-            object.position.add(object.userData.velocity.clone().multiplyScalar(deltaTime));
-            object.rotation.x += object.userData.angularVelocity.x * deltaTime;
-            object.rotation.y += object.userData.angularVelocity.y * deltaTime;
-            object.rotation.z += object.userData.angularVelocity.z * deltaTime;
+        if (object.userData.isMoving) {
+            const amplitude = 1.0; // How high/low it moves
+            const speed = 0.5;     // How fast it moves
+            object.position.y = object.userData.originalY + (Math.sin(object.userData.movePhase + elapsedTime * speed) * amplitude); // Sin wave for smooth up/down movement
 
-            if (object.userData.collider) {
-                object.userData.collider.center.copy(object.position);
-            }
-        }
-    }
-
-    for (let i = 0; i < objects.length; i++) {
-        const obj1 = objects[i];
-        if (!obj1.userData.collider) continue;
-
-        for (let j = i + 1; j < objects.length; j++) {
-            const obj2 = objects[j];
-            if (!obj2.userData.collider) continue;
-
-            if (obj1.userData.collider.intersectsSphere(obj2.userData.collider)) {
-                
-                const normal = new THREE.Vector3().subVectors(obj2.position, obj1.position).normalize();
-                const relativeVelocity = new THREE.Vector3().subVectors(obj2.userData.velocity, obj1.userData.velocity);
-                
-                const impulse = ((0.2 + restitution) * relativeVelocity.dot(normal));
-
-                obj1.userData.velocity.add(normal.clone().multiplyScalar(impulse));
-                obj2.userData.velocity.sub(normal.clone().multiplyScalar(impulse));
-            }
-        }
-    }
-
-    for (const object of objects) {
-        if (object.userData.velocity) {
-            if (object.position.x > bounds) object.position.x = -bounds;
-            if (object.position.x < -bounds) object.position.x = bounds;
-            if (object.position.y > bounds) object.position.y = -bounds;
-            if (object.position.y < -bounds) object.position.y = bounds;
-            if (object.position.z > bounds) object.position.z = -bounds;
-            if (object.position.z < -bounds) object.position.z = bounds;
         }
     }
 }

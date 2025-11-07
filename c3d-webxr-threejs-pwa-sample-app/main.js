@@ -53,13 +53,18 @@ async function init() {
             }
         }
     });
+    
+    // Export object (cube) functionality of the c3d-sdk-webxr, Press O to export  
 
-    window.addEventListener('keydown', async (event) => { // Export object (cube) functionality of the c3d-sdk-webxr 
+    window.addEventListener('keydown', async (event) => { 
         if (event.key.toLowerCase() === 'o') {
-            const cube = interactableGroup.children.find(obj => obj.name === "Cube");
+            // Find the first dynamic cube to export (e.g., "Cube_1")
+            const cube = interactableGroup.children.find(obj => obj.name === "Cube_1");
             if (cube && c3dAdapter) {
-                await c3dAdapter.exportObject(cube, "Cube", renderer, camera);
-                console.log("Exported Cube.");
+                await c3dAdapter.exportObject(cube, "Cube_1", renderer, camera);
+                console.log("Exported Cube_1.");
+            } else {
+                console.log("Could not find Cube_1 to export.");
             }
         }
     });
@@ -76,6 +81,7 @@ async function init() {
 
     // A single call to start all tracking and the render loop.
     // Pass the top-level 'render' function as the callback.
+    // The c3dAdapter will now handle calling render() inside its own loop.
     c3dAdapter.startTracking(renderer, camera, interactableGroup, render);
 }
 
@@ -87,8 +93,12 @@ function onWindowResize() {
 
 function render() {
     const deltaTime = clock.getDelta();
+    const elapsedTime = clock.getElapsedTime(); // Get elapsed time for movement
+
     if (interactableGroup) {
-        updateObjectMomentum(interactableGroup, deltaTime); 
+        // Pass elapsed time to the update function
+        updateObjectMomentum(interactableGroup, deltaTime, elapsedTime); 
+        
         handleControllerIntersections(controller1, interactableGroup);
         handleControllerIntersections(controller2, interactableGroup);
 
