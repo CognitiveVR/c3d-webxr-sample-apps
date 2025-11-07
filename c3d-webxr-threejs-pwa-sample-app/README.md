@@ -62,8 +62,16 @@ If you cannot view the controllers in the scene, ensure the controllers are on.
 * It is registered with the Cognitive3D SDK to track its position and rotation within the scene, **no other objects are Cognitive3D Dynamic Objects in this scene**.
 * **A Dynamic Object in Cognitive3D is an interactive element within the VR scene whose position, rotation, scale, and state are continuously tracked over the user session. These tracked transforms and interactions are recorded as snapshots, allowing them to be visualized during session replay in Cognitive3D's Scene Explorer for detailed analysis of user engagement with the 3D environment.**
 
-#### Export Object
+### Export Object
 
 * `exportObject(objectToExport, objectName, renderer, camera)` exports a specific Three.js object (The purple cube) to GLTF, binary, and PNG screenshot files.
 * Pressing the "O" key while running the application will export this cube object using the Cognitive3D ThreeJS adapter, ready for upload using the [c3d-upload-tools](https://github.com/CognitiveVR/c3d-upload-tools). 
 
+## 🧪 Performance Testing
+This sample app includes settings for testing the performance of the Cognitive3D SDK, specifically for dynamic object tracking.
+
+To configure the test, open src/objects.js and modify the following constants:
+
+`NUM_DYNAMIC_OBJECTS`: Set this to the number of dynamic cubes you want to spawn in the scene (e.g., 10, 100, or 1000).
+
+`ARE_OBJECTS_MOVING`: Set to true to have all spawned cubes move up and down, simulating a highly active scene. Set to false to have all cubes remain stationary.
