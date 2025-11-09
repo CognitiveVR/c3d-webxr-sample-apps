@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
-import { initializeC3D, setupCognitive3DSession } from './src/cognitive.js'; 
+import { initializeC3D, setupCognitive3DSession, c3d, c3dAdapter } from './src/cognitive.js'; 
 import { createInteractableObjects, updateObjectMomentum } from './src/objects.js'; 
 import { setupControllers, handleControllerIntersections, adjustObjectWithGamepad } from './src/controllers.js';
 
@@ -8,6 +8,8 @@ let camera, scene, renderer;
 let controller1, controller2;
 let interactableGroup;
 const clock = new THREE.Clock(); 
+
+let sessionIsActive = false;
 
 init();
 
@@ -31,8 +33,8 @@ async function init() {
     document.body.appendChild(renderer.domElement);
     
     // Get the adapter directly from the initialization
-    const { c3d, c3dAdapter } = initializeC3D(renderer);
-
+    // const { c3d, c3dAdapter } = initializeC3D(renderer);
+    initializeC3D(renderer);
     interactableGroup = await createInteractableObjects(c3d); 
     scene.add(interactableGroup);
 
@@ -43,6 +45,14 @@ async function init() {
     
     // Setup session listeners
     setupCognitive3DSession(renderer);
+
+    // Listen for session start and end to track session state
+    renderer.xr.addEventListener('sessionstart', () => {
+        sessionIsActive = true;
+    });
+    renderer.xr.addEventListener('sessionend', () => {
+        sessionIsActive = false;
+    });
     
     window.addEventListener('resize', onWindowResize);
 
@@ -92,6 +102,19 @@ function onWindowResize() {
 }
 
 function render() {
+
+    // if (sessionIsActive && c3d.isSessionActive()) {
+    //     const sessionStartTime = c3d.getSessionTimestamp(); // in seconds
+    //     const currentTime = Date.now() / 1000; // in seconds
+    //     const sessionDuration = currentTime - sessionStartTime;
+
+    //     if (sessionDuration >= 30) {
+    //         console.log('30-second test duration reached. Exiting VR session from render loop.');
+    //         renderer.xr.getSession().end();
+    //         sessionIsActive = false; // Prevent this from firing multiple times
+    //     }
+    // }
+
     const deltaTime = clock.getDelta();
     const elapsedTime = clock.getElapsedTime(); // Get elapsed time for movement
 

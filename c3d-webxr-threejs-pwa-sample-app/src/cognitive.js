@@ -42,7 +42,7 @@ export function setupCognitive3DSession(renderer) {
         console.log('Cognitive3D: VR Session Started');
 
         const xrSession = renderer.xr.getSession();
-        if (xrSession.supportedFrameRates && xrSession.supportedFrameRates.includes(120)) {
+        if (xrSession.supportedFrameRates && xrSession.supportedFrameRates.includes(120)) { // Sets limit up to 120Hz if supported, useful for performance testing
             try {
                 await xrSession.updateTargetFrameRate(120);
                 console.log('Target frame rate set to 120Hz');
@@ -55,13 +55,28 @@ export function setupCognitive3DSession(renderer) {
         if (success) {
             console.log('Cognitive3D SDK session successfully started.');
             console.log('Gaze tracking with raycasting is now active.');
+
+            // console.log('Starting 30-second timer to auto-exit VR session.');
+            // setTimeout(() => {
+            //     if (renderer.xr.isPresenting) {
+            //         console.log('30-second timer elapsed. Exiting VR session.');
+            //         renderer.xr.getSession().end();
+            //     }
+            // }, 30000); // 30 seconds
+
         }
     });
 
-    renderer.xr.addEventListener('sessionend', () => {
+    renderer.xr.addEventListener('sessionend', async () => {
         console.log('Cognitive3D: VR Session Ended');
-        c3d.endSession().then(status => {
+        // c3d.endSession().then(status => {
+        //     console.log('Cognitive3D SDK session ended with status:', status);
+        // });
+        try {
+            const status = await c3d.endSession(); 
             console.log('Cognitive3D SDK session ended with status:', status);
-        });
+        } catch (error) {
+            console.error('Cognitive3D: Error during endSession:', error);
+        }
     });
 }
