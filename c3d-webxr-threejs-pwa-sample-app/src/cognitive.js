@@ -23,10 +23,8 @@ export function initializeC3D(renderer) {
     
    // PARTICIPANT SETUP 
    c3d.setParticipantFullName('ThreeJS_SDK_Test_User');  
-    //    c3d.setParticipantId(Date.now());
     
     // DEVICE PROPERTIES 
-    // c3d.setDeviceName('WindowsPCBrowserVR');
     c3d.setDeviceProperty("AppName", "c3d-webxr-threejs-pwa-sample-app");
     
     c3d.setAppVersion("1.0");
