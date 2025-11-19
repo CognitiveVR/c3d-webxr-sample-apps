@@ -37,6 +37,13 @@ async function init() {
     scene.add(interactableGroup);
 
 
+    // const sessionInit = {
+    // requiredFeatures: ['local-floor'],
+    // optionalFeatures: ['bounded-floor', 'hand-tracking' ]
+    // };
+    // document.body. appendChild(VRButton.createButton(renderer, sessionInit));
+
+
     document.body.appendChild(VRButton.createButton(renderer));
     
     [controller1, controller2] = setupControllers(scene, renderer, interactableGroup);

@@ -9,11 +9,11 @@ export async function createInteractableObjects(c3d) {
     // PERFORMANCE TEST SETTINGS 
     // =================================================================
 
-    const NUM_DYNAMIC_OBJECTS = 20;    // Set the number of dynamic objects (cubes) to test ****** 
-    const ARE_OBJECTS_MOVING = false;     // Set to true for moving objects, false for stationary ******
+    const NUM_DYNAMIC_OBJECTS = 50;     // Set the number of dynamic objects (cubes) to test ****** 
+    const ARE_OBJECTS_MOVING = true;    // Set to true for moving objects, false for stationary ******
 
     const grid_size = Math.ceil(Math.sqrt(NUM_DYNAMIC_OBJECTS));
-    const spacing = 3; // Spacing between cubes ******
+    const spacing = 1.2;                // Spacing between cubes ******
     const offset = (grid_size - 1) * spacing / 2;
 
     for (let i = 0; i < NUM_DYNAMIC_OBJECTS; i++) {
@@ -57,8 +57,8 @@ export function updateObjectMomentum(group, deltaTime, elapsedTime) {
         if (object.userData.isMoving) {
             const amplitude = 1.0; // How high/low it moves
             const speed = 0.5;     // How fast it moves
-            object.position.y = object.userData.originalY + (Math.sin(object.userData.movePhase + elapsedTime * speed) * amplitude); // Sin wave for smooth up/down movement
-
+            // object.position.y = object.userData.originalY + (Math.sin(object.userData.movePhase + elapsedTime * speed) * amplitude); // Sin wave for smooth up/down movement, each cube has a phase offset
+            object.position.y = object.userData.originalY + (Math.sin(elapsedTime * speed) * amplitude); // Sin wave for smooth up/down movement, all cubes move in unison (in phase)
         }
     }
 }
