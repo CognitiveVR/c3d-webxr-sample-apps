@@ -9,11 +9,11 @@ export async function createInteractableObjects(c3d) {
     // PERFORMANCE TEST SETTINGS 
     // =================================================================
 
-    const NUM_DYNAMIC_OBJECTS = 50;     // Set the number of dynamic objects (cubes) to test ****** 
+    const NUM_DYNAMIC_OBJECTS = 100;     // Set the number of dynamic objects (cubes) to test ****** 
     const ARE_OBJECTS_MOVING = true;    // Set to true for moving objects, false for stationary ******
 
     const grid_size = Math.ceil(Math.sqrt(NUM_DYNAMIC_OBJECTS));
-    const spacing = 1.2;                // Spacing between cubes ******
+    const spacing = 1.1;                // Spacing between cubes ******
     const offset = (grid_size - 1) * spacing / 2;
 
     for (let i = 0; i < NUM_DYNAMIC_OBJECTS; i++) {
