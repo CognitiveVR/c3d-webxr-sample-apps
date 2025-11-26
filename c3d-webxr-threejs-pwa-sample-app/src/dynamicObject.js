@@ -23,7 +23,6 @@ export function createDynamicCube(c3d, customId, position) {
 
     dynamicObject.position.copy(position); 
     
-    // Calculate world position for registration (group is at z = -5)
     const worldPosition = [position.x, position.y, position.z - 5];
 
     const objectId = c3d.dynamicObject.registerObjectCustomId(
