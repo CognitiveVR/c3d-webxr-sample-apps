@@ -18,11 +18,7 @@
                 1.0,
                 0.9999998
             ],
-            "components": [
-                {
-                    "type": "c3d-analytics-component"
-                }
-            ]
+            "components": []
         },
         "15": {
             "name": "FloorPlane",
@@ -63,9 +59,10 @@
             ],
             "scaling": [
                 4.0,
-                4.0,
-                4.0
-            ]
+                3.9999995,
+                3.9999995
+            ],
+            "parent": "234"
         },
         "16": {
             "name": "Cube",
@@ -93,7 +90,8 @@
                 0.5,
                 0.5,
                 0.5
-            ]
+            ],
+            "parent": "234"
         },
         "17": {
             "name": "NonVrCamera",
@@ -226,7 +224,8 @@
                 1.0,
                 1.0,
                 1.0
-            ]
+            ],
+            "parent": "234"
         },
         "23": {
             "name": "Light.000",
@@ -253,7 +252,8 @@
                 1.0,
                 1.0,
                 1.0
-            ]
+            ],
+            "parent": "234"
         },
         "24": {
             "name": "Cone",
@@ -281,7 +281,8 @@
                 1.0,
                 1.0,
                 1.0
-            ]
+            ],
+            "parent": "234"
         },
         "27": {
             "name": "Sphere",
@@ -309,7 +310,8 @@
                 0.75,
                 0.75,
                 0.75
-            ]
+            ],
+            "parent": "234"
         },
         "53": {
             "link": {
@@ -1503,20 +1505,21 @@
             ],
             "translation": [
                 -2.5000019,
-                1.2000006,
-                1.7881393432617188e-7
+                1.2000005,
+                2.384185791015625e-7
             ],
             "rotation": [
-                0.5002127,
+                0.5002128,
                 0.0,
                 0.0,
-                0.8659025
+                0.8659024
             ],
             "scaling": [
                 0.405,
                 0.2024997,
                 0.4049996
-            ]
+            ],
+            "parent": "234"
         },
         "196": {
             "link": {
@@ -1896,7 +1899,41 @@
             ]
         },
         "234": {
-            "name": "C3D_Manager"
+            "name": "Scene Export",
+            "components": []
+        },
+        "235": {
+            "name": "Cognitive3D Analytics",
+            "parent": null,
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "components": [
+                {
+                    "type": "c3d-analytics-component",
+                    "c3d-analytics-component": {
+                        "exportRootObject": "234",
+                        "sceneName": "WonderlandEngineScene",
+                        "apiKey": "EAO23IC878XWH17E5SC2O8T68TMDM66F",
+                        "sceneId": "81a64114-9930-4078-a813-fe4ed03f60cb",
+                        "versionNumber": "2",
+                        "exportScale": "0.001"
+                    }
+                }
+            ]
         }
     },
     "meshes": {
