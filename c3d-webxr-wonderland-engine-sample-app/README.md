@@ -35,7 +35,7 @@ Before you begin, ensure you have the following installed:
     * In the **Properties** panel on the right, you will see fields for **`apiKey`**, **`Scene Name`**, **`Scene id`**, and **`Version Number`**.
     * Paste your unique Application Key and scene data from your Cognitive3D dashboard into these fields.
   
-4. 📦 **Scene Export:** To visualize user data in the Cognitive3D dashboard, you must upload a 3D model of your environment (static scene geometry). This project includes a built-in exporter that generates the exact geometry and configuration required.
+4. 📦 **Scene Export:** To visualize scene data in the Cognitive3D dashboard, you can upload a 3D model of your environment (static scene geometry). 
 
     #### 1. Configuration (Editor): In the Wonderland Editor, select the object with the `c3d-analytics-component`. In the **Properties** panel, you can configure the export:
     * **Export Scale:** (Optional) Set the global scale for the exported model (Default: `1.0`).
