@@ -31,9 +31,26 @@ Before you begin, ensure you have the following installed:
 
 3.  **Set Your API Key and Project:**
     * In the Wonderland Editor, navigate to the **Scene Outline** panel.
-    * Find the `c3d-analytics-component` and select the object it's attached to **Player** object. 
+    * Find the `c3d-analytics-component` and select the object it's attached to **Cognitive3D Analytics** object. 
     * In the **Properties** panel on the right, you will see fields for **`apiKey`**, **`Scene Name`**, **`Scene id`**, and **`Version Number`**.
     * Paste your unique Application Key and scene data from your Cognitive3D dashboard into these fields.
+  
+4. 📦 **Scene Export:** To visualize user data in the Cognitive3D dashboard, you must upload a 3D model of your environment (static scene geometry). This project includes a built-in exporter that generates the exact geometry and configuration required.
+
+    #### 1. Configuration (Editor): In the Wonderland Editor, select the object with the `c3d-analytics-component`. In the **Properties** panel, you can configure the export:
+    * **Export Scale:** (Optional) Set the global scale for the exported model (Default: `1.0`).
+    * **Export Root Object:** Drag and drop a specific parent object from the Scene Outline into this field. If set, the exporter will only include this object and its children for export.
+
+    #### 2. Triggering Export (Runtime)
+    1.  Run the project in your browser (desktop mode).
+    2.  Press the **`O`** key on your keyboard.
+    3.  A browser prompt will ask you to select a folder. Choose an empty folder on your computer.
+    4.  The script will generate and save the following 4 files directly into that folder:
+        * `scene.gltf` / `scene.bin`: The static geometry of your scene.
+        * `settings.json`: Configuration file containing scale and scene metadata.
+        * `screenshot.png`: A snapshot of your current view (taken immediately when you press the key).
+  
+    #### 3. Upload: Once exported, use the [Cognitive3D CLI tools](https://docs.cognitive3d.com/uploading-your-scene/) to upload the folder content to your dashboard.
 
 ---
 
