@@ -1929,7 +1929,9 @@
                         "sceneName": "WonderlandEngineScene",
                         "apiKey": "EAO23IC878XWH17E5SC2O8T68TMDM66F",
                         "sceneId": "81a64114-9930-4078-a813-fe4ed03f60cb",
-                        "versionNumber": "2"
+                        "versionNumber": "3",
+                        "exportScale": "0.001",
+                        "enableSceneExport": true
                     }
                 }
             ]
