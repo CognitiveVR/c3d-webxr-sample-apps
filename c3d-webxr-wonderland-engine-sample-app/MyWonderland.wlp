@@ -1926,11 +1926,12 @@
                     "type": "c3d-analytics-component",
                     "c3d-analytics-component": {
                         "exportRootObject": "234",
-                        "sceneName": "WonderlandEngineScene",
-                        "apiKey": "EAO23IC878XWH17E5SC2O8T68TMDM66F",
-                        "sceneId": "81a64114-9930-4078-a813-fe4ed03f60cb",
+                        "sceneName": "YOUR_SCENE_NAME",
+                        "apiKey": "YOUR_API_KEY",
+                        "sceneId": "YOUR_SCENE_ID",
                         "versionNumber": "3",
-                        "exportScale": "0.001"
+                        "exportScale": "1",
+                        "enableSceneExport": true
                     }
                 }
             ]
