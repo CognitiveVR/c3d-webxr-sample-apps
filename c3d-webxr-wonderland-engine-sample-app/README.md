@@ -40,6 +40,7 @@ Before you begin, ensure you have the following installed:
     #### 1. Configuration (Editor): In the Wonderland Editor, select the object with the `c3d-analytics-component`. In the **Properties** panel, you can configure the export:
     * **Export Scale:** (Optional) Set the global scale for the exported model (Default: `1.0`).
     * **Export Root Object:** Drag and drop a specific parent object from the Scene Outline into this field. If set, the exporter will only include this object and its children for export.
+    * **enableSceneExport:** Toggle for enabling the scene export at runtime with the press of the O button. (Default: `true`). Disable to prevent accidental scene export. 
 
     #### 2. Triggering Export (Runtime)
     1.  Run the project in your browser (desktop mode).
