@@ -1926,9 +1926,9 @@
                     "type": "c3d-analytics-component",
                     "c3d-analytics-component": {
                         "exportRootObject": null,
-                        "sceneName": "YOUR_SCENE_NAME",
+                        "sceneName": "FullWonderland",
                         "apiKey": "YOUR_API_KEY",
-                        "sceneId": "YOUR_SCENE_ID",
+                        "sceneId": "5c735fe1-ffcd-4bc9-a4b7-d294fcc40f15",
                         "versionNumber": "1",
                         "exportScale": "1",
                         "enableSceneExport": true

@@ -9,7 +9,7 @@ export async function createInteractableObjects(c3d) {
     // PERFORMANCE TEST SETTINGS 
     // =================================================================
 
-    const NUM_DYNAMIC_OBJECTS = 50;     // Set the number of dynamic objects (cubes) to test ****** 
+    const NUM_DYNAMIC_OBJECTS = 10;     // Set the number of dynamic objects (cubes) to test ****** 
     const ARE_OBJECTS_MOVING = true;    // Set to true for moving objects, false for stationary ******
 
     const grid_size = Math.ceil(Math.sqrt(NUM_DYNAMIC_OBJECTS));
