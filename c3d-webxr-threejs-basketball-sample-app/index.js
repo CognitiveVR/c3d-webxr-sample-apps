@@ -125,13 +125,8 @@ function initializeC3D(renderer) {
 	);
 
 	c3d.setScene(import.meta.env.VITE_C3D_SCENE_NAME);
-	c3d.userId = "threejs_user_" + Date.now();
-	c3d.setUserName("ThreeJS_SDK_Test_User");
-	c3d.setDeviceName("WindowsPCBrowserVR");
-	c3d.setDeviceProperty("AppName", "ThreeJS_WebXR_SDK_Test_App");
-	c3d.setUserProperty("c3d.version", "0.1");
-	c3d.setUserProperty("c3d.app.version", "0.2");
-	c3d.setUserProperty("c3d.deviceid", "threejs_windows_device_" + Date.now());
+	c3d.setDeviceProperty("AppName", "ThreeJS_BasketBall_App");
+	c3d.setAppVersion("1.0"); 
 
 	const adapter = new C3DThreeAdapter(c3d); 
 
@@ -744,7 +739,15 @@ class VRBasketballGame {
 		this.setupScene();
 		this.createGameObjects();
 		this.setupVR();
-		this.renderer.setAnimationLoop(() => this.update());
+
+        // 1. Start Tracking: Initialize SDK logic (Raycasting, Object Scanning)
+        // Note: Tracking will only scan objects that have been created up to this point
+        if (this.c3dAdapter) {
+            this.c3dAdapter.startTracking(this.renderer, this.camera, this.scene);
+        }
+
+        // 2. Loop Integration: Pass 'time' and 'frame' to the update function
+		this.renderer.setAnimationLoop((time, frame) => this.update(time, frame));
 	}
 
 	// Initialize WebGL renderer and VR setup
@@ -836,7 +839,13 @@ class VRBasketballGame {
 	}
 
 	// Main game loop
-	update() {
+    // 3. Update method signature to accept timestamp and frame
+	update(time, frame) {
+        // 4. Manually trigger the SDK update
+        if (this.c3dAdapter) {
+            this.c3dAdapter.update(time, frame);
+        }
+
 		const deltaTime = Math.min(this.clock.getDelta(), 0.1);
 		this.controllerManager.update(deltaTime);
 

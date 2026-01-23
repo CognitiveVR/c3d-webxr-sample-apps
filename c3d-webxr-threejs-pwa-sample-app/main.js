@@ -7,6 +7,8 @@ import { setupControllers, handleControllerIntersections, adjustObjectWithGamepa
 let camera, scene, renderer;
 let controller1, controller2;
 let interactableGroup;
+// Define adapter in outer scope so it can be accessed by render loop
+let c3dAdapter = null; 
 const clock = new THREE.Clock(); 
 
 init();
@@ -30,19 +32,13 @@ async function init() {
     renderer.xr.enabled = true;
     document.body.appendChild(renderer.domElement);
     
-    // Get the adapter directly from the initialization
-    const { c3d, c3dAdapter } = initializeC3D(renderer);
+    // Initialize SDK and assign to the outer variable
+    const result = initializeC3D(renderer);
+    c3dAdapter = result.c3dAdapter;
+    const c3d = result.c3d;
 
     interactableGroup = await createInteractableObjects(c3d); 
     scene.add(interactableGroup);
-
-
-    // const sessionInit = {
-    // requiredFeatures: ['local-floor'],
-    // optionalFeatures: ['bounded-floor', 'hand-tracking' ]
-    // };
-    // document.body. appendChild(VRButton.createButton(renderer, sessionInit));
-
 
     document.body.appendChild(VRButton.createButton(renderer));
     
@@ -62,7 +58,6 @@ async function init() {
     });
     
     // Export object (cube) functionality of the c3d-sdk-webxr, Press O to export  
-
     window.addEventListener('keydown', async (event) => { 
         if (event.key.toLowerCase() === 'o') {
             // Find the first dynamic cube to export (e.g., "Cube_1")
@@ -86,10 +81,11 @@ async function init() {
         });
     }
 
-    // A single call to start all tracking and the render loop.
-    // Pass the top-level 'render' function as the callback.
-    // The c3dAdapter will now handle calling render() inside its own loop.
-    c3dAdapter.startTracking(renderer, camera, interactableGroup, render);
+    // 1. Setup SDK tracking (Gaze, Dynamic Objects) but DO NOT start the loop
+    c3dAdapter.startTracking(renderer, camera, interactableGroup);
+
+    // 2. Start the render loop manually
+    renderer.setAnimationLoop(render);
 }
 
 function onWindowResize() {
@@ -98,9 +94,15 @@ function onWindowResize() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-function render() {
+// 3. Update the render signature to accept timestamp and frame (standard WebXR/ThreeJS)
+function render(timestamp, frame) {
     const deltaTime = clock.getDelta();
     const elapsedTime = clock.getElapsedTime(); // Get elapsed time for movement
+
+    // 4. Manually call the SDK update method
+    if (c3dAdapter) {
+        c3dAdapter.update(timestamp, frame);
+    }
 
     if (interactableGroup) {
         // Pass elapsed time to the update function
