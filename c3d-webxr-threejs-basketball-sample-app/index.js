@@ -192,7 +192,8 @@ class GameState {
 
 // Basketball physics object
 class Basketball {
-	constructor() {
+    // UPDATED: Constructor now accepts index and initialPosition
+	constructor(index, initialPosition) {
 		this.mesh = new THREE.Mesh(
 			new THREE.SphereGeometry(CONFIG.ball.radius, 20, 20),
 			new THREE.MeshLambertMaterial({ color: CONFIG.ball.color })
@@ -202,7 +203,41 @@ class Basketball {
 		this.isHeld = false;
 		this.hasScored = false;
 		this.isSeated = true;
+
+        // UPDATED: Set initial position immediately if provided
+        if (initialPosition) {
+            this.mesh.position.copy(initialPosition);
+        }
+
+        // =================================================================
+        // DYNAMIC OBJECT REGISTRATION
+        // =================================================================
+        this.mesh.name = `Basketball_${index}`; // Unique name for the mesh
+        this.mesh.userData.isDynamic = true;    // Flag for the SDK/Adapter
+
+        // Access the global c3d instance initialized in initializeC3D
+        if (typeof c3d !== 'undefined' && c3d) {
+            const meshName = "Basketball";      // Grouping name for analytics (all balls share this)
+            const customId = `ball_${index}`;   // Unique ID for this specific instance
+            
+            // Format position and rotation for the SDK
+            const worldPos = [this.mesh.position.x, this.mesh.position.y, this.mesh.position.z];
+            const quaternion = this.mesh.quaternion.toArray();
+
+            // Register the object
+            const objectId = c3d.dynamicObject.registerObjectCustomId(
+                this.mesh.name,
+                meshName,
+                customId,
+                worldPos,
+                quaternion
+            );
+            
+            this.mesh.userData.c3dId = objectId;
+            console.log(`Registered dynamic object: ${this.mesh.name} with ID: ${objectId}`);
+        }
 	}
+
 	get position() {
 		return this.mesh.position;
 	}
@@ -788,6 +823,88 @@ class VRBasketballGame {
 				this.c3dAdapter.exportScene(exportGroup, "VR Hoops", this.renderer, this.camera);
 			}
 		});
+
+        // =================================================================
+        // EXPORT BASKETBALL OBJECT (Press 'O')
+        // =================================================================
+	// document.addEventListener("keydown", async (e) => {
+    //         if (e.key.toLowerCase() === "o" && this.c3dAdapter) {
+    //             const ball = this.gameState.balls[0];
+                
+    //             if (ball && ball.mesh) {
+    //                 console.log("Preparing Basketball object for export...");
+                    
+    //                 // 1. CLONE: Don't touch the live game ball
+    //                 const exportMesh = ball.mesh.clone();
+
+    //                 // 2. CENTER: CRITICAL! Reset position/rotation to local origin
+    //                 exportMesh.position.set(0, 0, 0);
+    //                 exportMesh.quaternion.set(0, 0, 0, 1);
+    //                 exportMesh.scale.set(1, 1, 1);
+
+    //                 // 3. CLEAN: Ensure only the dynamic flag remains (optional)
+    //                 exportMesh.userData = { isDynamic: true };
+
+    //                 // 4. EXPORT
+    //                 await this.c3dAdapter.exportObject(
+    //                     exportMesh, 
+    //                     "Basketball", 
+    //                     this.renderer, 
+    //                     this.camera
+    //                 );
+    //             } else {
+    //                 console.warn("No basketball found to export.");
+    //             }
+    //         }
+    //     });
+	// }
+	document.addEventListener("keydown", async (e) => {
+            if (e.key.toLowerCase() === "o" && this.c3dAdapter) {
+                const ball = this.gameState.balls[0];
+                
+                if (ball && ball.mesh) {
+                    console.log("Preparing Basketball object for export...");
+                    
+                    // 1. CLONE: Don't touch the live game ball
+                    const exportMesh = ball.mesh.clone();
+                    
+                    // 2. FORCE GEOMETRY CENTERING
+                    // This mathematically shifts all vertices so the center of the bounding box is (0,0,0)
+                    exportMesh.geometry = exportMesh.geometry.clone(); // Clone geometry to avoid shifting all balls
+                    exportMesh.geometry.center();
+
+                    // 3. RESET TRANSFORMS
+                    // Ensure the mesh object itself is at the world origin
+                    exportMesh.position.set(0, 0, 0);
+                    exportMesh.quaternion.set(0, 0, 0, 1);
+                    exportMesh.scale.set(1, 1, 1);
+
+                    // 4. BAKE TRANSFORMS (Critical step often missed)
+                    // Force Three.js to calculate the local matrix immediately
+                    exportMesh.updateMatrix();
+                    exportMesh.updateMatrixWorld(true);
+
+                    // 5. DEBUG LOGGING
+                    // Verify bounds in console before export
+                    const box = new THREE.Box3().setFromObject(exportMesh);
+                    console.log("Export Bounding Box (Should be symmetric around 0):", 
+                        "Min:", box.min, 
+                        "Max:", box.max, 
+                        "Center:", box.getCenter(new THREE.Vector3())
+                    );
+
+                    // 6. EXPORT
+                    await this.c3dAdapter.exportObject(
+                        exportMesh, 
+                        "Basketball", 
+                        this.renderer, 
+                        this.camera
+                    );
+                } else {
+                    console.warn("No basketball found to export.");
+                }
+            }
+        });
 	}
 
 	// Setup 3D scene, camera, and lighting
@@ -820,13 +937,18 @@ class VRBasketballGame {
 		this.rack = new BallRack(this.scene);
 		this.scoreboard = new Scoreboard(this.scene);
 
-		// Create and position basketballs
+		// UPDATED: Create and position basketballs with dynamic registration
 		for (let i = 0; i < CONFIG.ball.count; i++) {
-			const ball = new Basketball();
+            // Get position first
 			const position = this.rack.getSocketWorldPosition(i);
-			if (position) ball.position = position;
-			this.scene.add(ball.mesh);
-			this.gameState.balls.push(ball);
+            
+            // Only create the ball if we have a valid rack position
+            if (position) {
+                // Pass index (i) and position to the constructor
+			    const ball = new Basketball(i, position);
+			    this.scene.add(ball.mesh);
+			    this.gameState.balls.push(ball);
+            }
 		}
 		this.scoreboard.update(0, 0);
 	}
