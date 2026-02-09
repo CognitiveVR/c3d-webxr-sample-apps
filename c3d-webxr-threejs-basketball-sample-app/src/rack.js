@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { RACK_CONFIG, BALL_RADIUS, RACK_BOUNCE, SNAP_CONFIG } from "./config.js";
+import { RACK_CONFIG, BALL_RADIUS } from "./config.js";
 
 const tmpV1 = new THREE.Vector3();
 const tmpQ1 = new THREE.Quaternion();
@@ -84,33 +84,13 @@ export class BallRack {
         const localPos = this.group.worldToLocal(tmpV1.copy(ball.position));
         const localVel = this._worldToLocalVelocity(ball.velocity);
 
-        const bounds = {
-            xMin: -this.config.length / 2 - this.config.tubeRadius * 2,
-            xMax: this.config.length / 2 + this.config.tubeRadius * 2,
-            zMin: -this.config.depth / 2,
-            zMax: this.config.depth / 2,
-            yMax: this.config.shelfHeights[2] + 0.8,
-        };
-
-        if (localPos.x < bounds.xMin - 0.4 || localPos.x > bounds.xMax + 0.4 || localPos.z < bounds.zMin - 0.4 || localPos.z > bounds.zMax + 0.4 || localPos.y > bounds.yMax) return;
-
-        if (localPos.x - BALL_RADIUS < bounds.xMin && localVel.x < 0) {
-            localPos.x = bounds.xMin + BALL_RADIUS + 0.001;
-            localVel.x *= -RACK_BOUNCE;
-        }
-        if (localPos.x + BALL_RADIUS > bounds.xMax && localVel.x > 0) {
-            localPos.x = bounds.xMax - BALL_RADIUS - 0.001;
-            localVel.x *= -RACK_BOUNCE;
-        }
-        if (localPos.z - BALL_RADIUS < bounds.zMin && localVel.z < 0) {
-            localPos.z = bounds.zMin + BALL_RADIUS + 0.001;
-            localVel.z *= -RACK_BOUNCE;
-        }
 
         let activeShelf = null;
         for (const shelfY of this.config.shelfHeights) {
+            // Check if ball is strictly within the shelf area
             const inX = localPos.x > -this.config.length / 2 + BALL_RADIUS && localPos.x < this.config.length / 2 - BALL_RADIUS;
             const inZ = localPos.z > -this.config.depth * 0.3 + BALL_RADIUS && localPos.z < this.config.depth * 0.3 - BALL_RADIUS;
+            
             if (inX && inZ && shelfY <= localPos.y) {
                 if (!activeShelf || shelfY > activeShelf) activeShelf = shelfY;
             }
@@ -118,11 +98,12 @@ export class BallRack {
 
         if (activeShelf !== null) {
             const shelfTop = activeShelf + BALL_RADIUS;
+            // If ball is falling onto the shelf (and close enough)
             if (localVel.y <= 0 && localPos.y <= shelfTop + 0.02) {
-                localPos.y = shelfTop + 0.001;
-                localVel.y *= -0.2;
-                localVel.x *= 0.7;
-                localVel.z *= 0.7;
+                localPos.y = shelfTop + 0.001; // Snap to surface
+                localVel.y *= -0.2;            // Small bounce
+                localVel.x *= 0.7;             // Friction
+                localVel.z *= 0.7;             // Friction
             }
         }
 
