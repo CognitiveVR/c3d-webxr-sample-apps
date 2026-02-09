@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { c3d } from './cognitive.js';
+import { c3d } from './cognitive3d.js';
 
 let INTERSECTED;
 const tempMatrix = new THREE.Matrix4();
