@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
-import { initializeC3D, setupCognitive3DSession } from './src/cognitive.js'; 
+import { initializeC3D, setupCognitive3DSession } from './src/cognitive3d.js'; 
 import { createInteractableObjects, updateObjectMomentum } from './src/objects.js'; 
 import { setupControllers, handleControllerIntersections, adjustObjectWithGamepad } from './src/controllers.js';
 
