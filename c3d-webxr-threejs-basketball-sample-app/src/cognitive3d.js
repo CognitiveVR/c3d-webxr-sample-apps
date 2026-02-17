@@ -10,6 +10,7 @@ export function initializeC3D(renderer) {
         {
             config: {
                 APIKey: import.meta.env.VITE_C3D_APPLICATION_KEY,
+                LOG: true,
                 networkHost: import.meta.env.VITE_C3D_NETWORK_HOST,
                 allSceneData: [
                     {

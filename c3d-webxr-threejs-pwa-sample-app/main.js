@@ -101,7 +101,7 @@ function render(timestamp, frame) {
 
     // 4. Manually call the SDK update method
     if (c3dAdapter) {
-        c3dAdapter.update(timestamp, frame);
+        c3dAdapter.update();
     }
 
     if (interactableGroup) {

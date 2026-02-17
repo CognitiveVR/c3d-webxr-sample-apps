@@ -121,7 +121,7 @@ class VRBasketballGame {
     }
 
     update(time, frame) {
-        if (this.c3dAdapter) this.c3dAdapter.update(time, frame);
+        if (this.c3dAdapter) this.c3dAdapter.update();
         const deltaTime = Math.min(this.clock.getDelta(), 0.1);
         this.controllerManager.update(deltaTime);
 
