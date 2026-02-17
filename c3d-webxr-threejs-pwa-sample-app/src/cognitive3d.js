@@ -11,6 +11,7 @@ export function initializeC3D(renderer) {
     c3d = new C3DAnalytics({
         config: {
             APIKey: import.meta.env.VITE_C3D_APPLICATION_KEY,
+            LOG: true,
             allSceneData: [{
                 sceneName: "SampleScene",
                 sceneId: "50542ff3-4f51-4c9a-99d8-6082921953f9",
