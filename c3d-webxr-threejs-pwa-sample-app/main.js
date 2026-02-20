@@ -7,9 +7,16 @@ import { setupControllers, handleControllerIntersections, adjustObjectWithGamepa
 let camera, scene, renderer;
 let controller1, controller2;
 let interactableGroup;
-// Define adapter in outer scope so it can be accessed by render loop
+
 let c3dAdapter = null; 
 const clock = new THREE.Clock(); 
+
+// --- PROFILING VARIABLES ---
+let profilingData = [];
+let isProfiling = false;
+let profileStartTime = 0;
+const PROFILING_DURATION_MS = 120000; // 2 minutes
+// ---------------------------
 
 init();
 
@@ -94,26 +101,105 @@ function onWindowResize() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-// 3. Update the render signature to accept timestamp and frame (standard WebXR/ThreeJS)
 function render(timestamp, frame) {
-    const deltaTime = clock.getDelta();
-    const elapsedTime = clock.getElapsedTime(); // Get elapsed time for movement
+    // 1. Start CPU Execution Timer
+    const startJSTime = performance.now();
 
-    // 4. Manually call the SDK update method
+    // 2. Initialize Profiling Timer on the first frame
+    if (!isProfiling && timestamp) {
+        isProfiling = true;
+        profileStartTime = timestamp;
+        console.log("Profiling started for 2 minutes...");
+    }
+
+    const deltaTime = clock.getDelta();
+    const elapsedTime = clock.getElapsedTime(); 
+
+    // --- YOUR EXISTING RENDER LOGIC ---
     if (c3dAdapter) {
         c3dAdapter.update();
     }
 
     if (interactableGroup) {
-        // Pass elapsed time to the update function
         updateObjectMomentum(interactableGroup, deltaTime, elapsedTime); 
-        
         handleControllerIntersections(controller1, interactableGroup);
         handleControllerIntersections(controller2, interactableGroup);
-
         adjustObjectWithGamepad(controller1);
         adjustObjectWithGamepad(controller2);
     }
 
     renderer.render(scene, camera);
+    // ----------------------------------
+
+    // 3. Collect Profiling Metrics
+    if (isProfiling) {
+        const endJSTime = performance.now();
+        const jsExecutionTime = endJSTime - startJSTime; // CPU Proxy
+        
+        const currentElapsedMs = timestamp - profileStartTime;
+        
+        // Calculate Instantaneous FPS
+        const currentFps = deltaTime > 0 ? 1 / deltaTime : 0;
+        
+        // Calculate JS RAM Usage (Requires Chrome/Edge)
+        let ramUsedMb = 0;
+        if (performance.memory) {
+            ramUsedMb = performance.memory.usedJSHeapSize / (1024 * 1024);
+        }
+
+        // Store current frame data
+        profilingData.push({
+            timeMs: currentElapsedMs.toFixed(2),
+            fps: currentFps.toFixed(2),
+            jsTimeMs: jsExecutionTime.toFixed(4),
+            ramMb: ramUsedMb.toFixed(2)
+        });
+
+        // 4. End Profiling after 2 minutes (120,000 ms)
+        if (currentElapsedMs >= PROFILING_DURATION_MS) {
+            isProfiling = false;
+            renderer.setAnimationLoop(null); // Stop the render loop
+            
+            if (renderer.xr.isPresenting) {
+                renderer.xr.getSession().end(); // Exit VR
+            }
+            
+            exportProfilingData();
+        }
+    }
+    
 }
+    function exportProfilingData() {
+        console.log("Profiling complete. Generating CSV...");
+        
+        let csvContent = "data:text/csv;charset=utf-8,TimeElapsed(ms),FPS,JS_Execution_Time(ms),RAM_Used(MB)\n";
+        
+        let totalFps = 0, totalJsTime = 0, totalRam = 0;
+        const count = profilingData.length;
+
+        profilingData.forEach(row => {
+            csvContent += `${row.timeMs},${row.fps},${row.jsTimeMs},${row.ramMb}\n`;
+            totalFps += parseFloat(row.fps);
+            totalJsTime += parseFloat(row.jsTimeMs);
+            totalRam += parseFloat(row.ramMb);
+        });
+
+        // Calculate and append averages at the very bottom of the CSV
+        if (count > 0) {
+            const avgFps = (totalFps / count).toFixed(2);
+            const avgJsTime = (totalJsTime / count).toFixed(4);
+            const avgRam = (totalRam / count).toFixed(2);
+            csvContent += `\nAVERAGES,-,${avgFps},${avgJsTime},${avgRam}\n`;
+            console.log(`Averages -> FPS: ${avgFps} | JS Time: ${avgJsTime}ms | RAM: ${avgRam}MB`);
+        }
+
+        // Trigger File Download
+        const encodedUri = encodeURI(csvContent);
+        const link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        // You can rename this string to "profiling_without_sdk.csv" when doing your baseline test
+        link.setAttribute("download", "profiling_with_sdk.csv"); 
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
