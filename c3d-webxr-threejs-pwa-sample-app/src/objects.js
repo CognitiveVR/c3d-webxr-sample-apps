@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { createDynamicCube } from './dynamicObject';
 
-export async function createInteractableObjects(c3d) { 
+export async function createInteractableObjects() { 
     const interactableGroup = new THREE.Group();
     interactableGroup.position.z = -5;
 
@@ -25,7 +25,7 @@ export async function createInteractableObjects(c3d) {
         const z = 0; 
         const position = new THREE.Vector3(x, y, z);
 
-        const dynamicObject = createDynamicCube(c3d, customId, position);
+        const dynamicObject = createDynamicCube(customId, position);
         
         if (ARE_OBJECTS_MOVING) {
             dynamicObject.userData.isMoving = true;
@@ -42,12 +42,9 @@ export async function createInteractableObjects(c3d) {
         new THREE.TorusGeometry(0.2, 0.04, 64, 32)
     ];
 
-
-    
     return interactableGroup;
 }
 
-// Modified to accept elapsedTime for movement
 export function updateObjectMomentum(group, deltaTime, elapsedTime) {
     const bounds = 100;
     const objects = group.children;
@@ -55,10 +52,9 @@ export function updateObjectMomentum(group, deltaTime, elapsedTime) {
 
     for (const object of objects) {
         if (object.userData.isMoving) {
-            const amplitude = 1.0; // How high/low it moves
-            const speed = 0.5;     // How fast it moves
-            // object.position.y = object.userData.originalY + (Math.sin(object.userData.movePhase + elapsedTime * speed) * amplitude); // Sin wave for smooth up/down movement, each cube has a phase offset
-            object.position.y = object.userData.originalY + (Math.sin(elapsedTime * speed) * amplitude); // Sin wave for smooth up/down movement, all cubes move in unison (in phase)
+            const amplitude = 1.0; 
+            const speed = 0.5;     
+            object.position.y = object.userData.originalY + (Math.sin(elapsedTime * speed) * amplitude); 
         }
     }
 }

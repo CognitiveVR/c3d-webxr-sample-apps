@@ -1,6 +1,5 @@
 import * as THREE from 'three';
 import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
-import { initializeC3D, setupCognitive3DSession } from './src/cognitive3d.js'; 
 import { createInteractableObjects, updateObjectMomentum } from './src/objects.js'; 
 import { setupControllers, handleControllerIntersections, adjustObjectWithGamepad } from './src/controllers.js';
 
@@ -8,7 +7,6 @@ let camera, scene, renderer;
 let controller1, controller2;
 let interactableGroup;
 
-let c3dAdapter = null; 
 const clock = new THREE.Clock(); 
 
 // --- PROFILING VARIABLES ---
@@ -38,21 +36,26 @@ async function init() {
     renderer.outputColorSpace = THREE.SRGBColorSpace; 
     renderer.xr.enabled = true;
     document.body.appendChild(renderer.domElement);
-    
-    // Initialize SDK and assign to the outer variable
-    const result = initializeC3D(renderer);
-    c3dAdapter = result.c3dAdapter;
-    const c3d = result.c3d;
 
-    interactableGroup = await createInteractableObjects(c3d); 
+    interactableGroup = await createInteractableObjects(); 
     scene.add(interactableGroup);
 
     document.body.appendChild(VRButton.createButton(renderer));
     
     [controller1, controller2] = setupControllers(scene, renderer, interactableGroup);
     
-    // Setup session listeners
-    setupCognitive3DSession(renderer);
+    // Retain 120Hz frame rate target for a fair 1:1 performance comparison
+    renderer.xr.addEventListener('sessionstart', async () => {
+        const xrSession = renderer.xr.getSession();
+        if (xrSession.supportedFrameRates && xrSession.supportedFrameRates.includes(120)) {
+            try {
+                await xrSession.updateTargetFrameRate(120);
+                console.log('Target frame rate set to 120Hz');
+            } catch (e) {
+                console.error('Failed to set target frame rate to 120Hz:', e);
+            }
+        }
+    });
     
     window.addEventListener('resize', onWindowResize);
 
@@ -60,20 +63,6 @@ async function init() {
         if (event.key === 'Escape') {
             if (renderer.xr.isPresenting) {
                 renderer.xr.getSession().end();
-            }
-        }
-    });
-    
-    // Export object (cube) functionality of the c3d-sdk-webxr, Press O to export  
-    window.addEventListener('keydown', async (event) => { 
-        if (event.key.toLowerCase() === 'o') {
-            // Find the first dynamic cube to export (e.g., "Cube_1")
-            const cube = interactableGroup.children.find(obj => obj.name === "Cube_1");
-            if (cube && c3dAdapter) {
-                await c3dAdapter.exportObject(cube, "Cube_1", renderer, camera);
-                console.log("Exported Cube_1.");
-            } else {
-                console.log("Could not find Cube_1 to export.");
             }
         }
     });
@@ -88,10 +77,7 @@ async function init() {
         });
     }
 
-    // 1. Setup SDK tracking (Gaze, Dynamic Objects) but DO NOT start the loop
-    c3dAdapter.startTracking(renderer, camera, interactableGroup);
-
-    // 2. Start the render loop manually
+    // Start the render loop manually
     renderer.setAnimationLoop(render);
 }
 
@@ -116,10 +102,6 @@ function render(timestamp, frame) {
     const elapsedTime = clock.getElapsedTime(); 
 
     // --- YOUR EXISTING RENDER LOGIC ---
-    if (c3dAdapter) {
-        c3dAdapter.update();
-    }
-
     if (interactableGroup) {
         updateObjectMomentum(interactableGroup, deltaTime, elapsedTime); 
         handleControllerIntersections(controller1, interactableGroup);
@@ -167,39 +149,39 @@ function render(timestamp, frame) {
             exportProfilingData();
         }
     }
-    
 }
-    function exportProfilingData() {
-        console.log("Profiling complete. Generating CSV...");
-        
-        let csvContent = "data:text/csv;charset=utf-8,TimeElapsed(ms),FPS,JS_Execution_Time(ms),RAM_Used(MB)\n";
-        
-        let totalFps = 0, totalJsTime = 0, totalRam = 0;
-        const count = profilingData.length;
 
-        profilingData.forEach(row => {
-            csvContent += `${row.timeMs},${row.fps},${row.jsTimeMs},${row.ramMb}\n`;
-            totalFps += parseFloat(row.fps);
-            totalJsTime += parseFloat(row.jsTimeMs);
-            totalRam += parseFloat(row.ramMb);
-        });
+function exportProfilingData() {
+    console.log("Profiling complete. Generating CSV...");
+    
+    let csvContent = "data:text/csv;charset=utf-8,TimeElapsed(ms),FPS,JS_Execution_Time(ms),RAM_Used(MB)\n";
+    
+    let totalFps = 0, totalJsTime = 0, totalRam = 0;
+    const count = profilingData.length;
 
-        // Calculate and append averages at the very bottom of the CSV
-        if (count > 0) {
-            const avgFps = (totalFps / count).toFixed(2);
-            const avgJsTime = (totalJsTime / count).toFixed(4);
-            const avgRam = (totalRam / count).toFixed(2);
-            csvContent += `\nAVERAGES,-,${avgFps},${avgJsTime},${avgRam}\n`;
-            console.log(`Averages -> FPS: ${avgFps} | JS Time: ${avgJsTime}ms | RAM: ${avgRam}MB`);
-        }
+    profilingData.forEach(row => {
+        csvContent += `${row.timeMs},${row.fps},${row.jsTimeMs},${row.ramMb}\n`;
+        totalFps += parseFloat(row.fps);
+        totalJsTime += parseFloat(row.jsTimeMs);
+        totalRam += parseFloat(row.ramMb);
+    });
 
-        // Trigger File Download
-        const encodedUri = encodeURI(csvContent);
-        const link = document.createElement("a");
-        link.setAttribute("href", encodedUri);
-        // You can rename this string to "profiling_without_sdk.csv" when doing your baseline test
-        link.setAttribute("download", "profiling_with_sdk.csv"); 
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+    // Calculate and append averages at the very bottom of the CSV
+    if (count > 0) {
+        const avgFps = (totalFps / count).toFixed(2);
+        const avgJsTime = (totalJsTime / count).toFixed(4);
+        const avgRam = (totalRam / count).toFixed(2);
+        csvContent += `\nAVERAGES,-,${avgFps},${avgJsTime},${avgRam}\n`;
+        console.log(`Averages -> FPS: ${avgFps} | JS Time: ${avgJsTime}ms | RAM: ${avgRam}MB`);
     }
+
+    // Trigger File Download
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    // Updated download filename for baseline test
+    link.setAttribute("download", "profiling_without_sdk.csv"); 
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
