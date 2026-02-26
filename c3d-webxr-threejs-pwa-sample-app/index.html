@@ -8,13 +8,11 @@
     <link rel="icon" href="/favicon.webp" type="image/x-icon">
     <link rel="icon" href="/favicon.webp" type="image/x-icon" sizes="any">
 
-
     <style>
         body { 
             margin: 0;
             overflow: hidden;
             font-family: 'Poppins', sans-serif;
-
         }
         canvas { 
             display: block; 
@@ -54,6 +52,29 @@
             font: 'Courier New', monospace;
         }
 
+        /* Network Status UI Styles */
+        #network-status {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            color: white;
+            z-index: 2000;
+            transition: opacity 0.5s ease-in-out;
+            box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
+            font-family: 'Courier New', monospace;
+        }
+
+        .status-online {
+            background-color: #28a745; /* Green */
+        }
+
+        .status-offline {
+            background-color: #dc3545; /* Red */
+        }
+
         #VRButton {
             position: absolute !important;
             bottom: 100px !important;    
@@ -76,6 +97,8 @@
     </style>
 </head>
 <body>
+    <div id="network-status" style="display: none;"></div>
+
     <div id="welcome-container">
         <img src="/icons/cog3d_full_logo.png" alt="Cognitive3D Logo">
         <h2>Welcome to c3d-webxr-threejs-pwa-sample-app, check browser console for logs</h2>

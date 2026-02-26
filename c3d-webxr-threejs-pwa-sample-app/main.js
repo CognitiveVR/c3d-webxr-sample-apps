@@ -60,7 +60,6 @@ async function init() {
     // Export object (cube) functionality of the c3d-sdk-webxr, Press O to export  
     window.addEventListener('keydown', async (event) => { 
         if (event.key.toLowerCase() === 'o') {
-            // Find the first dynamic cube to export (e.g., "Cube_1")
             const cube = interactableGroup.children.find(obj => obj.name === "Cube_1");
             if (cube && c3dAdapter) {
                 await c3dAdapter.exportObject(cube, "Cube_1", renderer, camera);
@@ -81,11 +80,38 @@ async function init() {
         });
     }
 
+    // Network Status Logic
+    setupNetworkStatusUI();
+
     // 1. Setup SDK tracking (Gaze, Dynamic Objects) but DO NOT start the loop
     c3dAdapter.startTracking(renderer, camera, interactableGroup);
 
     // 2. Start the render loop manually
     renderer.setAnimationLoop(render);
+}
+
+function setupNetworkStatusUI() {
+    const statusEl = document.getElementById('network-status');
+
+    function updateNetworkStatus() {
+        if (navigator.onLine) {
+            statusEl.textContent = '🟢 Online - Syncing Data';
+            statusEl.className = 'status-online';
+        } else {
+            statusEl.textContent = '🔴 Offline - Caching Locally';
+            statusEl.className = 'status-offline';
+        }
+        
+        // Ensure it is always visible
+        statusEl.style.display = 'block';
+        statusEl.style.opacity = '1';
+    }
+
+    window.addEventListener('online', updateNetworkStatus);
+    window.addEventListener('offline', updateNetworkStatus);
+
+    // Initialize state on load
+    updateNetworkStatus();
 }
 
 function onWindowResize() {
