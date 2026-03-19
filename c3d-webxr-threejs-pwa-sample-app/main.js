@@ -72,14 +72,13 @@ async function init() {
 
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/service-worker.js').then(registration => {
+            navigator.serviceWorker.register('/sw.js').then(registration => {
                 console.log('ServiceWorker registration successful with scope: ', registration.scope);
             }, err => {
                 console.log('ServiceWorker registration failed: ', err);
             });
         });
     }
-
     // Network Status Logic
     setupNetworkStatusUI();
 
@@ -95,7 +94,7 @@ function setupNetworkStatusUI() {
 
     function updateNetworkStatus() {
         if (navigator.onLine) {
-            statusEl.textContent = '🟢 Online - Syncing Data';
+            statusEl.textContent = '🟢 Online - Syncing Data if Cognitive3D Session Active';
             statusEl.className = 'status-online';
         } else {
             statusEl.textContent = '🔴 Offline - Caching Locally';

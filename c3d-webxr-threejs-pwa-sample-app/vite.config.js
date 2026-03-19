@@ -11,6 +11,10 @@ export default defineConfig({
   plugins: [
     VitePWA({
       registerType: 'autoUpdate',
+      // Enable the service worker for local development (localhost:5173)
+      devOptions: {
+        enabled: true
+      },
       manifest: {
         name: 'Cog3D WebXR - ThreeJS VR Project with PWA support',
         short_name: 'ThreeJS VR',
@@ -27,10 +31,7 @@ export default defineConfig({
             purpose: 'any maskable'
           }
         ]
-      },
-      srcDir: 'public',
-      filename: 'service-worker.js',
-      strategies: 'injectManifest',
+      }
     })
   ],
   resolve: {

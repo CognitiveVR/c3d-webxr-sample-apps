@@ -12,6 +12,7 @@ export function initializeC3D(renderer) {
                 APIKey: import.meta.env.VITE_C3D_APPLICATION_KEY,
                 LOG: true,
                 networkHost: import.meta.env.VITE_C3D_NETWORK_HOST,
+                gazeTrackingSource: "engine",
                 allSceneData: [
                     {
                         sceneName: import.meta.env.VITE_C3D_SCENE_NAME,
