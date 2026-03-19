@@ -55,7 +55,8 @@ The `Lever` behavior (in `Lever/Lever.ts`) detects when the user's hand/controll
 ## Setup
 
 ### 1. Open in Mattercraft
-Open the project folder in the Mattercraft editor. The editor will install dependencies automatically via `package.json`.
+
+Create a new Mattercraft project, when you’re on the template selection screen, select **Import from ZIP**. You will need to zip this mattercraft project first. 
 
 ### 2. Configure Cognitive3D Credentials
 In the Mattercraft scene editor, select the node that has the `Cognitive3D` behavior attached and fill in the following properties in the inspector:
