@@ -1,0 +1,3501 @@
+{
+	"animation": {
+		"clips": {
+			"0b8223e445fd4769bb67170fc9cccbb9": {
+				"id": "0b8223e445fd4769bb67170fc9cccbb9",
+				"length": 1012,
+				"lengthType": "manual",
+				"name": "Range",
+				"order": "a4",
+				"scriptName": "Range0",
+				"tracks": {
+				},
+				"type": "timeline"
+			},
+			"1b74b4dea81b47b793a720b4a47fd6b1": {
+				"id": "1b74b4dea81b47b793a720b4a47fd6b1",
+				"length": 25678.367346938776,
+				"lengthType": "expand",
+				"name": "Step 3",
+				"order": "aA",
+				"scriptName": "Step_3",
+				"tracks": {
+					"04f1ff1f88df4d31b623f8f508ec19bf": {
+						"blend": "overlay",
+						"entityID": "43fc19f4ae044e97b6ad1acb3e761b99",
+						"id": "04f1ff1f88df4d31b623f8f508ec19bf",
+						"keyframes": {
+							"f06c22dc00184df8820c0e16a29ae60e": {
+								"id": "f06c22dc00184df8820c0e16a29ae60e",
+								"t": 0,
+								"v": "Internal Inspection"
+							}
+						},
+						"order": "a0",
+						"property": [
+							"text"
+						],
+						"type": "property",
+						"weight": {
+							"ac6b6ac5f78242b99b80edc8dacc5f67-blend": {
+								"id": "ac6b6ac5f78242b99b80edc8dacc5f67-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"2026ff2cc46f4dd2b0bf19bb5170f825": {
+						"blend": "overlay",
+						"entityID": "140a19ad305a4a25b943704abaf504a9",
+						"fadeParameters": {
+							"easing": "ease"
+						},
+						"id": "2026ff2cc46f4dd2b0bf19bb5170f825",
+						"keyframes": {
+							"1d0a434e575c4a5eb69639c9b6a05020": {
+								"easing": "linear",
+								"id": "1d0a434e575c4a5eb69639c9b6a05020",
+								"t": 0,
+								"v": [
+									0.33,
+									1,
+									1
+								]
+							},
+							"f3f38f2ed78848faaf04b08c314a08c7": {
+								"id": "f3f38f2ed78848faaf04b08c314a08c7",
+								"t": 5277,
+								"v": [
+									1.0032565145845231,
+									1,
+									1
+								]
+							}
+						},
+						"order": "ZuV",
+						"property": [
+							"scale"
+						],
+						"type": "property",
+						"weight": {
+							"b77a731ae58f4d3998a0d52bff642bb1-blend": {
+								"id": "b77a731ae58f4d3998a0d52bff642bb1-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"2d59b5133a7549929b3d252cda8c420d": {
+						"blend": "overlay",
+						"entityID": "45cf0e3ff6d84b1ba7677334822ca7a5",
+						"id": "2d59b5133a7549929b3d252cda8c420d",
+						"keyframes": {
+							"22015dc1ab6948f5afb8fc40cbdde39f": {
+								"id": "22015dc1ab6948f5afb8fc40cbdde39f",
+								"t": 25678.367346938776,
+								"v": false
+							},
+							"94a4e4bb4d2a477ab26ecd9732efc965": {
+								"easing": "linear",
+								"id": "94a4e4bb4d2a477ab26ecd9732efc965",
+								"t": 0,
+								"v": true
+							}
+						},
+						"order": "Zw",
+						"property": [
+							"enabled"
+						],
+						"type": "property",
+						"weight": {
+							"e7beef21b2764d11a56dce604cfc25da-blend": {
+								"id": "e7beef21b2764d11a56dce604cfc25da-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"3ff251f57fd04f309ce25cb019c4edcc": {
+						"blend": "overlay",
+						"entityID": "956899dc8efc41e88eda57775f467cf6",
+						"id": "3ff251f57fd04f309ce25cb019c4edcc",
+						"keyframes": {
+							"84029ac4adb64bedb53505feadd82596": {
+								"easing": "linear",
+								"id": "84029ac4adb64bedb53505feadd82596",
+								"t": 0,
+								"v": "STEP 1 OF 3"
+							},
+							"ae8f61fd29a34054b4af7266909bc136": {
+								"id": "ae8f61fd29a34054b4af7266909bc136",
+								"t": 25678.367346938776,
+								"v": "STEP 3 OF 3"
+							}
+						},
+						"order": "Zt",
+						"property": [
+							"text"
+						],
+						"type": "property",
+						"weight": {
+							"abfbb1d8a04c4019854ad7a2d1fbf1f8-blend": {
+								"id": "abfbb1d8a04c4019854ad7a2d1fbf1f8-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"4ff73a924df24bf88915122d6b9bc5cb": {
+						"blend": "overlay",
+						"entityID": "1fe277d5eb3142dfb02cf4cff3155fee",
+						"id": "4ff73a924df24bf88915122d6b9bc5cb",
+						"keyframes": {
+							"d372549eec6c4130af32acb18b19ec20": {
+								"id": "d372549eec6c4130af32acb18b19ec20",
+								"t": 25678.367346938776,
+								"v": true
+							},
+							"e4a5552ecb004373a9d049d7cd7f56d7": {
+								"easing": "linear",
+								"id": "e4a5552ecb004373a9d049d7cd7f56d7",
+								"t": 0,
+								"v": false
+							}
+						},
+						"order": "ZvV",
+						"property": [
+							"enabled"
+						],
+						"type": "property",
+						"weight": {
+							"9794cd6ead5a4a3f8b41c19206ff230c-blend": {
+								"id": "9794cd6ead5a4a3f8b41c19206ff230c-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"a01c7ce8d94d4c59bd0db5711254fce3": {
+						"blend": "overlay",
+						"entityID": "b11195991e814b9ba0da9dc64252adda",
+						"id": "a01c7ce8d94d4c59bd0db5711254fce3",
+						"keyframes": {
+							"f2ede172d55749c8b9bf4651f6a18b6a": {
+								"id": "f2ede172d55749c8b9bf4651f6a18b6a",
+								"t": 0,
+								"v": "Check internal controls and safety features. Use the lever to move the forks up and down"
+							}
+						},
+						"order": "Zz",
+						"property": [
+							"text"
+						],
+						"type": "property",
+						"weight": {
+							"3dbb31be8ae74db3ace6c9f3227d1d8d-blend": {
+								"id": "3dbb31be8ae74db3ace6c9f3227d1d8d-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"a033f7f64c014a6e9580a5cc2814b812": {
+						"blend": "overlay",
+						"entityID": "1fe277d5eb3142dfb02cf4cff3155fee",
+						"id": "a033f7f64c014a6e9580a5cc2814b812",
+						"keyframes": {
+							"e4345a839ad84910a39b0c7c0b328880": {
+								"id": "e4345a839ad84910a39b0c7c0b328880",
+								"t": 25678.367346938776,
+								"v": true
+							},
+							"ebf70db9b3554a33910515d763edfc4f": {
+								"easing": "linear",
+								"id": "ebf70db9b3554a33910515d763edfc4f",
+								"t": 0,
+								"v": false
+							}
+						},
+						"order": "Zv",
+						"property": [
+							"visible"
+						],
+						"type": "property",
+						"weight": {
+							"476371f1e22c454eb8b8866e7bda8bbb-blend": {
+								"id": "476371f1e22c454eb8b8866e7bda8bbb-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"af7a6d033e984ab88e4f5d6c231decc0": {
+						"data": {
+							"36a2cae2301e4f68a8088f2fc93f7f1c": {
+								"id": "36a2cae2301e4f68a8088f2fc93f7f1c",
+								"rate": 1,
+								"s0": 0,
+								"t0": 0,
+								"t1": 25678.367346938776
+							}
+						},
+						"entityID": "a1352e5656d546ef8c9fc6687ac4db19",
+						"id": "af7a6d033e984ab88e4f5d6c231decc0",
+						"name": "step3Audio",
+						"order": "Zx",
+						"property": [
+						],
+						"type": "stream",
+						"weight": {
+						}
+					},
+					"b0ae85e9f2ec4269b763f830aa7f1920": {
+						"blend": "overlay",
+						"entityID": "45cf0e3ff6d84b1ba7677334822ca7a5",
+						"id": "b0ae85e9f2ec4269b763f830aa7f1920",
+						"keyframes": {
+							"2ca8fdbb30754c03b1d5bf34e2368ea9": {
+								"id": "2ca8fdbb30754c03b1d5bf34e2368ea9",
+								"t": 25678.367346938776,
+								"v": false
+							},
+							"644b897b8e694cef888fea5a07189fb4": {
+								"easing": "linear",
+								"id": "644b897b8e694cef888fea5a07189fb4",
+								"t": 0,
+								"v": true
+							}
+						},
+						"order": "ZwV",
+						"property": [
+							"visible"
+						],
+						"type": "property",
+						"weight": {
+							"c0b95e09674743fda3b3afda7775e9c6-blend": {
+								"id": "c0b95e09674743fda3b3afda7775e9c6-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"f9b3603342de4f32b0ab3f7b9ed488b4": {
+						"blend": "overlay",
+						"entityID": "fe478a302a7844f884f1f6a8f83f8b4c",
+						"id": "f9b3603342de4f32b0ab3f7b9ed488b4",
+						"keyframes": {
+							"e1f42d06fbe4407c92ee2415b0f89de8": {
+								"id": "e1f42d06fbe4407c92ee2415b0f89de8",
+								"t": 0,
+								"v": "Complete"
+							}
+						},
+						"order": "Zy",
+						"property": [
+							"text"
+						],
+						"type": "property",
+						"weight": {
+							"6d5684b1dd8e45289a8cbaaf6ef048b9-blend": {
+								"id": "6d5684b1dd8e45289a8cbaaf6ef048b9-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"fb21de1d7ef3420498e19a481ea7b4b3": {
+						"blend": "overlay",
+						"entityID": "140a19ad305a4a25b943704abaf504a9",
+						"fadeParameters": {
+							"easing": null
+						},
+						"id": "fb21de1d7ef3420498e19a481ea7b4b3",
+						"keyframes": {
+							"6fc07901e02c4f7ab57b7820d89689c7": {
+								"id": "6fc07901e02c4f7ab57b7820d89689c7",
+								"t": 5277,
+								"v": [
+									-0.010562726740665829,
+									0,
+									0.01
+								]
+							},
+							"e8a28409af1849179e2077e5ffb7f592": {
+								"easing": "linear",
+								"id": "e8a28409af1849179e2077e5ffb7f592",
+								"t": 0,
+								"v": [
+									-0.33024080290086844,
+									0,
+									0.01
+								]
+							}
+						},
+						"order": "Zu",
+						"property": [
+							"position"
+						],
+						"type": "property",
+						"weight": {
+							"5ccc5d162fd147cea16ed8d77fd34fdb-blend": {
+								"id": "5ccc5d162fd147cea16ed8d77fd34fdb-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					}
+				},
+				"type": "state"
+			},
+			"3297fb44d9ff4e9e81028f0465f89a4f": {
+				"id": "3297fb44d9ff4e9e81028f0465f89a4f",
+				"length": 19644.081632653062,
+				"lengthType": "expand",
+				"name": "Step 2",
+				"order": "a9",
+				"scriptName": "Step_2",
+				"tracks": {
+					"010efc0254eb405f834bb9df50f7f5fe": {
+						"blend": "overlay",
+						"entityID": "45cf0e3ff6d84b1ba7677334822ca7a5",
+						"id": "010efc0254eb405f834bb9df50f7f5fe",
+						"keyframes": {
+							"5c03e7a9b7114955ba9f253c96b517c7": {
+								"easing": "linear",
+								"id": "5c03e7a9b7114955ba9f253c96b517c7",
+								"t": 0,
+								"v": true
+							},
+							"b5a2b12238c44c589d0d9e259fea20cd": {
+								"id": "b5a2b12238c44c589d0d9e259fea20cd",
+								"t": 19644.081632653062,
+								"v": false
+							}
+						},
+						"order": "Zv",
+						"property": [
+							"visible"
+						],
+						"type": "property",
+						"weight": {
+							"afc9d1abb8434300a5eb9bd977555ea0-blend": {
+								"id": "afc9d1abb8434300a5eb9bd977555ea0-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"0232773ae6e04d66ad43bf695018bb56": {
+						"blend": "overlay",
+						"entityID": "43fc19f4ae044e97b6ad1acb3e761b99",
+						"id": "0232773ae6e04d66ad43bf695018bb56",
+						"keyframes": {
+							"3c47a76e3d264f07882e28f45b3d7e32": {
+								"id": "3c47a76e3d264f07882e28f45b3d7e32",
+								"t": 0,
+								"v": "Enter Forklift"
+							}
+						},
+						"order": "Zy",
+						"property": [
+							"text"
+						],
+						"type": "property",
+						"weight": {
+							"9d29059be7634504a2f9450dbcd51331-blend": {
+								"id": "9d29059be7634504a2f9450dbcd51331-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"11e7cff998f047be90cf53365ad1f95f": {
+						"blend": "overlay",
+						"entityID": "fe478a302a7844f884f1f6a8f83f8b4c",
+						"fadeParameters": {
+							"easing": null,
+							"pin": 1
+						},
+						"id": "11e7cff998f047be90cf53365ad1f95f",
+						"keyframes": {
+							"3b88027dea1b450aa8ebeee1a053f32e": {
+								"id": "3b88027dea1b450aa8ebeee1a053f32e",
+								"t": 19644.081632653062,
+								"v": 0.35
+							},
+							"d1d624c6b3cc4a36ad51bf4c1ec0844d": {
+								"easing": "linear",
+								"id": "d1d624c6b3cc4a36ad51bf4c1ec0844d",
+								"t": 0,
+								"v": 0.4
+							}
+						},
+						"order": "a1",
+						"property": [
+							"fontSize"
+						],
+						"type": "property",
+						"weight": {
+							"cdcdcc435890458ab89e8a628cc24cc9-blend": {
+								"id": "cdcdcc435890458ab89e8a628cc24cc9-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"1b69a857047248d0b553213245a2d9f5": {
+						"blend": "overlay",
+						"entityID": "1fe277d5eb3142dfb02cf4cff3155fee",
+						"id": "1b69a857047248d0b553213245a2d9f5",
+						"keyframes": {
+							"191bbc344be84ce69ded6405ff62b775": {
+								"easing": "linear",
+								"id": "191bbc344be84ce69ded6405ff62b775",
+								"t": 0,
+								"v": false
+							},
+							"25e854709be445b887b1200ce82c856e": {
+								"id": "25e854709be445b887b1200ce82c856e",
+								"t": 19644.081632653062,
+								"v": true
+							}
+						},
+						"order": "ZwV",
+						"property": [
+							"enabled"
+						],
+						"type": "property",
+						"weight": {
+							"fe0bfb8a31634c409d8c340a3933983a-blend": {
+								"id": "fe0bfb8a31634c409d8c340a3933983a-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"3ad0c1f59f064014ae207b873317bdc8": {
+						"blend": "overlay",
+						"entityID": "1fe277d5eb3142dfb02cf4cff3155fee",
+						"id": "3ad0c1f59f064014ae207b873317bdc8",
+						"keyframes": {
+							"670b8ba3d2014f3899e2a9a549eab3c2": {
+								"easing": "linear",
+								"id": "670b8ba3d2014f3899e2a9a549eab3c2",
+								"t": 0,
+								"v": false
+							},
+							"890272f16a514b9d9489a538c9a590b1": {
+								"id": "890272f16a514b9d9489a538c9a590b1",
+								"t": 19644.081632653062,
+								"v": true
+							}
+						},
+						"order": "Zw",
+						"property": [
+							"visible"
+						],
+						"type": "property",
+						"weight": {
+							"1307a43aad2e4a458a94ff918acea2a7-blend": {
+								"id": "1307a43aad2e4a458a94ff918acea2a7-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"4e4e7e1df7b74c938a609225f9ae1202": {
+						"data": {
+							"b9c59bb0e2a1437bad2b3c028b63067e": {
+								"id": "b9c59bb0e2a1437bad2b3c028b63067e",
+								"rate": 1,
+								"s0": 0,
+								"t0": 0,
+								"t1": 19644.081632653062
+							}
+						},
+						"entityID": "0847500b614242f89507f5ca3a564e9e",
+						"id": "4e4e7e1df7b74c938a609225f9ae1202",
+						"name": "step2Audio",
+						"order": "Zx",
+						"property": [
+						],
+						"type": "stream",
+						"weight": {
+						}
+					},
+					"aac9ca84cc8d45ec9de5b5c6497b6ded": {
+						"blend": "overlay",
+						"entityID": "43fc19f4ae044e97b6ad1acb3e761b99",
+						"fadeParameters": {
+							"easing": null,
+							"pin": 1
+						},
+						"id": "aac9ca84cc8d45ec9de5b5c6497b6ded",
+						"keyframes": {
+							"b785cb5ed7644395b21460bd575a532b": {
+								"id": "b785cb5ed7644395b21460bd575a532b",
+								"t": 19644.081632653062,
+								"v": [
+									0.364874607126579,
+									-0.11189694409463137,
+									0.0032600831431891077
+								]
+							},
+							"f9ccfb32c3e944c1812f23a6dc6c5766": {
+								"easing": "linear",
+								"id": "f9ccfb32c3e944c1812f23a6dc6c5766",
+								"t": 0,
+								"v": [
+									0.41100824222987575,
+									-0.11189694409463137,
+									0.0032600831431891077
+								]
+							}
+						},
+						"order": "ZyV",
+						"property": [
+							"position"
+						],
+						"type": "property",
+						"weight": {
+							"49671adbdf6249b482c0accca99a0607-blend": {
+								"id": "49671adbdf6249b482c0accca99a0607-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"b16cf0d4bc1b407398abc7d8ab6f985c": {
+						"blend": "overlay",
+						"entityID": "b11195991e814b9ba0da9dc64252adda",
+						"id": "b16cf0d4bc1b407398abc7d8ab6f985c",
+						"keyframes": {
+							"d75ff87541664f98a3431bf4fdec4ee1": {
+								"id": "d75ff87541664f98a3431bf4fdec4ee1",
+								"t": 0,
+								"v": "Sit down in a chair to teleport into the forklift"
+							}
+						},
+						"order": "Zz",
+						"property": [
+							"text"
+						],
+						"type": "property",
+						"weight": {
+							"f72565fb6f6746a582493a848f28d649-blend": {
+								"id": "f72565fb6f6746a582493a848f28d649-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"b331505b6e0a46f5b20ea46a53f1f4ac": {
+						"blend": "overlay",
+						"entityID": "140a19ad305a4a25b943704abaf504a9",
+						"fadeParameters": {
+							"easing": "ease"
+						},
+						"id": "b331505b6e0a46f5b20ea46a53f1f4ac",
+						"keyframes": {
+							"a8b1082270be4b0e85b71e008a0ea167": {
+								"id": "a8b1082270be4b0e85b71e008a0ea167",
+								"t": 19644.081632653062,
+								"v": [
+									0.5728916823772243,
+									1,
+									1
+								]
+							},
+							"f74cc3e56ddc487aa59ae2c9f9e652f2": {
+								"easing": "linear",
+								"id": "f74cc3e56ddc487aa59ae2c9f9e652f2",
+								"t": 0,
+								"v": [
+									0.33,
+									1,
+									1
+								]
+							}
+						},
+						"order": "Zu",
+						"property": [
+							"scale"
+						],
+						"type": "property",
+						"weight": {
+							"a2973b6cbcff48719444dc73f453d6ac-blend": {
+								"id": "a2973b6cbcff48719444dc73f453d6ac-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"bcdf7b119b81469684d65f09d66a191e": {
+						"blend": "overlay",
+						"entityID": "956899dc8efc41e88eda57775f467cf6",
+						"id": "bcdf7b119b81469684d65f09d66a191e",
+						"keyframes": {
+							"943f263357324edebfd7aff549d15c20": {
+								"id": "943f263357324edebfd7aff549d15c20",
+								"t": 19644.081632653062,
+								"v": "STEP 2 OF 3"
+							},
+							"d3b87de8c26746d8ba5a18396665859f": {
+								"easing": "linear",
+								"id": "d3b87de8c26746d8ba5a18396665859f",
+								"t": 0,
+								"v": "STEP 1 OF 3"
+							}
+						},
+						"order": "Zt",
+						"property": [
+							"text"
+						],
+						"type": "property",
+						"weight": {
+							"123d36d46d5d42f4b8187d6accfcb80b-blend": {
+								"id": "123d36d46d5d42f4b8187d6accfcb80b-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"f542ca7faea84a318d03918a3396c7b6": {
+						"blend": "overlay",
+						"entityID": "fe478a302a7844f884f1f6a8f83f8b4c",
+						"id": "f542ca7faea84a318d03918a3396c7b6",
+						"keyframes": {
+							"9b5651ddac724674a70985629be5869a": {
+								"easing": "linear",
+								"id": "9b5651ddac724674a70985629be5869a",
+								"t": 0,
+								"v": "I am sat"
+							},
+							"de07af9cf1394f65852cc344638a2fd9": {
+								"id": "de07af9cf1394f65852cc344638a2fd9",
+								"t": 19644.081632653062,
+								"v": "I am seated"
+							}
+						},
+						"order": "a0",
+						"property": [
+							"text"
+						],
+						"type": "property",
+						"weight": {
+							"6210e1a60b0d403cbe3efb8d4d1e56b6-blend": {
+								"id": "6210e1a60b0d403cbe3efb8d4d1e56b6-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"fbad861baa244f6e8b1caf252746c488": {
+						"blend": "overlay",
+						"entityID": "45cf0e3ff6d84b1ba7677334822ca7a5",
+						"id": "fbad861baa244f6e8b1caf252746c488",
+						"keyframes": {
+							"174cd94f0ae14299bfb85061984a77e8": {
+								"id": "174cd94f0ae14299bfb85061984a77e8",
+								"t": 19644.081632653062,
+								"v": false
+							},
+							"d9ece9da248a4373b3a2bc561a9addea": {
+								"easing": "linear",
+								"id": "d9ece9da248a4373b3a2bc561a9addea",
+								"t": 0,
+								"v": true
+							}
+						},
+						"order": "ZvV",
+						"property": [
+							"enabled"
+						],
+						"type": "property",
+						"weight": {
+							"c7d71be133f943ff9900299af7aba479-blend": {
+								"id": "c7d71be133f943ff9900299af7aba479-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"ffb12dd79052480db37fa36fae1f7fc8": {
+						"blend": "overlay",
+						"entityID": "140a19ad305a4a25b943704abaf504a9",
+						"fadeParameters": {
+							"easing": null,
+							"pin": 1
+						},
+						"id": "ffb12dd79052480db37fa36fae1f7fc8",
+						"keyframes": {
+							"08b115db366c482e8bf96c36f817534b": {
+								"id": "08b115db366c482e8bf96c36f817534b",
+								"t": 19644.081632653062,
+								"v": [
+									-0.21619204548858856,
+									0,
+									0.01
+								]
+							},
+							"e8bd5f7438c842cea4afc3b6157845bd": {
+								"easing": "linear",
+								"id": "e8bd5f7438c842cea4afc3b6157845bd",
+								"t": 0,
+								"v": [
+									-0.33024080290086844,
+									0,
+									0.01
+								]
+							}
+						},
+						"order": "ZuV",
+						"property": [
+							"position"
+						],
+						"type": "property",
+						"weight": {
+							"ad10e230c1b24738af47b9e55bf8a2e8-blend": {
+								"id": "ad10e230c1b24738af47b9e55bf8a2e8-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					}
+				},
+				"type": "state"
+			},
+			"4dabd98927f0479abd5bc48ac55ecea2": {
+				"id": "4dabd98927f0479abd5bc48ac55ecea2",
+				"length": 992,
+				"lengthType": "manual",
+				"name": "Grab",
+				"order": "a1",
+				"scriptName": "Grab0",
+				"tracks": {
+				},
+				"type": "timeline"
+			},
+			"543107eb7f0d405c840658a56c7adfb8": {
+				"id": "543107eb7f0d405c840658a56c7adfb8",
+				"length": 1012,
+				"lengthType": "manual",
+				"name": "Rest",
+				"order": "a0",
+				"scriptName": "Rest",
+				"tracks": {
+				},
+				"type": "timeline"
+			},
+			"5a6088d531d74177a8baf1c4606bc507": {
+				"id": "5a6088d531d74177a8baf1c4606bc507",
+				"length": 1666.6666666666667,
+				"lengthType": "expand",
+				"name": "Timeline_1",
+				"order": "aC",
+				"scriptName": "Timeline_10",
+				"tracks": {
+					"76ae3f12aae6484b9cc40cf5324129b6": {
+						"blend": "overlay",
+						"entityID": "b19c56a3831e4bb79d83cb88209dbd06-2",
+						"id": "76ae3f12aae6484b9cc40cf5324129b6",
+						"keyframes": {
+							"f3ffc64e7940481eb3c553377685be52": {
+								"id": "f3ffc64e7940481eb3c553377685be52",
+								"t": 0,
+								"v": 1
+							}
+						},
+						"order": "a1",
+						"property": [
+							"weight"
+						],
+						"type": "property",
+						"weight": {
+						}
+					},
+					"c8ca4b704768437d86679cbd777c8c80": {
+						"data": {
+							"052998a7599644708433af11335d6f2c": {
+								"id": "052998a7599644708433af11335d6f2c",
+								"rate": 1,
+								"s0": 0,
+								"t0": 0,
+								"t1": 1666.6666666666667
+							}
+						},
+						"entityID": "b19c56a3831e4bb79d83cb88209dbd06-2",
+						"id": "c8ca4b704768437d86679cbd777c8c80",
+						"name": "Fork Up Animation",
+						"order": "a0",
+						"property": [
+						],
+						"type": "stream",
+						"weight": {
+						}
+					}
+				},
+				"type": "timeline"
+			},
+			"677aec8bd8754652996b09360b2d4d4a": {
+				"id": "677aec8bd8754652996b09360b2d4d4a",
+				"length": 0,
+				"lengthType": "expand",
+				"name": "Grab",
+				"order": "a3",
+				"scriptName": "Grab",
+				"tracks": {
+				},
+				"type": "state"
+			},
+			"85cd977e33a2484ca247a81f05e88823": {
+				"id": "85cd977e33a2484ca247a81f05e88823",
+				"length": 291.666656732559,
+				"lengthType": "expand",
+				"name": "Range",
+				"order": "a2",
+				"scriptName": "Range",
+				"tracks": {
+				},
+				"type": "state"
+			},
+			"9149349c3c874363ae39353b891cb66e": {
+				"id": "9149349c3c874363ae39353b891cb66e",
+				"length": 11911.836734693878,
+				"lengthType": "expand",
+				"name": "Step4",
+				"order": "aB",
+				"scriptName": "Step4",
+				"tracks": {
+					"3b40bd621d114706bf71a93c62cfab64": {
+						"blend": "overlay",
+						"entityID": "1fe277d5eb3142dfb02cf4cff3155fee",
+						"id": "3b40bd621d114706bf71a93c62cfab64",
+						"keyframes": {
+							"052b920fdec243caa2e949a87fd46f62": {
+								"id": "052b920fdec243caa2e949a87fd46f62",
+								"t": 11911.836734693878,
+								"v": false
+							},
+							"73b0b164f0854d17a47963eef07f4f3d": {
+								"easing": "linear",
+								"id": "73b0b164f0854d17a47963eef07f4f3d",
+								"t": 0,
+								"v": false
+							}
+						},
+						"order": "Zz",
+						"property": [
+							"visible"
+						],
+						"type": "property",
+						"weight": {
+							"643f768469cb47b39254fab4855fb036-blend": {
+								"id": "643f768469cb47b39254fab4855fb036-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"8c450b30ba5d49008c657fa12ec3b91e": {
+						"data": {
+							"51fe13868e5a48069c11c92444b36e16": {
+								"id": "51fe13868e5a48069c11c92444b36e16",
+								"rate": 1,
+								"s0": 0,
+								"t0": 0,
+								"t1": 11911.836734693878
+							}
+						},
+						"entityID": "4e9a9305b9f94fa4b769b71a24beb390",
+						"id": "8c450b30ba5d49008c657fa12ec3b91e",
+						"name": "completeAudio",
+						"order": "Zy",
+						"property": [
+						],
+						"type": "stream",
+						"weight": {
+						}
+					}
+				},
+				"type": "state"
+			},
+			"b45a3121ccd04950bf5be024642be0e6": {
+				"id": "b45a3121ccd04950bf5be024642be0e6",
+				"length": 3318,
+				"lengthType": "manual",
+				"name": "ForkliftUpandDown",
+				"order": "a7",
+				"scriptName": "ForkliftUpandDown",
+				"tracks": {
+					"2c5bee39bc894d5d9254e01563fb4534": {
+						"blend": "overlay",
+						"entityID": "b19c56a3831e4bb79d83cb88209dbd06-3",
+						"id": "2c5bee39bc894d5d9254e01563fb4534",
+						"keyframes": {
+							"111b7bf880f3467c9fb13ddeabcf0ca3": {
+								"id": "111b7bf880f3467c9fb13ddeabcf0ca3",
+								"t": 3333.333333333324,
+								"v": 0
+							},
+							"d38498413b7f47d3bcbcda6a8b7e30ec": {
+								"id": "d38498413b7f47d3bcbcda6a8b7e30ec",
+								"t": 1666.666666666657,
+								"v": 1
+							}
+						},
+						"order": "ZzV",
+						"property": [
+							"weight"
+						],
+						"type": "property",
+						"weight": {
+						}
+					},
+					"6fedd855da944deb81d8c75cf12717d6": {
+						"data": {
+							"6ebdea359a6c44388b9a6db100bfb12f": {
+								"id": "6ebdea359a6c44388b9a6db100bfb12f",
+								"rate": 1,
+								"s0": 0,
+								"t0": 0,
+								"t1": 1666.6666666666667
+							}
+						},
+						"entityID": "b19c56a3831e4bb79d83cb88209dbd06-2",
+						"id": "6fedd855da944deb81d8c75cf12717d6",
+						"name": "Fork Up Animation",
+						"order": "a0",
+						"property": [
+						],
+						"type": "stream",
+						"weight": {
+						}
+					},
+					"72a1e9eb4bba429c83333979524fc852": {
+						"data": {
+							"57bfee129e604a04b111e080eb9767e1": {
+								"id": "57bfee129e604a04b111e080eb9767e1",
+								"rate": 1,
+								"s0": 0,
+								"t0": 1666.666666666657,
+								"t1": 3333.333333333324
+							}
+						},
+						"entityID": "b19c56a3831e4bb79d83cb88209dbd06-3",
+						"id": "72a1e9eb4bba429c83333979524fc852",
+						"name": "Fork Down Animation",
+						"order": "Zz",
+						"property": [
+						],
+						"type": "stream",
+						"weight": {
+						}
+					},
+					"f5de0b8dac424260b7e7421011be2996": {
+						"blend": "overlay",
+						"entityID": "b19c56a3831e4bb79d83cb88209dbd06-2",
+						"id": "f5de0b8dac424260b7e7421011be2996",
+						"keyframes": {
+							"9e385924a9e241808d0901678b3f44bb": {
+								"id": "9e385924a9e241808d0901678b3f44bb",
+								"t": 4.547473508864641e-12,
+								"v": 1
+							},
+							"be59647f139a44d4aea4ae46d7f3d7b1": {
+								"id": "be59647f139a44d4aea4ae46d7f3d7b1",
+								"t": 1666.666666666657,
+								"v": 0
+							},
+							"c53f6f9696c64c0ca4c44e1510f97f2b": {
+								"id": "c53f6f9696c64c0ca4c44e1510f97f2b",
+								"t": 0,
+								"v": 1
+							}
+						},
+						"order": "a1",
+						"property": [
+							"weight"
+						],
+						"type": "property",
+						"weight": {
+						}
+					}
+				},
+				"type": "timeline"
+			},
+			"e0ca0c591f514ab6bf138181f54ce18e": {
+				"id": "e0ca0c591f514ab6bf138181f54ce18e",
+				"length": 22909.38775510204,
+				"lengthType": "expand",
+				"name": "Step 1",
+				"order": "a8",
+				"scriptName": "Step_1",
+				"tracks": {
+					"17faa4cd73dd4b7cb86e9cb4f6503a8d": {
+						"blend": "overlay",
+						"entityID": "fe478a302a7844f884f1f6a8f83f8b4c",
+						"id": "17faa4cd73dd4b7cb86e9cb4f6503a8d",
+						"keyframes": {
+							"6785eb32bd714e59ade6023bbcff6358": {
+								"id": "6785eb32bd714e59ade6023bbcff6358",
+								"t": 0,
+								"v": "Complete"
+							}
+						},
+						"order": "Zy",
+						"property": [
+							"text"
+						],
+						"type": "property",
+						"weight": {
+							"f927588f1f204d2189a798cc15aec59c-blend": {
+								"id": "f927588f1f204d2189a798cc15aec59c-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"4aa4ddfb4ac14666ad1217e5f1164e1b": {
+						"blend": "overlay",
+						"entityID": "b11195991e814b9ba0da9dc64252adda",
+						"id": "4aa4ddfb4ac14666ad1217e5f1164e1b",
+						"keyframes": {
+							"5eec625bc80344aaba81108cf9ad66ab": {
+								"id": "5eec625bc80344aaba81108cf9ad66ab",
+								"t": 0,
+								"v": "Check forks, tyres, and lights"
+							}
+						},
+						"order": "Zz",
+						"property": [
+							"text"
+						],
+						"type": "property",
+						"weight": {
+							"ef824f576ad64c0498f434cbec15e586-blend": {
+								"id": "ef824f576ad64c0498f434cbec15e586-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"672ed28a0b3b4ffca0faee9906051352": {
+						"blend": "overlay",
+						"entityID": "45cf0e3ff6d84b1ba7677334822ca7a5",
+						"id": "672ed28a0b3b4ffca0faee9906051352",
+						"keyframes": {
+							"5d141425a43441e4afd35f26eadbe3b6": {
+								"id": "5d141425a43441e4afd35f26eadbe3b6",
+								"t": 22909.38775510204,
+								"v": false
+							},
+							"9150f6312af64cb4a8062bd5b0a15572": {
+								"easing": "linear",
+								"id": "9150f6312af64cb4a8062bd5b0a15572",
+								"t": 0,
+								"v": true
+							}
+						},
+						"order": "Zw",
+						"property": [
+							"visible"
+						],
+						"type": "property",
+						"weight": {
+							"9169510cd0d9409a91fa11282316d5cd-blend": {
+								"id": "9169510cd0d9409a91fa11282316d5cd-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"6d6747e5028e47f8ae9b1647238e03d9": {
+						"blend": "overlay",
+						"entityID": "1fe277d5eb3142dfb02cf4cff3155fee",
+						"id": "6d6747e5028e47f8ae9b1647238e03d9",
+						"keyframes": {
+							"596940f35b7b4128bdc1840dd99bd171": {
+								"id": "596940f35b7b4128bdc1840dd99bd171",
+								"t": 22909.38775510204,
+								"v": true
+							},
+							"ab1829fa7e9d4392af5537e431e40ea6": {
+								"easing": "linear",
+								"id": "ab1829fa7e9d4392af5537e431e40ea6",
+								"t": 0,
+								"v": false
+							}
+						},
+						"order": "Zv",
+						"property": [
+							"visible"
+						],
+						"type": "property",
+						"weight": {
+							"320592eb9aae42cfb86a6cd7e9765697-blend": {
+								"id": "320592eb9aae42cfb86a6cd7e9765697-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"7f455023083d4da3b5ba2eb20164bd9d": {
+						"data": {
+							"290eb0b15cbc4672ad8f76c925276636": {
+								"id": "290eb0b15cbc4672ad8f76c925276636",
+								"rate": 1,
+								"s0": 0,
+								"t0": 0,
+								"t1": 22909.38775510204
+							}
+						},
+						"entityID": "2aec994fb55440a3b30b7688a75d8270",
+						"id": "7f455023083d4da3b5ba2eb20164bd9d",
+						"name": "step1Audio",
+						"order": "Zx",
+						"property": [
+						],
+						"type": "stream",
+						"weight": {
+						}
+					},
+					"9a389ead4eba4c91a7fba3badfb40673": {
+						"blend": "overlay",
+						"entityID": "43fc19f4ae044e97b6ad1acb3e761b99",
+						"id": "9a389ead4eba4c91a7fba3badfb40673",
+						"keyframes": {
+							"e9475a55e50143168df64a8e4d926e35": {
+								"id": "e9475a55e50143168df64a8e4d926e35",
+								"t": 0,
+								"v": "External Inspection "
+							}
+						},
+						"order": "a0",
+						"property": [
+							"text"
+						],
+						"type": "property",
+						"weight": {
+							"a096284fef454860937a0cfe75981118-blend": {
+								"id": "a096284fef454860937a0cfe75981118-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"aabe04714d8b478f910657cc82ad9192": {
+						"blend": "overlay",
+						"entityID": "1fe277d5eb3142dfb02cf4cff3155fee",
+						"id": "aabe04714d8b478f910657cc82ad9192",
+						"keyframes": {
+							"2f752ab151174ba2b7a579bb2c1550d9": {
+								"id": "2f752ab151174ba2b7a579bb2c1550d9",
+								"t": 22909.38775510204,
+								"v": true
+							},
+							"cfbd5061e4054e878241fb340d4a3363": {
+								"easing": "linear",
+								"id": "cfbd5061e4054e878241fb340d4a3363",
+								"t": 0,
+								"v": false
+							}
+						},
+						"order": "ZvV",
+						"property": [
+							"enabled"
+						],
+						"type": "property",
+						"weight": {
+							"0b12b2224ccf424aabc688a77780a5f8-blend": {
+								"id": "0b12b2224ccf424aabc688a77780a5f8-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"b2f9c60ba9a042bbabaf5e126485dbe3": {
+						"blend": "overlay",
+						"entityID": "45cf0e3ff6d84b1ba7677334822ca7a5",
+						"id": "b2f9c60ba9a042bbabaf5e126485dbe3",
+						"keyframes": {
+							"a0d4571cc9494185a22078ee3bf46e2b": {
+								"easing": "linear",
+								"id": "a0d4571cc9494185a22078ee3bf46e2b",
+								"t": 0,
+								"v": true
+							},
+							"c69a518b8e564a55b054334c153e960a": {
+								"id": "c69a518b8e564a55b054334c153e960a",
+								"t": 22909.38775510204,
+								"v": false
+							}
+						},
+						"order": "ZwV",
+						"property": [
+							"enabled"
+						],
+						"type": "property",
+						"weight": {
+							"acf646d8175843a7ac636d7b207db5b8-blend": {
+								"id": "acf646d8175843a7ac636d7b207db5b8-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					},
+					"dcb34453a8864565a3e5fef2918af6a0": {
+						"blend": "overlay",
+						"entityID": "956899dc8efc41e88eda57775f467cf6",
+						"id": "dcb34453a8864565a3e5fef2918af6a0",
+						"keyframes": {
+							"7c31d18a47a54965a229e90eaf271151": {
+								"id": "7c31d18a47a54965a229e90eaf271151",
+								"t": 0,
+								"v": "STEP 1 OF 3"
+							}
+						},
+						"order": "Zu",
+						"property": [
+							"text"
+						],
+						"type": "property",
+						"weight": {
+							"443304cf86dc4873858e48d95976038b-blend": {
+								"id": "443304cf86dc4873858e48d95976038b-blend",
+								"t": 0,
+								"v": 1
+							}
+						}
+					}
+				},
+				"type": "state"
+			}
+		},
+		"curves": {
+		},
+		"layers": {
+			"0c01a423284441e1991261552af7689c": {
+				"clips": {
+					"212c6901668c4c23bf672c76d4e732ee": {
+						"clipId": "e0ca0c591f514ab6bf138181f54ce18e",
+						"id": "212c6901668c4c23bf672c76d4e732ee",
+						"order": "a2",
+						"scriptName": "Step_10"
+					},
+					"33b130594c164fc5a07bc8684a3febbb": {
+						"clipId": "3297fb44d9ff4e9e81028f0465f89a4f",
+						"id": "33b130594c164fc5a07bc8684a3febbb",
+						"order": "a3l",
+						"scriptName": "Step_20"
+					},
+					"b41545b2d8c5420caef24c3952c258e3": {
+						"clipId": "1b74b4dea81b47b793a720b4a47fd6b1",
+						"id": "b41545b2d8c5420caef24c3952c258e3",
+						"order": "a4",
+						"scriptName": "Step_30"
+					},
+					"bed0983e760d4ad3b3a1568c5825f518": {
+						"clipId": "9149349c3c874363ae39353b891cb66e",
+						"id": "bed0983e760d4ad3b3a1568c5825f518",
+						"order": "a5",
+						"scriptName": "Step40"
+					}
+				},
+				"defaultClip": null,
+				"defaultFadeParameters": {
+					"easing": "ease",
+					"pin": 0,
+					"time": 300
+				},
+				"enabled": true,
+				"id": "0c01a423284441e1991261552af7689c",
+				"name": "Game States",
+				"order": "a3",
+				"scriptName": "Game_States"
+			},
+			"2e0adacf86f04b18ba6cdac229ff7aeb": {
+				"clips": {
+					"520069c026df4bc180cf7febe4d64aa9": {
+						"clipId": "b45a3121ccd04950bf5be024642be0e6",
+						"id": "520069c026df4bc180cf7febe4d64aa9",
+						"order": "a4",
+						"scriptName": "ForkliftUpandDown0"
+					}
+				},
+				"defaultClip": null,
+				"defaultFadeParameters": {
+					"easing": "ease",
+					"pin": 0,
+					"time": 300
+				},
+				"enabled": true,
+				"id": "2e0adacf86f04b18ba6cdac229ff7aeb",
+				"name": "Forklift",
+				"order": "a2",
+				"scriptName": "Forklift"
+			}
+		}
+	},
+	"behaviors": {
+		"0eba282b3a4445b882cf3baee8528fde": {
+			"id": "0eba282b3a4445b882cf3baee8528fde",
+			"label": "RigidBody",
+			"parent": {
+				"id": "194aae695cba4b60a35c287f3e37fbcf",
+				"order": "a0",
+				"scriptName": "RigidBody"
+			},
+			"type": "@zcomponent/physics/lib/behaviors/RigidBody#RigidBody"
+		},
+		"1949d614a3db40bdbd1b8728641211a3": {
+			"id": "1949d614a3db40bdbd1b8728641211a3",
+			"label": "GameStepsContext",
+			"parent": {
+				"id": "root",
+				"order": "a1",
+				"scriptName": "GameStepsContext"
+			},
+			"type": "./GameStepsContext.ts#GameStepsContext"
+		},
+		"1a8681464df54ebabdf01ad06ebf3731": {
+			"id": "1a8681464df54ebabdf01ad06ebf3731",
+			"label": "LeverBehavior",
+			"parent": {
+				"id": "fa61216fea204276a5e3dd6e2a6206df",
+				"order": "a0",
+				"scriptName": "LeverBehavior"
+			},
+			"type": "./LeverBehavior.ts#LeverBehavior"
+		},
+		"2e9367f3bdb4422381c0c87d6811b8d6": {
+			"id": "2e9367f3bdb4422381c0c87d6811b8d6",
+			"label": "Cognitive3D",
+			"parent": {
+				"id": "466b178fcbad428da8b3c7341b69a7cc",
+				"order": "a0",
+				"scriptName": "Cognitive3D"
+			},
+			"type": "./Cognitive3D#Cognitive3D"
+		},
+		"558811b752974eeeb2f2a982e4e86eac": {
+			"id": "558811b752974eeeb2f2a982e4e86eac",
+			"label": "Cognitive3DDynamicObject",
+			"parent": {
+				"id": "2ce807645b8a4ade804d6c2467c0121c",
+				"order": "a0",
+				"scriptName": "Cognitive3DDynamicObject"
+			},
+			"type": "./Cognitive3D#Cognitive3DDynamicObject"
+		},
+		"629577d6f038407cbca192ced0f9e5f0": {
+			"id": "629577d6f038407cbca192ced0f9e5f0",
+			"label": "SetGrabState",
+			"parent": {
+				"id": "8fc18656acbc425e9c7db9002436f8f8",
+				"order": "a0",
+				"scriptName": "SetGrabState"
+			},
+			"type": "@zcomponent/physics/lib/behaviors/SetGrabState#SetGrabState"
+		},
+		"85a535bc00144b6a9aa5145f7e720b36": {
+			"id": "85a535bc00144b6a9aa5145f7e720b36",
+			"label": "PlayStream",
+			"parent": {
+				"id": "18961d4fadd2440f83848529eed74418",
+				"order": "a0",
+				"scriptName": "PlayStream"
+			},
+			"type": "@zcomponent/core/lib/behaviors/stream/PlayStream#PlayStream"
+		},
+		"8e286b70a5e34f83a9d82e44b8d3e5e1": {
+			"id": "8e286b70a5e34f83a9d82e44b8d3e5e1",
+			"label": "ToggleGrabState",
+			"parent": {
+				"id": "07b291132a004a03b9a7e998b4c267a4",
+				"order": "a1",
+				"scriptName": "ToggleGrabState"
+			},
+			"type": "@zcomponent/physics/lib/behaviors/ToggleGrabState#ToggleGrabState"
+		},
+		"b0d9f5ebc4ed4518a86e275de50b119b": {
+			"id": "b0d9f5ebc4ed4518a86e275de50b119b",
+			"label": "ActivateState",
+			"parent": {
+				"id": "8fd75e018ba743ebb636b8434b97ba77",
+				"order": "a0",
+				"scriptName": "ActivateState"
+			},
+			"type": "@zcomponent/core/lib/behaviors/ActivateState#ActivateState"
+		},
+		"b19c56a3831e4bb79d83cb88209dbd06-2": {
+			"id": "b19c56a3831e4bb79d83cb88209dbd06-2",
+			"label": "Fork Up Animation",
+			"parent": {
+				"id": "7cbfd458b8be4772b3f11593a9460289",
+				"order": "a0"
+			},
+			"type": "@zcomponent/three/lib/behaviors/Animation#Animation"
+		},
+		"b19c56a3831e4bb79d83cb88209dbd06-3": {
+			"id": "b19c56a3831e4bb79d83cb88209dbd06-3",
+			"label": "Fork Down Animation",
+			"parent": {
+				"id": "7cbfd458b8be4772b3f11593a9460289",
+				"order": "a1"
+			},
+			"type": "@zcomponent/three/lib/behaviors/Animation#Animation"
+		},
+		"c9f2ef39926d4567bcec05280a3efe3f": {
+			"id": "c9f2ef39926d4567bcec05280a3efe3f",
+			"label": "ToggleGrabState",
+			"parent": {
+				"id": "8fc18656acbc425e9c7db9002436f8f8",
+				"order": "a1",
+				"scriptName": "ToggleGrabState"
+			},
+			"type": "@zcomponent/physics/lib/behaviors/ToggleGrabState#ToggleGrabState"
+		},
+		"cca0da1d3564447983ff288052112055": {
+			"id": "cca0da1d3564447983ff288052112055",
+			"label": "Cognitive3DDynamicObject",
+			"parent": {
+				"id": "7cbfd458b8be4772b3f11593a9460289",
+				"order": "a2",
+				"scriptName": "Cognitive3DDynamicObject"
+			},
+			"type": "./Cognitive3D#Cognitive3DDynamicObject"
+		},
+		"d7a800bebfee430c97d3869a1c84557e": {
+			"id": "d7a800bebfee430c97d3869a1c84557e",
+			"label": "SetGrabState",
+			"parent": {
+				"id": "07b291132a004a03b9a7e998b4c267a4",
+				"order": "a0",
+				"scriptName": "SetGrabState"
+			},
+			"type": "@zcomponent/physics/lib/behaviors/SetGrabState#SetGrabState"
+		},
+		"e6a71a533c7949f0907800ea97f09eba": {
+			"id": "e6a71a533c7949f0907800ea97f09eba",
+			"label": "Cognitive3DDynamicObject",
+			"parent": {
+				"id": "4a0b84c3175949b9999468982e0cbb93",
+				"order": "a0",
+				"scriptName": "Cognitive3DDynamicObject"
+			},
+			"type": "./Cognitive3D#Cognitive3DDynamicObject"
+		}
+	},
+	"constructorProps": {
+	},
+	"entitiesByLabel": {
+		"Box": {
+			"6e279dbbf2034ef8b3f7676e766e8508": true
+		},
+		"Boxes": {
+			"c0fab61481a049308dda5b16858bb0fa": true
+		},
+		"Button": {
+			"375fe3890d23420aa1e0ebddfe6cf690": true
+		},
+		"ButtonText": {
+			"fe478a302a7844f884f1f6a8f83f8b4c": true
+		},
+		"ButtonText 2": {
+			"914f9a9895cd413099de5810d7e46b63": true
+		},
+		"Collider": {
+			"47456d4850e14e489691b87201e80a96": true
+		},
+		"DefaultCookieConsent": {
+			"0ba8e27369df45ca897731dcb1e39bcf": true
+		},
+		"DefaultEnvironment": {
+			"a57f5d58e38e4a0b918dcf605ea12736": true
+		},
+		"DefaultLoader": {
+			"52148d8eafe3426085e700e049662c07": true
+		},
+		"Defaults": {
+			"7b6fb4d895774174b5d151eec86b704c": true
+		},
+		"DirectionalLight": {
+			"857f9901b65b42c89a3ff04470d70738": true
+		},
+		"Floor": {
+			"194aae695cba4b60a35c287f3e37fbcf": true
+		},
+		"Group": {
+			"root": true
+		},
+		"Left Controller": {
+			"8fc18656acbc425e9c7db9002436f8f8": true
+		},
+		"Lever": {
+			"fa61216fea204276a5e3dd6e2a6206df": true
+		},
+		"MeshBasicMaterial": {
+			"a78759b609344d05a9baec4de6403e5f": true
+		},
+		"MeshBasicMaterial 2": {
+			"26abdee2ea6c4d8ca5fc1826ae78c02e": true
+		},
+		"MeshBasicMaterial 3": {
+			"6c47f2bcc9af45bd9b1d454c7b54f734": true
+		},
+		"MeshBasicMaterial 4": {
+			"5def74de4d834ce99dfd285eea2009e5": true
+		},
+		"MeshStandardMaterial": {
+			"d57a479c827e41d686df05012e30717c": true
+		},
+		"Plane": {
+			"5dd4ee29dbdb44109cae7188b0c293eb": true
+		},
+		"Plane 2": {
+			"02c88085230f4db3b43a3e0948a73a05": true
+		},
+		"ProceedButton": {
+			"8fd75e018ba743ebb636b8434b97ba77": true
+		},
+		"ProgressBar": {
+			"a1c651ef815b4912ad8255f4e3dd33c2": true
+		},
+		"ProgressBarBackground": {
+			"1e83435cc1894bbeb378899757a5cb061": true
+		},
+		"ProgressBarFill": {
+			"140a19ad305a4a25b943704abaf504a9": true
+		},
+		"ProgressBarFillMaterial": {
+			"1e83435cc1894bbeb378899757a5cb062": true
+		},
+		"Right Controller": {
+			"07b291132a004a03b9a7e998b4c267a4": true
+		},
+		"RigidbodyGrabber Left": {
+			"94992da1e2444869ae30022d3a6863d2": true
+		},
+		"RigidbodyGrabber Right": {
+			"139d2a3cb9e943e0959c55a7553d4c3d": true
+		},
+		"RigidbodyTargetTransform": {
+			"3eb28157a310435bb68f182cb111d83d": true
+		},
+		"ShadowPlane": {
+			"bf1d127bf7234511b3cdc3d5a98af7b0": true
+		},
+		"Sky Environment": {
+			"2eb158feb565427084b28ea98fbf97c9": true
+		},
+		"SphereTrigger": {
+			"63e5054f5a4e47048f82b700194edc80": true
+		},
+		"SphereTrigger 2": {
+			"62653525009b4c668f59f47b3193c68c": true
+		},
+		"SphereTrigger_Horn": {
+			"18961d4fadd2440f83848529eed74418": true
+		},
+		"Steps": {
+			"956899dc8efc41e88eda57775f467cf6": true
+		},
+		"Target": {
+			"4c1b68cbafbe4686a55388cce4ea86ab": true,
+			"8962a3c79da9408d9694583e48e12440": true
+		},
+		"TaskDesc": {
+			"b11195991e814b9ba0da9dc64252adda": true
+		},
+		"TaskName": {
+			"43fc19f4ae044e97b6ad1acb3e761b99": true
+		},
+		"Teleport Manager": {
+			"fac2a029bd0b4712b6fe442a24dd64a7": true
+		},
+		"Title": {
+			"43108691216f48a28ee2f793a1babed6": true
+		},
+		"TrainingProgressUI": {
+			"1fe277d5eb3142dfb02cf4cff3155fee": true
+		},
+		"Turn Manager": {
+			"7532b09379cb4ba98c0fca6b61640d97": true
+		},
+		"UI": {
+			"45cf0e3ff6d84b1ba7677334822ca7a5": true
+		},
+		"WelcomeDesc": {
+			"74e736beede3486bad79d5315e3f0bf5": true
+		},
+		"WelcomeText": {
+			"b2fc375c02c449cdba26fc8d2c226ede": true
+		},
+		"XR Default Loader": {
+			"516eb13b036141e888071760310e4df2": true
+		},
+		"XR Manager": {
+			"7dc313c4ec1a4a2d95fe0a4025f9363b": true
+		},
+		"XRRigVR": {
+			"466b178fcbad428da8b3c7341b69a7cc": true
+		},
+		"XR_Camera ": {
+			"5797b34a748c4027b41cb6268ca8e46e": true
+		},
+		"completeAudio": {
+			"4e9a9305b9f94fa4b769b71a24beb390": true
+		},
+		"forklift_animated.glb": {
+			"7cbfd458b8be4772b3f11593a9460289": true
+		},
+		"horn": {
+			"d4092dc46e964960a543c839cadc97b9": true
+		},
+		"hydraulics_front_13": {
+			"2ce807645b8a4ade804d6c2467c0121c": true
+		},
+		"steering_wheel_25": {
+			"4a0b84c3175949b9999468982e0cbb93": true
+		},
+		"step1Audio": {
+			"2aec994fb55440a3b30b7688a75d8270": true
+		},
+		"step2Audio": {
+			"0847500b614242f89507f5ca3a564e9e": true
+		},
+		"step3Audio": {
+			"a1352e5656d546ef8c9fc6687ac4db19": true
+		},
+		"warehouseAmbience": {
+			"03db82d622bb4d9abf94ec117dc764b6": true
+		},
+		"warehouseScene.glb": {
+			"0f8bae71e6484bca88c731b4841f0e8c": true
+		},
+		"welcomeAudio": {
+			"5ee7bd91e4ca4c059bbdad230141d684": true
+		}
+	},
+	"entitiesByScriptName": {
+		"Box": {
+			"6e279dbbf2034ef8b3f7676e766e8508": true
+		},
+		"Boxes": {
+			"c0fab61481a049308dda5b16858bb0fa": true
+		},
+		"Button": {
+			"375fe3890d23420aa1e0ebddfe6cf690": true
+		},
+		"ButtonText": {
+			"fe478a302a7844f884f1f6a8f83f8b4c": true
+		},
+		"ButtonText0": {
+			"914f9a9895cd413099de5810d7e46b63": true
+		},
+		"Collider": {
+			"47456d4850e14e489691b87201e80a96": true
+		},
+		"DefaultCookieConsent": {
+			"0ba8e27369df45ca897731dcb1e39bcf": true
+		},
+		"DefaultEnvironment": {
+			"a57f5d58e38e4a0b918dcf605ea12736": true
+		},
+		"DefaultLoader": {
+			"52148d8eafe3426085e700e049662c07": true
+		},
+		"Defaults": {
+			"7b6fb4d895774174b5d151eec86b704c": true
+		},
+		"DirectionalLight": {
+			"857f9901b65b42c89a3ff04470d70738": true
+		},
+		"Floor": {
+			"194aae695cba4b60a35c287f3e37fbcf": true
+		},
+		"Left_Controller": {
+			"8fc18656acbc425e9c7db9002436f8f8": true
+		},
+		"Lever": {
+			"fa61216fea204276a5e3dd6e2a6206df": true
+		},
+		"MeshBasicMaterial": {
+			"a78759b609344d05a9baec4de6403e5f": true
+		},
+		"MeshBasicMaterial0": {
+			"6c47f2bcc9af45bd9b1d454c7b54f734": true
+		},
+		"MeshBasicMaterial_2": {
+			"26abdee2ea6c4d8ca5fc1826ae78c02e": true
+		},
+		"MeshBasicMaterial_20": {
+			"5def74de4d834ce99dfd285eea2009e5": true
+		},
+		"MeshStandardMaterial": {
+			"d57a479c827e41d686df05012e30717c": true
+		},
+		"Plane": {
+			"5dd4ee29dbdb44109cae7188b0c293eb": true
+		},
+		"Plane0": {
+			"02c88085230f4db3b43a3e0948a73a05": true
+		},
+		"ProceedButton": {
+			"8fd75e018ba743ebb636b8434b97ba77": true
+		},
+		"ProgressBar": {
+			"a1c651ef815b4912ad8255f4e3dd33c2": true
+		},
+		"ProgressBarBackground": {
+			"1e83435cc1894bbeb378899757a5cb061": true
+		},
+		"ProgressBarFill": {
+			"140a19ad305a4a25b943704abaf504a9": true
+		},
+		"ProgressBarFillMaterial": {
+			"1e83435cc1894bbeb378899757a5cb062": true
+		},
+		"Right_Controller": {
+			"07b291132a004a03b9a7e998b4c267a4": true
+		},
+		"RigidbodyGrabber_Left": {
+			"94992da1e2444869ae30022d3a6863d2": true
+		},
+		"RigidbodyGrabber_Right": {
+			"139d2a3cb9e943e0959c55a7553d4c3d": true
+		},
+		"RigidbodyTargetTransform": {
+			"3eb28157a310435bb68f182cb111d83d": true
+		},
+		"ShadowPlane": {
+			"bf1d127bf7234511b3cdc3d5a98af7b0": true
+		},
+		"Sky_Environment": {
+			"2eb158feb565427084b28ea98fbf97c9": true
+		},
+		"SphereTrigger": {
+			"63e5054f5a4e47048f82b700194edc80": true
+		},
+		"SphereTrigger0": {
+			"62653525009b4c668f59f47b3193c68c": true
+		},
+		"SphereTrigger_Horn": {
+			"18961d4fadd2440f83848529eed74418": true
+		},
+		"Steps": {
+			"956899dc8efc41e88eda57775f467cf6": true
+		},
+		"Target": {
+			"4c1b68cbafbe4686a55388cce4ea86ab": true
+		},
+		"Target0": {
+			"8962a3c79da9408d9694583e48e12440": true
+		},
+		"TaskDesc": {
+			"b11195991e814b9ba0da9dc64252adda": true
+		},
+		"TaskName": {
+			"43fc19f4ae044e97b6ad1acb3e761b99": true
+		},
+		"Teleport_Manager": {
+			"fac2a029bd0b4712b6fe442a24dd64a7": true
+		},
+		"Title": {
+			"43108691216f48a28ee2f793a1babed6": true
+		},
+		"TrainingProgressUI": {
+			"1fe277d5eb3142dfb02cf4cff3155fee": true
+		},
+		"Turn_Manager": {
+			"7532b09379cb4ba98c0fca6b61640d97": true
+		},
+		"UI": {
+			"45cf0e3ff6d84b1ba7677334822ca7a5": true
+		},
+		"WelcomeDesc": {
+			"74e736beede3486bad79d5315e3f0bf5": true
+		},
+		"WelcomeText": {
+			"b2fc375c02c449cdba26fc8d2c226ede": true
+		},
+		"XRRigVR": {
+			"466b178fcbad428da8b3c7341b69a7cc": true
+		},
+		"XR_Camera_": {
+			"5797b34a748c4027b41cb6268ca8e46e": true
+		},
+		"XR_DefaultLoader": {
+			"516eb13b036141e888071760310e4df2": true
+		},
+		"XR_Manager": {
+			"7dc313c4ec1a4a2d95fe0a4025f9363b": true
+		},
+		"completeAudio": {
+			"4e9a9305b9f94fa4b769b71a24beb390": true
+		},
+		"forklift_animated_glb": {
+			"7cbfd458b8be4772b3f11593a9460289": true
+		},
+		"horn": {
+			"d4092dc46e964960a543c839cadc97b9": true
+		},
+		"hydraulics_front_13": {
+			"2ce807645b8a4ade804d6c2467c0121c": true
+		},
+		"steering_wheel_25": {
+			"4a0b84c3175949b9999468982e0cbb93": true
+		},
+		"step1Audio": {
+			"2aec994fb55440a3b30b7688a75d8270": true
+		},
+		"step2Audio": {
+			"0847500b614242f89507f5ca3a564e9e": true
+		},
+		"step3Audio": {
+			"a1352e5656d546ef8c9fc6687ac4db19": true
+		},
+		"warehouseAmbience": {
+			"03db82d622bb4d9abf94ec117dc764b6": true
+		},
+		"warehouseScene_glb": {
+			"0f8bae71e6484bca88c731b4841f0e8c": true
+		},
+		"welcomeAudio": {
+			"5ee7bd91e4ca4c059bbdad230141d684": true
+		}
+	},
+	"entityConstructorProps": {
+		"02c88085230f4db3b43a3e0948a73a05": {
+		},
+		"03db82d622bb4d9abf94ec117dc764b6": {
+			"autoplay": true,
+			"source": "file://./Audio/warehouse_ambience.mp3"
+		},
+		"07b291132a004a03b9a7e998b4c267a4": {
+			"allowLeftHandControllers": false,
+			"loadModel": true
+		},
+		"0847500b614242f89507f5ca3a564e9e": {
+			"source": "file://./Audio/2.mp3"
+		},
+		"0ba8e27369df45ca897731dcb1e39bcf": {
+		},
+		"0eba282b3a4445b882cf3baee8528fde": {
+		},
+		"0f8bae71e6484bca88c731b4841f0e8c": {
+			"source": "file://./warehouseScene.glb"
+		},
+		"139d2a3cb9e943e0959c55a7553d4c3d": {
+		},
+		"140a19ad305a4a25b943704abaf504a9": {
+		},
+		"18961d4fadd2440f83848529eed74418": {
+		},
+		"1949d614a3db40bdbd1b8728641211a3": {
+		},
+		"194aae695cba4b60a35c287f3e37fbcf": {
+		},
+		"1a8681464df54ebabdf01ad06ebf3731": {
+		},
+		"1e83435cc1894bbeb378899757a5cb061": {
+		},
+		"1e83435cc1894bbeb378899757a5cb062": {
+		},
+		"1fe277d5eb3142dfb02cf4cff3155fee": {
+		},
+		"26abdee2ea6c4d8ca5fc1826ae78c02e": {
+		},
+		"2aec994fb55440a3b30b7688a75d8270": {
+			"source": "file://./Audio/1.mp3"
+		},
+		"2ce807645b8a4ade804d6c2467c0121c": {
+			"attachTo": "hydraulics_front_13"
+		},
+		"2e9367f3bdb4422381c0c87d6811b8d6": {
+			"apiKey": "EAO23IC878XWH17E5SC2O8T68TMDM66F",
+			"sceneId": "21faa84b-9201-4177-835e-f788966b6c2a",
+			"sceneName": "Mattercraft-Forklift-Training",
+			"sceneVersion": "1"
+		},
+		"2eb158feb565427084b28ea98fbf97c9": {
+			"showAtRunTime": true
+		},
+		"375fe3890d23420aa1e0ebddfe6cf690": {
+		},
+		"3eb28157a310435bb68f182cb111d83d": {
+		},
+		"43108691216f48a28ee2f793a1babed6": {
+		},
+		"43fc19f4ae044e97b6ad1acb3e761b99": {
+		},
+		"45cf0e3ff6d84b1ba7677334822ca7a5": {
+		},
+		"466b178fcbad428da8b3c7341b69a7cc": {
+		},
+		"47456d4850e14e489691b87201e80a96": {
+		},
+		"4a0b84c3175949b9999468982e0cbb93": {
+			"attachTo": "steering_wheel_25"
+		},
+		"4c1b68cbafbe4686a55388cce4ea86ab": {
+		},
+		"4e9a9305b9f94fa4b769b71a24beb390": {
+			"source": "file://./Audio/complete.mp3"
+		},
+		"516eb13b036141e888071760310e4df2": {
+		},
+		"52148d8eafe3426085e700e049662c07": {
+		},
+		"558811b752974eeeb2f2a982e4e86eac": {
+			"c3dMeshName": "hydraulics_front_13"
+		},
+		"5797b34a748c4027b41cb6268ca8e46e": {
+		},
+		"5dd4ee29dbdb44109cae7188b0c293eb": {
+		},
+		"5def74de4d834ce99dfd285eea2009e5": {
+		},
+		"5ee7bd91e4ca4c059bbdad230141d684": {
+			"autoplay": true,
+			"source": "file://./Audio/welcome.mp3"
+		},
+		"62653525009b4c668f59f47b3193c68c": {
+		},
+		"629577d6f038407cbca192ced0f9e5f0": {
+			"event": "onSelectStart"
+		},
+		"63e5054f5a4e47048f82b700194edc80": {
+		},
+		"6c47f2bcc9af45bd9b1d454c7b54f734": {
+		},
+		"6e279dbbf2034ef8b3f7676e766e8508": {
+		},
+		"74e736beede3486bad79d5315e3f0bf5": {
+		},
+		"7532b09379cb4ba98c0fca6b61640d97": {
+		},
+		"7b6fb4d895774174b5d151eec86b704c": {
+		},
+		"7cbfd458b8be4772b3f11593a9460289": {
+			"source": "file://./forklift_animated.glb"
+		},
+		"7dc313c4ec1a4a2d95fe0a4025f9363b": {
+			"startOnLaunch": "immersive-vr"
+		},
+		"857f9901b65b42c89a3ff04470d70738": {
+		},
+		"85a535bc00144b6a9aa5145f7e720b36": {
+			"event": "onCollisionEnter",
+			"runAtEditTime": true
+		},
+		"8962a3c79da9408d9694583e48e12440": {
+		},
+		"8e286b70a5e34f83a9d82e44b8d3e5e1": {
+			"event": "onSelectEnd"
+		},
+		"8fc18656acbc425e9c7db9002436f8f8": {
+			"allowRightHandControllers": false,
+			"allowUnspecifiedHandControllers": false,
+			"loadModel": true
+		},
+		"8fd75e018ba743ebb636b8434b97ba77": {
+		},
+		"914f9a9895cd413099de5810d7e46b63": {
+		},
+		"94992da1e2444869ae30022d3a6863d2": {
+		},
+		"956899dc8efc41e88eda57775f467cf6": {
+		},
+		"a1352e5656d546ef8c9fc6687ac4db19": {
+			"source": "file://./Audio/3.mp3"
+		},
+		"a1c651ef815b4912ad8255f4e3dd33c2": {
+		},
+		"a57f5d58e38e4a0b918dcf605ea12736": {
+		},
+		"a78759b609344d05a9baec4de6403e5f": {
+		},
+		"b0d9f5ebc4ed4518a86e275de50b119b": {
+			"event": "onPointerDown",
+			"runAtEditTime": true
+		},
+		"b11195991e814b9ba0da9dc64252adda": {
+		},
+		"b19c56a3831e4bb79d83cb88209dbd06-2": {
+			"loop": "Once",
+			"name": "fork_up"
+		},
+		"b19c56a3831e4bb79d83cb88209dbd06-3": {
+			"loop": "Once",
+			"name": "fork_down"
+		},
+		"b2fc375c02c449cdba26fc8d2c226ede": {
+		},
+		"bf1d127bf7234511b3cdc3d5a98af7b0": {
+		},
+		"c0fab61481a049308dda5b16858bb0fa": {
+		},
+		"c9f2ef39926d4567bcec05280a3efe3f": {
+			"event": "onSelectEnd"
+		},
+		"cca0da1d3564447983ff288052112055": {
+			"c3dMeshName": "Forklift"
+		},
+		"d4092dc46e964960a543c839cadc97b9": {
+			"source": "file://./Audio/ForkliftHorn.mp3"
+		},
+		"d57a479c827e41d686df05012e30717c": {
+		},
+		"d7a800bebfee430c97d3869a1c84557e": {
+			"event": "onSelectStart"
+		},
+		"e6a71a533c7949f0907800ea97f09eba": {
+			"c3dMeshName": "steering_wheel_25"
+		},
+		"fa61216fea204276a5e3dd6e2a6206df": {
+		},
+		"fac2a029bd0b4712b6fe442a24dd64a7": {
+		},
+		"fe478a302a7844f884f1f6a8f83f8b4c": {
+		}
+	},
+	"entityPropOverrides": {
+		"componentprop:prop:root:position": {
+			"entityID": "root",
+			"entityPropIsConstructor": false,
+			"entityPropPath": [
+				"position"
+			],
+			"id": "componentprop:prop:root:position",
+			"isConstructorProp": false,
+			"propName": "position",
+			"type": "componentprop"
+		},
+		"componentprop:prop:root:rotation": {
+			"entityID": "root",
+			"entityPropIsConstructor": false,
+			"entityPropPath": [
+				"rotation"
+			],
+			"id": "componentprop:prop:root:rotation",
+			"isConstructorProp": false,
+			"propName": "rotation",
+			"type": "componentprop"
+		},
+		"componentprop:prop:root:scale": {
+			"entityID": "root",
+			"entityPropIsConstructor": false,
+			"entityPropPath": [
+				"scale"
+			],
+			"id": "componentprop:prop:root:scale",
+			"isConstructorProp": false,
+			"propName": "scale",
+			"type": "componentprop"
+		},
+		"componentprop:prop:root:visible": {
+			"entityID": "root",
+			"entityPropIsConstructor": false,
+			"entityPropPath": [
+				"visible"
+			],
+			"id": "componentprop:prop:root:visible",
+			"isConstructorProp": false,
+			"propName": "visible",
+			"type": "componentprop"
+		}
+	},
+	"entityProps": {
+		"02c88085230f4db3b43a3e0948a73a05": {
+			"position": [
+				0.2626789294092629,
+				1.1279068336726923,
+				-0.954259810671121
+			],
+			"scale": [
+				1.116301575669701,
+				1.116301575669701,
+				1.116301575669701
+			]
+		},
+		"03db82d622bb4d9abf94ec117dc764b6": {
+			"loop": true,
+			"volume": 0.2
+		},
+		"07b291132a004a03b9a7e998b4c267a4": {
+			"designTimeModel": "generic-hand",
+			"position": [
+				0.3,
+				1.3,
+				0
+			],
+			"showModel": true,
+			"tags": [
+				"button",
+				"horn"
+			]
+		},
+		"0847500b614242f89507f5ca3a564e9e": {
+		},
+		"0ba8e27369df45ca897731dcb1e39bcf": {
+		},
+		"0eba282b3a4445b882cf3baee8528fde": {
+			"motionType": "Static"
+		},
+		"0f8bae71e6484bca88c731b4841f0e8c": {
+			"position": [
+				0,
+				0.03508702969757738,
+				0
+			]
+		},
+		"139d2a3cb9e943e0959c55a7553d4c3d": {
+			"grabAtCurrentDistance": false,
+			"grabRadius": 0.2,
+			"position": [
+				-0.08149072911331262,
+				-0.048279631036636156,
+				0
+			],
+			"tags": [
+			]
+		},
+		"140a19ad305a4a25b943704abaf504a9": {
+			"position": [
+				-0.33024080290086844,
+				0,
+				0.01
+			],
+			"scale": [
+				0.33,
+				1,
+				1
+			]
+		},
+		"18961d4fadd2440f83848529eed74418": {
+			"isTrigger": true,
+			"position": [
+				-0.36283226088457454,
+				0.8328357774755137,
+				0.07696718911081628
+			],
+			"scale": [
+				0.030591611936770853,
+				0.030591611936770853,
+				0.030591611936770853
+			],
+			"tags": [
+				"horn"
+			]
+		},
+		"1949d614a3db40bdbd1b8728641211a3": {
+		},
+		"194aae695cba4b60a35c287f3e37fbcf": {
+			"position": [
+				0,
+				-0.5099999904632568,
+				0
+			],
+			"scale": [
+				10,
+				1,
+				10
+			],
+			"visible": false
+		},
+		"1a8681464df54ebabdf01ad06ebf3731": {
+		},
+		"1e83435cc1894bbeb378899757a5cb061": {
+			"color": [
+				0.2,
+				0.2,
+				0.2
+			]
+		},
+		"1e83435cc1894bbeb378899757a5cb062": {
+			"color": [
+				0.41254261347374327,
+				0.5583403896257968,
+				0.019382360952473074
+			]
+		},
+		"1fe277d5eb3142dfb02cf4cff3155fee": {
+			"enabled": false,
+			"position": [
+				-0.09009978201582641,
+				-0.15454909683356496,
+				0.00447098306340564
+			],
+			"rotation": [
+				-0.36205369018461614,
+				-1.5260348128674845,
+				1.2135390639898838
+			],
+			"scale": [
+				0.5027277697133481,
+				0.5027277697133481,
+				0.5027277697133481
+			],
+			"visible": false
+		},
+		"26abdee2ea6c4d8ca5fc1826ae78c02e": {
+			"color": [
+				0.41254261347374327,
+				0.5583403896257968,
+				0.019382360952473074
+			]
+		},
+		"2aec994fb55440a3b30b7688a75d8270": {
+		},
+		"2ce807645b8a4ade804d6c2467c0121c": {
+		},
+		"2e9367f3bdb4422381c0c87d6811b8d6": {
+			"triggerDynamicObjectsExport": true,
+			"triggerSceneExport": true
+		},
+		"2eb158feb565427084b28ea98fbf97c9": {
+		},
+		"375fe3890d23420aa1e0ebddfe6cf690": {
+			"position": [
+				0.26012140701537223,
+				0.07674386891128541,
+				-0.003054509370316885
+			],
+			"rotation": [
+				0,
+				0,
+				0
+			],
+			"scale": [
+				0.14540850332920402,
+				0.056582908568126124,
+				0.016920586246391346
+			]
+		},
+		"3eb28157a310435bb68f182cb111d83d": {
+			"rigidbody": ""
+		},
+		"43108691216f48a28ee2f793a1babed6": {
+			"color": [
+				1,
+				1,
+				1
+			],
+			"fontSize": 0.04,
+			"position": [
+				0.4160330069482373,
+				-0.23769058741742255,
+				0.0032600831431891077
+			],
+			"rotation": [
+				0,
+				0,
+				3.141592653589793
+			],
+			"scale": [
+				0.762631727192147,
+				0.762631727192147,
+				0.762631727192147
+			],
+			"text": "FORKLIFT TRAINING"
+		},
+		"43fc19f4ae044e97b6ad1acb3e761b99": {
+			"color": [
+				1,
+				1,
+				1
+			],
+			"fontSize": 0.04,
+			"position": [
+				0.41100824222987575,
+				-0.11189694409463137,
+				0.0032600831431891077
+			],
+			"rotation": [
+				0,
+				0,
+				3.141592653589793
+			],
+			"scale": [
+				0.762631727192147,
+				0.762631727192147,
+				0.762631727192147
+			],
+			"text": "External Inspection "
+		},
+		"45cf0e3ff6d84b1ba7677334822ca7a5": {
+			"position": [
+				-0.17035670915473722,
+				0.34683650528734644,
+				-0.33003900021293125
+			],
+			"visible": true
+		},
+		"466b178fcbad428da8b3c7341b69a7cc": {
+		},
+		"47456d4850e14e489691b87201e80a96": {
+		},
+		"4a0b84c3175949b9999468982e0cbb93": {
+		},
+		"4c1b68cbafbe4686a55388cce4ea86ab": {
+		},
+		"4e9a9305b9f94fa4b769b71a24beb390": {
+		},
+		"516eb13b036141e888071760310e4df2": {
+		},
+		"52148d8eafe3426085e700e049662c07": {
+		},
+		"558811b752974eeeb2f2a982e4e86eac": {
+		},
+		"5797b34a748c4027b41cb6268ca8e46e": {
+		},
+		"5dd4ee29dbdb44109cae7188b0c293eb": {
+			"position": [
+				0.2626789294092629,
+				-0.0726403500049098,
+				0
+			],
+			"scale": [
+				0.3954447964103509,
+				0.3954447964103509,
+				0.3954447964103509
+			]
+		},
+		"5def74de4d834ce99dfd285eea2009e5": {
+			"color": [
+				0.41254261347374327,
+				0.5583403896257968,
+				0.019382360952473074
+			]
+		},
+		"5ee7bd91e4ca4c059bbdad230141d684": {
+		},
+		"62653525009b4c668f59f47b3193c68c": {
+			"position": [
+				-0.020050059775465368,
+				-0.046693143308629725,
+				0.009795521267630725
+			],
+			"scale": [
+				0.06156182441010984,
+				0.06156182441010984,
+				0.06156182441010984
+			],
+			"tags": [
+				"horn"
+			]
+		},
+		"629577d6f038407cbca192ced0f9e5f0": {
+			"grabber": "94992da1e2444869ae30022d3a6863d2",
+			"state": true
+		},
+		"63e5054f5a4e47048f82b700194edc80": {
+			"position": [
+				0.017721092236291813,
+				-0.046693143308629725,
+				0.009795521267630725
+			],
+			"scale": [
+				0.06156182441010984,
+				0.06156182441010984,
+				0.06156182441010984
+			],
+			"tags": [
+				"horn"
+			]
+		},
+		"6c47f2bcc9af45bd9b1d454c7b54f734": {
+			"color": [
+				0.038204371589236,
+				0.038204371589236,
+				0.038204371589236
+			],
+			"opacity": 0.8,
+			"side": "DoubleSide",
+			"transparent": true
+		},
+		"6e279dbbf2034ef8b3f7676e766e8508": {
+			"position": [
+				1.6301497689395688,
+				0,
+				-4.323717608717249
+			]
+		},
+		"74e736beede3486bad79d5315e3f0bf5": {
+			"color": [
+				1,
+				1,
+				1
+			],
+			"fontSize": 0.05,
+			"maxWidth": 1,
+			"position": [
+				-0.21476635533040572,
+				1.462757256533399,
+				-0.9528428311056576
+			],
+			"text": " Welcome to Forklift Training in Virtual Reality. In this short simulation, you’ll learn how to perform a pre-use safety inspection and get familiar with forklift controls. \n\nPlease follow the steps shown on your wrist display. When you're ready, press the button to begin."
+		},
+		"7532b09379cb4ba98c0fca6b61640d97": {
+		},
+		"7b6fb4d895774174b5d151eec86b704c": {
+		},
+		"7cbfd458b8be4772b3f11593a9460289": {
+			"position": [
+				-1.2574897579554405,
+				0.2639901592076752,
+				0.14563786496707537
+			],
+			"rotation": [
+				0,
+				-1.5665031101002733,
+				0
+			],
+			"scale": [
+				0.8,
+				0.8,
+				0.8
+			],
+			"visible": true
+		},
+		"7dc313c4ec1a4a2d95fe0a4025f9363b": {
+			"showPointerRay": false
+		},
+		"857f9901b65b42c89a3ff04470d70738": {
+			"castShadow": true,
+			"position": [
+				0,
+				3.822578351542651,
+				0
+			]
+		},
+		"85a535bc00144b6a9aa5145f7e720b36": {
+			"fromStart": true,
+			"stream": "d4092dc46e964960a543c839cadc97b9"
+		},
+		"8962a3c79da9408d9694583e48e12440": {
+		},
+		"8e286b70a5e34f83a9d82e44b8d3e5e1": {
+			"grabber": "139d2a3cb9e943e0959c55a7553d4c3d"
+		},
+		"8fc18656acbc425e9c7db9002436f8f8": {
+			"designTimeModel": "generic-hand",
+			"position": [
+				-0.3,
+				1.3,
+				0
+			],
+			"showModel": true,
+			"tags": [
+				"button",
+				"horn"
+			]
+		},
+		"8fd75e018ba743ebb636b8434b97ba77": {
+			"position": [
+				0.26539951133701034,
+				0.7330332658754524,
+				-0.9446089492614657
+			],
+			"scale": [
+				0.24717540596959098,
+				0.09618353174712772,
+				0.028762779885206823
+			]
+		},
+		"914f9a9895cd413099de5810d7e46b63": {
+			"color": [
+				0,
+				0,
+				0
+			],
+			"fontSize": 0.5,
+			"position": [
+				-0.36756315552929364,
+				0.36671095441761015,
+				0.5558610192654121
+			],
+			"scale": [
+				0.36492852678602794,
+				0.9459836260245237,
+				0.5089939573047888
+			],
+			"text": "Proceed\n"
+		},
+		"94992da1e2444869ae30022d3a6863d2": {
+			"grabAtCurrentDistance": false,
+			"grabRadius": 0.2,
+			"position": [
+				0.012534973494504331,
+				-0.048279631036636156,
+				0
+			],
+			"tags": [
+				"controller"
+			]
+		},
+		"956899dc8efc41e88eda57775f467cf6": {
+			"color": [
+				0.41254261347374327,
+				0.5583403896257968,
+				0.019382360952473074
+			],
+			"fontSize": 0.03,
+			"position": [
+				0.3398102506260263,
+				-0.15539668521490185,
+				0.0032600831431891077
+			],
+			"rotation": [
+				0,
+				0,
+				3.141592653589793
+			],
+			"scale": [
+				0.762631727192147,
+				0.762631727192147,
+				0.762631727192147
+			],
+			"text": "STEP 1 OF 3"
+		},
+		"a1352e5656d546ef8c9fc6687ac4db19": {
+		},
+		"a1c651ef815b4912ad8255f4e3dd33c2": {
+			"position": [
+				0.26830136427782947,
+				-0.176644618240716,
+				0
+			],
+			"rotation": [
+				0,
+				0,
+				-3.1341651565031676
+			],
+			"scale": [
+				0.3,
+				0.02,
+				0.02
+			]
+		},
+		"a57f5d58e38e4a0b918dcf605ea12736": {
+		},
+		"a78759b609344d05a9baec4de6403e5f": {
+			"color": [
+				0.038204371589236,
+				0.038204371589236,
+				0.038204371589236
+			],
+			"opacity": 0.8,
+			"side": "DoubleSide",
+			"transparent": true
+		},
+		"b0d9f5ebc4ed4518a86e275de50b119b": {
+			"state": "212c6901668c4c23bf672c76d4e732ee"
+		},
+		"b11195991e814b9ba0da9dc64252adda": {
+			"color": [
+				1,
+				1,
+				1
+			],
+			"fontSize": 0.03,
+			"maxWidth": 0.45,
+			"position": [
+				0.424540973757163,
+				-0.05975531180631931,
+				0.0032600831431891077
+			],
+			"rotation": [
+				0,
+				0,
+				3.141592653589793
+			],
+			"scale": [
+				0.762631727192147,
+				0.762631727192147,
+				0.762631727192147
+			],
+			"text": "Check forks, tyres, and lights"
+		},
+		"b19c56a3831e4bb79d83cb88209dbd06-2": {
+		},
+		"b19c56a3831e4bb79d83cb88209dbd06-3": {
+		},
+		"b2fc375c02c449cdba26fc8d2c226ede": {
+			"color": [
+				1,
+				1,
+				1
+			],
+			"fontSize": 0.1,
+			"position": [
+				0,
+				1.649947111257404,
+				-0.9486028773340808
+			],
+			"text": "Welcome!"
+		},
+		"bf1d127bf7234511b3cdc3d5a98af7b0": {
+		},
+		"c0fab61481a049308dda5b16858bb0fa": {
+			"position": [
+				3.1744911447636865,
+				0,
+				3.7209041091419235
+			],
+			"rotation": [
+				0,
+				-0.34664760949367057,
+				0
+			]
+		},
+		"c9f2ef39926d4567bcec05280a3efe3f": {
+			"grabber": "94992da1e2444869ae30022d3a6863d2"
+		},
+		"cca0da1d3564447983ff288052112055": {
+		},
+		"d4092dc46e964960a543c839cadc97b9": {
+			"volume": 1
+		},
+		"d57a479c827e41d686df05012e30717c": {
+			"color": [
+				0.0196078431372549,
+				0.0196078431372549,
+				0.0196078431372549
+			],
+			"transparent": false
+		},
+		"d7a800bebfee430c97d3869a1c84557e": {
+			"grabber": "139d2a3cb9e943e0959c55a7553d4c3d",
+			"state": true
+		},
+		"e6a71a533c7949f0907800ea97f09eba": {
+		},
+		"fa61216fea204276a5e3dd6e2a6206df": {
+			"position": [
+				-1.232647861564069,
+				0.5815603334353706,
+				-0.33334802091782556
+			],
+			"rotation": [
+				0,
+				0,
+				0
+			],
+			"scale": [
+				0.5,
+				0.5,
+				0.5
+			],
+			"target": "139d2a3cb9e943e0959c55a7553d4c3d"
+		},
+		"fac2a029bd0b4712b6fe442a24dd64a7": {
+			"previewAtDesignTime": true
+		},
+		"fe478a302a7844f884f1f6a8f83f8b4c": {
+			"color": [
+				0,
+				0,
+				0
+			],
+			"fontSize": 0.4,
+			"position": [
+				0.39369800574067465,
+				-0.3344296592957563,
+				1.164657598216566
+			],
+			"rotation": [
+				0,
+				0,
+				3.141592653589793
+			],
+			"scale": [
+				0.4217513874196767,
+				0.9459836260245237,
+				0.5089939573047888
+			],
+			"text": "Complete",
+			"textAlign": "center"
+		}
+	},
+	"id": "5d4513e843574c04847bf1474912090f",
+	"nodes": {
+		"02c88085230f4db3b43a3e0948a73a05": {
+			"id": "02c88085230f4db3b43a3e0948a73a05",
+			"label": "Plane 2",
+			"parent": {
+				"id": "45cf0e3ff6d84b1ba7677334822ca7a5",
+				"order": "Zz"
+			},
+			"scriptName": "Plane0",
+			"type": "@zcomponent/three/lib/components/meshes/Plane#Plane"
+		},
+		"03db82d622bb4d9abf94ec117dc764b6": {
+			"id": "03db82d622bb4d9abf94ec117dc764b6",
+			"label": "warehouseAmbience",
+			"parent": {
+				"id": "root",
+				"order": "a6"
+			},
+			"scriptName": "warehouseAmbience",
+			"type": "@zcomponent/core/lib/components/Audio#Audio"
+		},
+		"07b291132a004a03b9a7e998b4c267a4": {
+			"id": "07b291132a004a03b9a7e998b4c267a4",
+			"label": "Right Controller",
+			"parent": {
+				"id": "466b178fcbad428da8b3c7341b69a7cc",
+				"order": "a1l"
+			},
+			"scriptName": "Right_Controller",
+			"type": "@zcomponent/three-webxr/lib/components/XRController#XRController"
+		},
+		"0847500b614242f89507f5ca3a564e9e": {
+			"id": "0847500b614242f89507f5ca3a564e9e",
+			"label": "step2Audio",
+			"parent": {
+				"id": "root",
+				"order": "a4"
+			},
+			"scriptName": "step2Audio",
+			"type": "@zcomponent/core/lib/components/Audio#Audio"
+		},
+		"0ba8e27369df45ca897731dcb1e39bcf": {
+			"id": "0ba8e27369df45ca897731dcb1e39bcf",
+			"label": "DefaultCookieConsent",
+			"parent": {
+				"id": "7b6fb4d895774174b5d151eec86b704c",
+				"order": "a4"
+			},
+			"scriptName": "DefaultCookieConsent",
+			"type": "@zcomponent/core/lib/components/DefaultCookieConsent#DefaultCookieConsent"
+		},
+		"0f8bae71e6484bca88c731b4841f0e8c": {
+			"id": "0f8bae71e6484bca88c731b4841f0e8c",
+			"label": "warehouseScene.glb",
+			"parent": {
+				"id": "root",
+				"order": "Zy"
+			},
+			"scriptName": "warehouseScene_glb",
+			"type": "@zcomponent/three/lib/components/models/GLTF#GLTF"
+		},
+		"139d2a3cb9e943e0959c55a7553d4c3d": {
+			"id": "139d2a3cb9e943e0959c55a7553d4c3d",
+			"label": "RigidbodyGrabber Right",
+			"parent": {
+				"id": "07b291132a004a03b9a7e998b4c267a4",
+				"order": "Zz"
+			},
+			"scriptName": "RigidbodyGrabber_Right",
+			"type": "@zcomponent/physics/lib/components/RigidbodyGrabber#RigidbodyGrabber"
+		},
+		"140a19ad305a4a25b943704abaf504a9": {
+			"id": "140a19ad305a4a25b943704abaf504a9",
+			"label": "ProgressBarFill",
+			"parent": {
+				"id": "a1c651ef815b4912ad8255f4e3dd33c2",
+				"order": "Zy"
+			},
+			"scriptName": "ProgressBarFill",
+			"type": "@zcomponent/three/lib/components/meshes/Box#Box"
+		},
+		"18961d4fadd2440f83848529eed74418": {
+			"id": "18961d4fadd2440f83848529eed74418",
+			"label": "SphereTrigger_Horn",
+			"parent": {
+				"id": "7cbfd458b8be4772b3f11593a9460289",
+				"order": "a0"
+			},
+			"scriptName": "SphereTrigger_Horn",
+			"type": "@zcomponent/three/lib/components/physics/triggers/SphereTrigger#SphereTrigger"
+		},
+		"194aae695cba4b60a35c287f3e37fbcf": {
+			"id": "194aae695cba4b60a35c287f3e37fbcf",
+			"label": "Floor",
+			"parent": {
+				"id": "root",
+				"order": "ZzV"
+			},
+			"scriptName": "Floor",
+			"type": "@zcomponent/three/lib/components/meshes/Box#Box"
+		},
+		"1e83435cc1894bbeb378899757a5cb061": {
+			"id": "1e83435cc1894bbeb378899757a5cb061",
+			"label": "ProgressBarBackground",
+			"parent": {
+				"id": "a1c651ef815b4912ad8255f4e3dd33c2",
+				"order": "a1"
+			},
+			"scriptName": "ProgressBarBackground",
+			"type": "@zcomponent/three/lib/components/materials/MeshBasicMaterial#MeshBasicMaterial"
+		},
+		"1e83435cc1894bbeb378899757a5cb062": {
+			"id": "1e83435cc1894bbeb378899757a5cb062",
+			"label": "ProgressBarFillMaterial",
+			"parent": {
+				"id": "140a19ad305a4a25b943704abaf504a9",
+				"order": "a0"
+			},
+			"scriptName": "ProgressBarFillMaterial",
+			"type": "@zcomponent/three/lib/components/materials/MeshBasicMaterial#MeshBasicMaterial"
+		},
+		"1fe277d5eb3142dfb02cf4cff3155fee": {
+			"id": "1fe277d5eb3142dfb02cf4cff3155fee",
+			"label": "TrainingProgressUI",
+			"parent": {
+				"id": "8fc18656acbc425e9c7db9002436f8f8",
+				"order": "a1"
+			},
+			"scriptName": "TrainingProgressUI",
+			"type": "@zcomponent/three/lib/components/Group#Group"
+		},
+		"26abdee2ea6c4d8ca5fc1826ae78c02e": {
+			"id": "26abdee2ea6c4d8ca5fc1826ae78c02e",
+			"label": "MeshBasicMaterial 2",
+			"parent": {
+				"id": "375fe3890d23420aa1e0ebddfe6cf690",
+				"order": "Zz"
+			},
+			"scriptName": "MeshBasicMaterial_2",
+			"type": "@zcomponent/three/lib/components/materials/MeshBasicMaterial#MeshBasicMaterial"
+		},
+		"2aec994fb55440a3b30b7688a75d8270": {
+			"id": "2aec994fb55440a3b30b7688a75d8270",
+			"label": "step1Audio",
+			"parent": {
+				"id": "root",
+				"order": "a3"
+			},
+			"scriptName": "step1Audio",
+			"type": "@zcomponent/core/lib/components/Audio#Audio"
+		},
+		"2ce807645b8a4ade804d6c2467c0121c": {
+			"id": "2ce807645b8a4ade804d6c2467c0121c",
+			"label": "hydraulics_front_13",
+			"parent": {
+				"id": "7cbfd458b8be4772b3f11593a9460289",
+				"order": "a1"
+			},
+			"scriptName": "hydraulics_front_13",
+			"type": "@zcomponent/three/lib/components/AttachmentPoint#AttachmentPoint"
+		},
+		"2eb158feb565427084b28ea98fbf97c9": {
+			"id": "2eb158feb565427084b28ea98fbf97c9",
+			"label": "Sky Environment",
+			"parent": {
+				"id": "466b178fcbad428da8b3c7341b69a7cc",
+				"order": "a3"
+			},
+			"scriptName": "Sky_Environment",
+			"type": "@zcomponent/three/lib/components/environments/SkyEnvironment#SkyEnvironment"
+		},
+		"375fe3890d23420aa1e0ebddfe6cf690": {
+			"id": "375fe3890d23420aa1e0ebddfe6cf690",
+			"label": "Button",
+			"parent": {
+				"id": "1fe277d5eb3142dfb02cf4cff3155fee",
+				"order": "a2"
+			},
+			"scriptName": "Button",
+			"type": "@zcomponent/three/lib/components/meshes/Box#Box"
+		},
+		"3eb28157a310435bb68f182cb111d83d": {
+			"id": "3eb28157a310435bb68f182cb111d83d",
+			"label": "RigidbodyTargetTransform",
+			"parent": {
+				"id": "root",
+				"order": "Zzt"
+			},
+			"scriptName": "RigidbodyTargetTransform",
+			"type": "@zcomponent/physics/lib/components/RigidbodyTransform#RigidbodyTargetTransform"
+		},
+		"43108691216f48a28ee2f793a1babed6": {
+			"id": "43108691216f48a28ee2f793a1babed6",
+			"label": "Title",
+			"parent": {
+				"id": "1fe277d5eb3142dfb02cf4cff3155fee",
+				"order": "a0"
+			},
+			"scriptName": "Title",
+			"type": "@zcomponent/three/lib/components/text/Text#Text"
+		},
+		"43fc19f4ae044e97b6ad1acb3e761b99": {
+			"id": "43fc19f4ae044e97b6ad1acb3e761b99",
+			"label": "TaskName",
+			"parent": {
+				"id": "1fe277d5eb3142dfb02cf4cff3155fee",
+				"order": "a1"
+			},
+			"scriptName": "TaskName",
+			"type": "@zcomponent/three/lib/components/text/Text#Text"
+		},
+		"45cf0e3ff6d84b1ba7677334822ca7a5": {
+			"id": "45cf0e3ff6d84b1ba7677334822ca7a5",
+			"label": "UI",
+			"parent": {
+				"id": "root",
+				"order": "a1"
+			},
+			"scriptName": "UI",
+			"type": "@zcomponent/three/lib/components/Group#Group"
+		},
+		"466b178fcbad428da8b3c7341b69a7cc": {
+			"id": "466b178fcbad428da8b3c7341b69a7cc",
+			"label": "XRRigVR",
+			"parent": {
+				"id": "root",
+				"order": "Zzh"
+			},
+			"scriptName": "XRRigVR",
+			"type": "@zcomponent/three-webxr/lib/components/XRRigVR#XRRigVR"
+		},
+		"47456d4850e14e489691b87201e80a96": {
+			"id": "47456d4850e14e489691b87201e80a96",
+			"label": "Collider",
+			"parent": {
+				"id": "194aae695cba4b60a35c287f3e37fbcf",
+				"order": "a0"
+			},
+			"scriptName": "Collider",
+			"type": "@zcomponent/physics/lib/components/Colliders/Collider#Collider"
+		},
+		"4a0b84c3175949b9999468982e0cbb93": {
+			"id": "4a0b84c3175949b9999468982e0cbb93",
+			"label": "steering_wheel_25",
+			"parent": {
+				"id": "7cbfd458b8be4772b3f11593a9460289",
+				"order": "a2"
+			},
+			"scriptName": "steering_wheel_25",
+			"type": "@zcomponent/three/lib/components/AttachmentPoint#AttachmentPoint"
+		},
+		"4c1b68cbafbe4686a55388cce4ea86ab": {
+			"id": "4c1b68cbafbe4686a55388cce4ea86ab",
+			"label": "Target",
+			"parent": {
+				"id": "07b291132a004a03b9a7e998b4c267a4",
+				"order": "a0"
+			},
+			"scriptName": "Target",
+			"type": "./Lever/Target#Target"
+		},
+		"4e9a9305b9f94fa4b769b71a24beb390": {
+			"id": "4e9a9305b9f94fa4b769b71a24beb390",
+			"label": "completeAudio",
+			"parent": {
+				"id": "root",
+				"order": "a5"
+			},
+			"scriptName": "completeAudio",
+			"type": "@zcomponent/core/lib/components/Audio#Audio"
+		},
+		"516eb13b036141e888071760310e4df2": {
+			"id": "516eb13b036141e888071760310e4df2",
+			"label": "XR Default Loader",
+			"parent": {
+				"id": "466b178fcbad428da8b3c7341b69a7cc",
+				"order": "a7"
+			},
+			"scriptName": "XR_DefaultLoader",
+			"type": "@zcomponent/three-webxr/lib/components/XRDefaultLoader#XRDefaultLoader"
+		},
+		"52148d8eafe3426085e700e049662c07": {
+			"id": "52148d8eafe3426085e700e049662c07",
+			"label": "DefaultLoader",
+			"parent": {
+				"id": "7b6fb4d895774174b5d151eec86b704c",
+				"order": "a3"
+			},
+			"scriptName": "DefaultLoader",
+			"type": "@zcomponent/core/lib/components/DefaultLoader#DefaultLoader"
+		},
+		"5797b34a748c4027b41cb6268ca8e46e": {
+			"id": "5797b34a748c4027b41cb6268ca8e46e",
+			"label": "XR_Camera ",
+			"parent": {
+				"id": "466b178fcbad428da8b3c7341b69a7cc",
+				"order": "a2"
+			},
+			"scriptName": "XR_Camera_",
+			"type": "@zcomponent/three-webxr/lib/components/XRCamera#XRCamera"
+		},
+		"5dd4ee29dbdb44109cae7188b0c293eb": {
+			"id": "5dd4ee29dbdb44109cae7188b0c293eb",
+			"label": "Plane",
+			"parent": {
+				"id": "1fe277d5eb3142dfb02cf4cff3155fee",
+				"order": "Zz"
+			},
+			"scriptName": "Plane",
+			"type": "@zcomponent/three/lib/components/meshes/Plane#Plane"
+		},
+		"5def74de4d834ce99dfd285eea2009e5": {
+			"id": "5def74de4d834ce99dfd285eea2009e5",
+			"label": "MeshBasicMaterial 4",
+			"parent": {
+				"id": "8fd75e018ba743ebb636b8434b97ba77",
+				"order": "Zz"
+			},
+			"scriptName": "MeshBasicMaterial_20",
+			"type": "@zcomponent/three/lib/components/materials/MeshBasicMaterial#MeshBasicMaterial"
+		},
+		"5ee7bd91e4ca4c059bbdad230141d684": {
+			"id": "5ee7bd91e4ca4c059bbdad230141d684",
+			"label": "welcomeAudio",
+			"parent": {
+				"id": "root",
+				"order": "a2"
+			},
+			"scriptName": "welcomeAudio",
+			"type": "@zcomponent/core/lib/components/Audio#Audio"
+		},
+		"62653525009b4c668f59f47b3193c68c": {
+			"id": "62653525009b4c668f59f47b3193c68c",
+			"label": "SphereTrigger 2",
+			"parent": {
+				"id": "8fc18656acbc425e9c7db9002436f8f8",
+				"order": "Zy"
+			},
+			"scriptName": "SphereTrigger0",
+			"type": "@zcomponent/three/lib/components/physics/triggers/SphereTrigger#SphereTrigger"
+		},
+		"63e5054f5a4e47048f82b700194edc80": {
+			"id": "63e5054f5a4e47048f82b700194edc80",
+			"label": "SphereTrigger",
+			"parent": {
+				"id": "07b291132a004a03b9a7e998b4c267a4",
+				"order": "a1"
+			},
+			"scriptName": "SphereTrigger",
+			"type": "@zcomponent/three/lib/components/physics/triggers/SphereTrigger#SphereTrigger"
+		},
+		"6c47f2bcc9af45bd9b1d454c7b54f734": {
+			"id": "6c47f2bcc9af45bd9b1d454c7b54f734",
+			"label": "MeshBasicMaterial 3",
+			"parent": {
+				"id": "02c88085230f4db3b43a3e0948a73a05",
+				"order": "a0"
+			},
+			"scriptName": "MeshBasicMaterial0",
+			"type": "@zcomponent/three/lib/components/materials/MeshBasicMaterial#MeshBasicMaterial"
+		},
+		"6e279dbbf2034ef8b3f7676e766e8508": {
+			"id": "6e279dbbf2034ef8b3f7676e766e8508",
+			"label": "Box",
+			"parent": {
+				"id": "c0fab61481a049308dda5b16858bb0fa",
+				"order": "a0"
+			},
+			"scriptName": "Box",
+			"type": "./Box.zcomp#default"
+		},
+		"74e736beede3486bad79d5315e3f0bf5": {
+			"id": "74e736beede3486bad79d5315e3f0bf5",
+			"label": "WelcomeDesc",
+			"parent": {
+				"id": "45cf0e3ff6d84b1ba7677334822ca7a5",
+				"order": "a1"
+			},
+			"scriptName": "WelcomeDesc",
+			"type": "@zcomponent/three/lib/components/text/Text#Text"
+		},
+		"7532b09379cb4ba98c0fca6b61640d97": {
+			"id": "7532b09379cb4ba98c0fca6b61640d97",
+			"label": "Turn Manager",
+			"parent": {
+				"id": "466b178fcbad428da8b3c7341b69a7cc",
+				"order": "a5"
+			},
+			"scriptName": "Turn_Manager",
+			"type": "@zcomponent/three-webxr/lib/components/TurnManager#TurnManager"
+		},
+		"7b6fb4d895774174b5d151eec86b704c": {
+			"id": "7b6fb4d895774174b5d151eec86b704c",
+			"label": "Defaults",
+			"parent": {
+				"id": "root",
+				"order": "a0"
+			},
+			"scriptName": "Defaults",
+			"type": "@zcomponent/three/lib/components/Group#Group"
+		},
+		"7cbfd458b8be4772b3f11593a9460289": {
+			"id": "7cbfd458b8be4772b3f11593a9460289",
+			"label": "forklift_animated.glb",
+			"parent": {
+				"id": "root",
+				"order": "ZyV"
+			},
+			"scriptName": "forklift_animated_glb",
+			"type": "@zcomponent/three/lib/components/models/GLTF#GLTF"
+		},
+		"7dc313c4ec1a4a2d95fe0a4025f9363b": {
+			"id": "7dc313c4ec1a4a2d95fe0a4025f9363b",
+			"label": "XR Manager",
+			"parent": {
+				"id": "466b178fcbad428da8b3c7341b69a7cc",
+				"order": "a6"
+			},
+			"scriptName": "XR_Manager",
+			"type": "@zcomponent/three-webxr/lib/components/XRManager#XRManager"
+		},
+		"857f9901b65b42c89a3ff04470d70738": {
+			"id": "857f9901b65b42c89a3ff04470d70738",
+			"label": "DirectionalLight",
+			"parent": {
+				"id": "7b6fb4d895774174b5d151eec86b704c",
+				"order": "a2"
+			},
+			"scriptName": "DirectionalLight",
+			"type": "@zcomponent/three/lib/components/lights/DirectionalLight#DirectionalLight"
+		},
+		"8962a3c79da9408d9694583e48e12440": {
+			"id": "8962a3c79da9408d9694583e48e12440",
+			"label": "Target",
+			"parent": {
+				"id": "8fc18656acbc425e9c7db9002436f8f8",
+				"order": "a0"
+			},
+			"scriptName": "Target0",
+			"type": "./Lever/Target#Target"
+		},
+		"8fc18656acbc425e9c7db9002436f8f8": {
+			"id": "8fc18656acbc425e9c7db9002436f8f8",
+			"label": "Left Controller",
+			"parent": {
+				"id": "466b178fcbad428da8b3c7341b69a7cc",
+				"order": "a0"
+			},
+			"scriptName": "Left_Controller",
+			"type": "@zcomponent/three-webxr/lib/components/XRController#XRController"
+		},
+		"8fd75e018ba743ebb636b8434b97ba77": {
+			"id": "8fd75e018ba743ebb636b8434b97ba77",
+			"label": "ProceedButton",
+			"parent": {
+				"id": "45cf0e3ff6d84b1ba7677334822ca7a5",
+				"order": "a2"
+			},
+			"scriptName": "ProceedButton",
+			"type": "@zcomponent/three/lib/components/meshes/Box#Box"
+		},
+		"914f9a9895cd413099de5810d7e46b63": {
+			"id": "914f9a9895cd413099de5810d7e46b63",
+			"label": "ButtonText 2",
+			"parent": {
+				"id": "8fd75e018ba743ebb636b8434b97ba77",
+				"order": "a0"
+			},
+			"scriptName": "ButtonText0",
+			"type": "@zcomponent/three/lib/components/text/Text#Text"
+		},
+		"94992da1e2444869ae30022d3a6863d2": {
+			"id": "94992da1e2444869ae30022d3a6863d2",
+			"label": "RigidbodyGrabber Left",
+			"parent": {
+				"id": "8fc18656acbc425e9c7db9002436f8f8",
+				"order": "Zz"
+			},
+			"scriptName": "RigidbodyGrabber_Left",
+			"type": "@zcomponent/physics/lib/components/RigidbodyGrabber#RigidbodyGrabber"
+		},
+		"956899dc8efc41e88eda57775f467cf6": {
+			"id": "956899dc8efc41e88eda57775f467cf6",
+			"label": "Steps",
+			"parent": {
+				"id": "1fe277d5eb3142dfb02cf4cff3155fee",
+				"order": "a0V"
+			},
+			"scriptName": "Steps",
+			"type": "@zcomponent/three/lib/components/text/Text#Text"
+		},
+		"a1352e5656d546ef8c9fc6687ac4db19": {
+			"id": "a1352e5656d546ef8c9fc6687ac4db19",
+			"label": "step3Audio",
+			"parent": {
+				"id": "root",
+				"order": "a4V"
+			},
+			"scriptName": "step3Audio",
+			"type": "@zcomponent/core/lib/components/Audio#Audio"
+		},
+		"a1c651ef815b4912ad8255f4e3dd33c2": {
+			"id": "a1c651ef815b4912ad8255f4e3dd33c2",
+			"label": "ProgressBar",
+			"parent": {
+				"id": "1fe277d5eb3142dfb02cf4cff3155fee",
+				"order": "a0l"
+			},
+			"scriptName": "ProgressBar",
+			"type": "@zcomponent/three/lib/components/meshes/Box#Box"
+		},
+		"a57f5d58e38e4a0b918dcf605ea12736": {
+			"id": "a57f5d58e38e4a0b918dcf605ea12736",
+			"label": "DefaultEnvironment",
+			"parent": {
+				"id": "7b6fb4d895774174b5d151eec86b704c",
+				"order": "a1"
+			},
+			"scriptName": "DefaultEnvironment",
+			"type": "@zcomponent/three/lib/components/environments/DefaultEnvironment#DefaultEnvironment"
+		},
+		"a78759b609344d05a9baec4de6403e5f": {
+			"id": "a78759b609344d05a9baec4de6403e5f",
+			"label": "MeshBasicMaterial",
+			"parent": {
+				"id": "5dd4ee29dbdb44109cae7188b0c293eb",
+				"order": "a0"
+			},
+			"scriptName": "MeshBasicMaterial",
+			"type": "@zcomponent/three/lib/components/materials/MeshBasicMaterial#MeshBasicMaterial"
+		},
+		"b11195991e814b9ba0da9dc64252adda": {
+			"id": "b11195991e814b9ba0da9dc64252adda",
+			"label": "TaskDesc",
+			"parent": {
+				"id": "1fe277d5eb3142dfb02cf4cff3155fee",
+				"order": "a1G"
+			},
+			"scriptName": "TaskDesc",
+			"type": "@zcomponent/three/lib/components/text/Text#Text"
+		},
+		"b2fc375c02c449cdba26fc8d2c226ede": {
+			"id": "b2fc375c02c449cdba26fc8d2c226ede",
+			"label": "WelcomeText",
+			"parent": {
+				"id": "45cf0e3ff6d84b1ba7677334822ca7a5",
+				"order": "a0"
+			},
+			"scriptName": "WelcomeText",
+			"type": "@zcomponent/three/lib/components/text/Text#Text"
+		},
+		"bf1d127bf7234511b3cdc3d5a98af7b0": {
+			"id": "bf1d127bf7234511b3cdc3d5a98af7b0",
+			"label": "ShadowPlane",
+			"locked": true,
+			"parent": {
+				"id": "7b6fb4d895774174b5d151eec86b704c",
+				"order": "a0"
+			},
+			"scriptName": "ShadowPlane",
+			"type": "@zcomponent/three/lib/components/meshes/ShadowPlane#ShadowPlane"
+		},
+		"c0fab61481a049308dda5b16858bb0fa": {
+			"id": "c0fab61481a049308dda5b16858bb0fa",
+			"label": "Boxes",
+			"parent": {
+				"id": "root",
+				"order": "Zz"
+			},
+			"scriptName": "Boxes",
+			"type": "@zcomponent/three/lib/components/Group#Group"
+		},
+		"d4092dc46e964960a543c839cadc97b9": {
+			"id": "d4092dc46e964960a543c839cadc97b9",
+			"label": "horn",
+			"parent": {
+				"id": "root",
+				"order": "a5G"
+			},
+			"scriptName": "horn",
+			"type": "@zcomponent/core/lib/components/Audio#Audio"
+		},
+		"d57a479c827e41d686df05012e30717c": {
+			"id": "d57a479c827e41d686df05012e30717c",
+			"label": "MeshStandardMaterial",
+			"parent": {
+				"id": "194aae695cba4b60a35c287f3e37fbcf",
+				"order": "a1"
+			},
+			"scriptName": "MeshStandardMaterial",
+			"type": "@zcomponent/three/lib/components/materials/MeshStandardMaterial#MeshStandardMaterial"
+		},
+		"fa61216fea204276a5e3dd6e2a6206df": {
+			"id": "fa61216fea204276a5e3dd6e2a6206df",
+			"label": "Lever",
+			"parent": {
+				"id": "root",
+				"order": "Zyt"
+			},
+			"scriptName": "Lever",
+			"type": "./Lever.zcomp#default"
+		},
+		"fac2a029bd0b4712b6fe442a24dd64a7": {
+			"id": "fac2a029bd0b4712b6fe442a24dd64a7",
+			"label": "Teleport Manager",
+			"parent": {
+				"id": "466b178fcbad428da8b3c7341b69a7cc",
+				"order": "a4V"
+			},
+			"scriptName": "Teleport_Manager",
+			"type": "@zcomponent/three-webxr/lib/components/TeleportManager#TeleportManager"
+		},
+		"fe478a302a7844f884f1f6a8f83f8b4c": {
+			"id": "fe478a302a7844f884f1f6a8f83f8b4c",
+			"label": "ButtonText",
+			"parent": {
+				"id": "375fe3890d23420aa1e0ebddfe6cf690",
+				"order": "a0"
+			},
+			"scriptName": "ButtonText",
+			"type": "@zcomponent/three/lib/components/text/Text#Text"
+		},
+		"root": {
+			"id": "root",
+			"label": "Group",
+			"type": "@zcomponent/three/lib/components/Group#Group"
+		}
+	},
+	"preview": "@zcomponent/three/lib/preview#default",
+	"propEntityOverrides": {
+		"position": {
+			"root": {
+				"position": true
+			}
+		}
+	},
+	"props": {
+		"position": {
+			"comments": [
+				"The position, in 3D space, of this node relative to its parent. The three elements of the array correspond to the `x`, `y`, and `z` components of position."
+			],
+			"default": [
+				0,
+				0,
+				0
+			],
+			"group": "Transform",
+			"groupPriority": 10,
+			"name": "position",
+			"type": {
+				"children": [
+					{
+						"comments": [
+						],
+						"name": "number"
+					},
+					{
+						"comments": [
+						],
+						"name": "number"
+					},
+					{
+						"comments": [
+						],
+						"name": "number"
+					}
+				],
+				"comments": [
+				],
+				"isObservable": true,
+				"name": "tuple",
+				"names": [
+					"x",
+					"y",
+					"z"
+				]
+			}
+		},
+		"rotation": {
+			"comments": [
+				"The rotation, in three dimensions, of this node relative to its parent. The three elements of the array correspond to Euler angles - yaw, pitch and roll."
+			],
+			"default": [
+				0,
+				0,
+				0
+			],
+			"group": "Transform",
+			"groupPriority": 10,
+			"name": "rotation",
+			"type": {
+				"children": [
+					{
+						"comments": [
+						],
+						"name": "number"
+					},
+					{
+						"comments": [
+						],
+						"name": "number"
+					},
+					{
+						"comments": [
+						],
+						"name": "number"
+					}
+				],
+				"comments": [
+				],
+				"isObservable": true,
+				"name": "tuple",
+				"names": [
+					"x",
+					"y",
+					"z"
+				]
+			}
+		},
+		"scale": {
+			"comments": [
+				"The scale, in three dimensions, of this node relative to its parent. The three elements of the array correspond to scales in the the `x`, `y`, and `z` axis."
+			],
+			"default": [
+				1,
+				1,
+				1
+			],
+			"group": "Transform",
+			"groupPriority": 10,
+			"name": "scale",
+			"type": {
+				"children": [
+					{
+						"comments": [
+						],
+						"name": "number"
+					},
+					{
+						"comments": [
+						],
+						"name": "number"
+					},
+					{
+						"comments": [
+						],
+						"name": "number"
+					}
+				],
+				"comments": [
+				],
+				"isObservable": true,
+				"name": "tuple",
+				"names": [
+					"x",
+					"y",
+					"z"
+				]
+			}
+		},
+		"visible": {
+			"comments": [
+				"Determines if this object and its children are rendered to the screen."
+			],
+			"default": true,
+			"group": "Appearance",
+			"groupPriority": 11,
+			"name": "visible",
+			"type": {
+				"comments": [
+				],
+				"isObservable": true,
+				"name": "boolean"
+			}
+		}
+	},
+	"root": "root"
+}
