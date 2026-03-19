@@ -1,0 +1,398 @@
+{
+	"animation": {
+		"clips": {
+			"13c5a913a3f541b793a05a78fec91496": {
+				"id": "13c5a913a3f541b793a05a78fec91496",
+				"length": 0,
+				"lengthType": "expand",
+				"name": "State_1",
+				"order": "a2",
+				"scriptName": "State_10",
+				"tracks": {
+				},
+				"type": "state"
+			},
+			"5234d6bda6fe4ab6879ff9b529f0ebdb": {
+				"id": "5234d6bda6fe4ab6879ff9b529f0ebdb",
+				"length": 0,
+				"lengthType": "expand",
+				"name": "Closest",
+				"order": "a0",
+				"scriptName": "Closest",
+				"tracks": {
+				},
+				"type": "state"
+			},
+			"8c0bfa3f860c4acc8b13db93cda4c7da": {
+				"id": "8c0bfa3f860c4acc8b13db93cda4c7da",
+				"length": 0,
+				"lengthType": "expand",
+				"name": "PickedUp",
+				"order": "a1",
+				"scriptName": "PickedUp",
+				"tracks": {
+				},
+				"type": "state"
+			},
+			"c28ecd6f2ef146db8e26847d8debe6cb": {
+				"id": "c28ecd6f2ef146db8e26847d8debe6cb",
+				"length": 1000,
+				"lengthType": "expand",
+				"name": "Timeline_1",
+				"order": "a3",
+				"scriptName": "Timeline_1",
+				"tracks": {
+				},
+				"type": "timeline"
+			},
+			"de3fe022b35541df94d9905e6848d91b": {
+				"id": "de3fe022b35541df94d9905e6848d91b",
+				"length": 0,
+				"lengthType": "expand",
+				"name": "InRange",
+				"order": "a4",
+				"scriptName": "InRange",
+				"tracks": {
+				},
+				"type": "state"
+			}
+		},
+		"curves": {
+		},
+		"layers": {
+			"a04ed7f42f34441c93a20f01e489e3d9": {
+				"clips": {
+					"3cb1223f23654cdcad25b45c7e4de845": {
+						"clipId": "de3fe022b35541df94d9905e6848d91b",
+						"id": "3cb1223f23654cdcad25b45c7e4de845",
+						"order": "a2",
+						"scriptName": "InRange0"
+					},
+					"8fb45fc96fff4f6abe229a4246bffc72": {
+						"clipId": "8c0bfa3f860c4acc8b13db93cda4c7da",
+						"id": "8fb45fc96fff4f6abe229a4246bffc72",
+						"order": "a3",
+						"scriptName": "PickedUp0"
+					},
+					"b208a1c157344c2dba35593d0428f0d3": {
+						"clipId": "5234d6bda6fe4ab6879ff9b529f0ebdb",
+						"id": "b208a1c157344c2dba35593d0428f0d3",
+						"order": "a2V",
+						"scriptName": "Closest0"
+					}
+				},
+				"defaultClip": null,
+				"defaultFadeParameters": {
+					"easing": "ease",
+					"pin": 0,
+					"time": 300
+				},
+				"enabled": true,
+				"id": "a04ed7f42f34441c93a20f01e489e3d9",
+				"name": "Layer_1",
+				"order": "a2",
+				"scriptName": "Layer_10"
+			}
+		}
+	},
+	"behaviors": {
+		"78eb0b3574f84ce588e3630cfe868465": {
+			"id": "78eb0b3574f84ce588e3630cfe868465",
+			"label": "RigidBody",
+			"parent": {
+				"id": "32189b75ea2e4dd1a3d71d165ccc6f23",
+				"order": "a0",
+				"scriptName": "RigidBody"
+			},
+			"type": "@zcomponent/physics/lib/behaviors/RigidBody#RigidBody"
+		},
+		"c554fc377a6d430c87af452a5e1444f0": {
+			"id": "c554fc377a6d430c87af452a5e1444f0",
+			"label": "Cognitive3DDynamicObject",
+			"parent": {
+				"id": "32189b75ea2e4dd1a3d71d165ccc6f23",
+				"order": "a1",
+				"scriptName": "Cognitive3DDynamicObject"
+			},
+			"type": "./Cognitive3D#Cognitive3DDynamicObject"
+		}
+	},
+	"behaviorsByNode": {
+	},
+	"constructorProps": {
+	},
+	"entitiesByLabel": {
+		"Collider": {
+			"b9f46eecda4b430fb728f50a6ac43c09": true
+		},
+		"warehouseBox.glb": {
+			"32189b75ea2e4dd1a3d71d165ccc6f23": true
+		}
+	},
+	"entitiesByScriptName": {
+		"Collider": {
+			"b9f46eecda4b430fb728f50a6ac43c09": true
+		},
+		"warehouseBox_glb": {
+			"32189b75ea2e4dd1a3d71d165ccc6f23": true
+		}
+	},
+	"entityConstructorProps": {
+		"32189b75ea2e4dd1a3d71d165ccc6f23": {
+			"source": "file://./warehouseBox.glb"
+		},
+		"78eb0b3574f84ce588e3630cfe868465": {
+		},
+		"b9f46eecda4b430fb728f50a6ac43c09": {
+		},
+		"c554fc377a6d430c87af452a5e1444f0": {
+			"c3dMeshName": "WarehouseBox"
+		}
+	},
+	"entityPropOverrides": {
+		"componentprop:prop:root:position": {
+			"entityID": "root",
+			"entityPropIsConstructor": false,
+			"entityPropPath": [
+				"position"
+			],
+			"id": "componentprop:prop:root:position",
+			"isConstructorProp": false,
+			"propName": "position",
+			"type": "componentprop"
+		},
+		"componentprop:prop:root:rotation": {
+			"entityID": "root",
+			"entityPropIsConstructor": false,
+			"entityPropPath": [
+				"rotation"
+			],
+			"id": "componentprop:prop:root:rotation",
+			"isConstructorProp": false,
+			"propName": "rotation",
+			"type": "componentprop"
+		},
+		"componentprop:prop:root:scale": {
+			"entityID": "root",
+			"entityPropIsConstructor": false,
+			"entityPropPath": [
+				"scale"
+			],
+			"id": "componentprop:prop:root:scale",
+			"isConstructorProp": false,
+			"propName": "scale",
+			"type": "componentprop"
+		},
+		"componentprop:prop:root:visible": {
+			"entityID": "root",
+			"entityPropIsConstructor": false,
+			"entityPropPath": [
+				"visible"
+			],
+			"id": "componentprop:prop:root:visible",
+			"isConstructorProp": false,
+			"propName": "visible",
+			"type": "componentprop"
+		}
+	},
+	"entityProps": {
+		"32189b75ea2e4dd1a3d71d165ccc6f23": {
+			"position": [
+				0,
+				0,
+				0
+			],
+			"scale": [
+				0.7,
+				0.7,
+				0.7
+			]
+		},
+		"78eb0b3574f84ce588e3630cfe868465": {
+			"grabbable": true
+		},
+		"b9f46eecda4b430fb728f50a6ac43c09": {
+			"position": [
+				-5.514291612021271,
+				0.6026868531145373,
+				0.3825321924183198
+			],
+			"scale": [
+				1.211842133186658,
+				1.211842133186658,
+				1.211842133186658
+			]
+		},
+		"c554fc377a6d430c87af452a5e1444f0": {
+		}
+	},
+	"id": "c878b40b776941158a46c8b3de243fee",
+	"nodes": {
+		"32189b75ea2e4dd1a3d71d165ccc6f23": {
+			"id": "32189b75ea2e4dd1a3d71d165ccc6f23",
+			"label": "warehouseBox.glb",
+			"parent": {
+				"id": "root",
+				"order": "Zy"
+			},
+			"scriptName": "warehouseBox_glb",
+			"type": "@zcomponent/three/lib/components/models/GLTF#GLTF"
+		},
+		"b9f46eecda4b430fb728f50a6ac43c09": {
+			"id": "b9f46eecda4b430fb728f50a6ac43c09",
+			"label": "Collider",
+			"parent": {
+				"id": "32189b75ea2e4dd1a3d71d165ccc6f23",
+				"order": "a0"
+			},
+			"scriptName": "Collider",
+			"type": "@zcomponent/physics/lib/components/Colliders/Collider#Collider"
+		},
+		"root": {
+			"id": "root",
+			"type": "@zcomponent/three/lib/components/Group#Group"
+		}
+	},
+	"preview": "@zcomponent/three/lib/preview#default",
+	"props": {
+		"position": {
+			"comments": [
+				"The position, in 3D space, of this node relative to its parent. The three elements of the array correspond to the `x`, `y`, and `z` components of position."
+			],
+			"default": [
+				0,
+				0,
+				0
+			],
+			"group": "Transform",
+			"groupPriority": 10,
+			"name": "position",
+			"type": {
+				"children": [
+					{
+						"comments": [
+						],
+						"name": "number"
+					},
+					{
+						"comments": [
+						],
+						"name": "number"
+					},
+					{
+						"comments": [
+						],
+						"name": "number"
+					}
+				],
+				"comments": [
+				],
+				"isObservable": true,
+				"name": "tuple",
+				"names": [
+					"x",
+					"y",
+					"z"
+				]
+			}
+		},
+		"rotation": {
+			"comments": [
+				"The rotation, in three dimensions, of this node relative to its parent. The three elements of the array correspond to Euler angles - yaw, pitch and roll."
+			],
+			"default": [
+				0,
+				0,
+				0
+			],
+			"group": "Transform",
+			"groupPriority": 10,
+			"name": "rotation",
+			"type": {
+				"children": [
+					{
+						"comments": [
+						],
+						"name": "number"
+					},
+					{
+						"comments": [
+						],
+						"name": "number"
+					},
+					{
+						"comments": [
+						],
+						"name": "number"
+					}
+				],
+				"comments": [
+				],
+				"isObservable": true,
+				"name": "tuple",
+				"names": [
+					"x",
+					"y",
+					"z"
+				]
+			}
+		},
+		"scale": {
+			"comments": [
+				"The scale, in three dimensions, of this node relative to its parent. The three elements of the array correspond to scales in the the `x`, `y`, and `z` axis."
+			],
+			"default": [
+				1,
+				1,
+				1
+			],
+			"group": "Transform",
+			"groupPriority": 10,
+			"name": "scale",
+			"type": {
+				"children": [
+					{
+						"comments": [
+						],
+						"name": "number"
+					},
+					{
+						"comments": [
+						],
+						"name": "number"
+					},
+					{
+						"comments": [
+						],
+						"name": "number"
+					}
+				],
+				"comments": [
+				],
+				"isObservable": true,
+				"name": "tuple",
+				"names": [
+					"x",
+					"y",
+					"z"
+				]
+			}
+		},
+		"visible": {
+			"comments": [
+				"Determines if this object and its children are rendered to the screen."
+			],
+			"default": true,
+			"group": "Appearance",
+			"groupPriority": 11,
+			"name": "visible",
+			"type": {
+				"comments": [
+				],
+				"isObservable": true,
+				"name": "boolean"
+			}
+		}
+	},
+	"root": "root"
+}
