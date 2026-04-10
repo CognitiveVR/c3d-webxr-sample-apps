@@ -1,6 +1,7 @@
 import { Component, Behavior, BehaviorConstructorProps, ContextManager, registerBehaviorRunAtDesignTime, useOnBeforeRender } from "@zcomponent/core";
 import { default as Lever_zcomp } from "./Lever.zcomp";
 import { default as Scene} from "./Scene.zcomp";
+import { Cognitive3D } from "@cognitive3d/three-mattercraft";
 
 interface ConstructionProps {
 	// Add any constructor props you'd like for your behavior here
@@ -25,6 +26,7 @@ export class LeverBehavior extends Behavior<Lever_zcomp> {
 			const rotationDegrees = rotationRadians * (180 / Math.PI); // Convert radians to degrees
 			
 			this.updateForkliftAnimation(rotationDegrees);
+			Cognitive3D.recordSensor("lever.rotation", rotationDegrees);
         });
 	}
 

@@ -3,7 +3,7 @@ import { ZComponent, ContextManager, Observable, Animation, Layer, LayerClip, Ev
 import { Box as Box_0 } from "@zcomponent/three/lib/components/meshes/Box";
 import { Group as Group_1 } from "@zcomponent/three/lib/components/Group";
 import { Lever as Lever_2 } from "./Lever/Lever";
-import { Cognitive3DDynamicObject as Cognitive3DDynamicObject_3 } from "./Cognitive3D";
+import { Cognitive3DDynamicObject as Cognitive3DDynamicObject_3 } from "@cognitive3d/three-mattercraft/lib/Cognitive3DDynamicObject";
 import { MeshStandardMaterial as MeshStandardMaterial_4 } from "@zcomponent/three/lib/components/materials/MeshStandardMaterial";
 import { Sphere as Sphere_5 } from "@zcomponent/three/lib/components/meshes/Sphere";
 
@@ -30,13 +30,12 @@ declare class Comp extends ZComponent {
 			behaviors: {
 				0: Lever_2,
 				Lever: Lever_2,
-				1: Cognitive3DDynamicObject_3,
-				Cognitive3DDynamicObject: Cognitive3DDynamicObject_3,
 			}
 		},
 		Lever: Box_0 & {
 			behaviors: {
-
+				0: Cognitive3DDynamicObject_3,
+				Cognitive3DDynamicObject0: Cognitive3DDynamicObject_3,
 			}
 		},
 		MeshStandardMaterial: MeshStandardMaterial_4 & {
