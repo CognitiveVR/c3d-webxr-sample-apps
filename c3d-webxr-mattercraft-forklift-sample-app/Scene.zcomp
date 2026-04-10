@@ -1368,25 +1368,25 @@
 			},
 			"type": "./LeverBehavior.ts#LeverBehavior"
 		},
-		"2e9367f3bdb4422381c0c87d6811b8d6": {
-			"id": "2e9367f3bdb4422381c0c87d6811b8d6",
+		"5091ecc117b84bbaa2dada128efb87f9": {
+			"id": "5091ecc117b84bbaa2dada128efb87f9",
 			"label": "Cognitive3D",
 			"parent": {
 				"id": "466b178fcbad428da8b3c7341b69a7cc",
-				"order": "a0",
+				"order": "a4",
 				"scriptName": "Cognitive3D"
 			},
-			"type": "./Cognitive3D#Cognitive3D"
+			"type": "@cognitive3d/three-mattercraft/lib/Cognitive3D#Cognitive3D"
 		},
-		"558811b752974eeeb2f2a982e4e86eac": {
-			"id": "558811b752974eeeb2f2a982e4e86eac",
+		"5deed1d4d83543c583cfd12ed313164b": {
+			"id": "5deed1d4d83543c583cfd12ed313164b",
 			"label": "Cognitive3DDynamicObject",
 			"parent": {
 				"id": "2ce807645b8a4ade804d6c2467c0121c",
-				"order": "a0",
+				"order": "a6",
 				"scriptName": "Cognitive3DDynamicObject"
 			},
-			"type": "./Cognitive3D#Cognitive3DDynamicObject"
+			"type": "@cognitive3d/three-mattercraft/lib/Cognitive3DDynamicObject#Cognitive3DDynamicObject"
 		},
 		"629577d6f038407cbca192ced0f9e5f0": {
 			"id": "629577d6f038407cbca192ced0f9e5f0",
@@ -1397,6 +1397,16 @@
 				"scriptName": "SetGrabState"
 			},
 			"type": "@zcomponent/physics/lib/behaviors/SetGrabState#SetGrabState"
+		},
+		"67e6702d9cfb4647a36cb9c7be7f0e87": {
+			"id": "67e6702d9cfb4647a36cb9c7be7f0e87",
+			"label": "Cognitive3DDynamicObject",
+			"parent": {
+				"id": "7cbfd458b8be4772b3f11593a9460289",
+				"order": "a6",
+				"scriptName": "Cognitive3DDynamicObject"
+			},
+			"type": "@cognitive3d/three-mattercraft/lib/Cognitive3DDynamicObject#Cognitive3DDynamicObject"
 		},
 		"85a535bc00144b6a9aa5145f7e720b36": {
 			"id": "85a535bc00144b6a9aa5145f7e720b36",
@@ -1446,6 +1456,16 @@
 			},
 			"type": "@zcomponent/three/lib/behaviors/Animation#Animation"
 		},
+		"c4253a9ac86046ffac86adfa7ddd5d0a": {
+			"id": "c4253a9ac86046ffac86adfa7ddd5d0a",
+			"label": "Cognitive3DDynamicObject",
+			"parent": {
+				"id": "4a0b84c3175949b9999468982e0cbb93",
+				"order": "a6",
+				"scriptName": "Cognitive3DDynamicObject"
+			},
+			"type": "@cognitive3d/three-mattercraft/lib/Cognitive3DDynamicObject#Cognitive3DDynamicObject"
+		},
 		"c9f2ef39926d4567bcec05280a3efe3f": {
 			"id": "c9f2ef39926d4567bcec05280a3efe3f",
 			"label": "ToggleGrabState",
@@ -1456,16 +1476,6 @@
 			},
 			"type": "@zcomponent/physics/lib/behaviors/ToggleGrabState#ToggleGrabState"
 		},
-		"cca0da1d3564447983ff288052112055": {
-			"id": "cca0da1d3564447983ff288052112055",
-			"label": "Cognitive3DDynamicObject",
-			"parent": {
-				"id": "7cbfd458b8be4772b3f11593a9460289",
-				"order": "a2",
-				"scriptName": "Cognitive3DDynamicObject"
-			},
-			"type": "./Cognitive3D#Cognitive3DDynamicObject"
-		},
 		"d7a800bebfee430c97d3869a1c84557e": {
 			"id": "d7a800bebfee430c97d3869a1c84557e",
 			"label": "SetGrabState",
@@ -1475,16 +1485,6 @@
 				"scriptName": "SetGrabState"
 			},
 			"type": "@zcomponent/physics/lib/behaviors/SetGrabState#SetGrabState"
-		},
-		"e6a71a533c7949f0907800ea97f09eba": {
-			"id": "e6a71a533c7949f0907800ea97f09eba",
-			"label": "Cognitive3DDynamicObject",
-			"parent": {
-				"id": "4a0b84c3175949b9999468982e0cbb93",
-				"order": "a0",
-				"scriptName": "Cognitive3DDynamicObject"
-			},
-			"type": "./Cognitive3D#Cognitive3DDynamicObject"
 		}
 	},
 	"constructorProps": {
@@ -1913,12 +1913,6 @@
 		"2ce807645b8a4ade804d6c2467c0121c": {
 			"attachTo": "hydraulics_front_13"
 		},
-		"2e9367f3bdb4422381c0c87d6811b8d6": {
-			"apiKey": "EAO23IC878XWH17E5SC2O8T68TMDM66F",
-			"sceneId": "21faa84b-9201-4177-835e-f788966b6c2a",
-			"sceneName": "Mattercraft-Forklift-Training",
-			"sceneVersion": "1"
-		},
 		"2eb158feb565427084b28ea98fbf97c9": {
 			"showAtRunTime": true
 		},
@@ -1944,16 +1938,23 @@
 		"4e9a9305b9f94fa4b769b71a24beb390": {
 			"source": "file://./Audio/complete.mp3"
 		},
+		"5091ecc117b84bbaa2dada128efb87f9": {
+			"apiKey": "EAO23IC878XWH17E5SC2O8T68TMDM66F",
+			"enableExport": false,
+			"sceneId": "ea9c17a2-e181-4fcd-b8de-0c42ebe62c27",
+			"sceneName": "Forklift_Training_3",
+			"sceneVersion": "1"
+		},
 		"516eb13b036141e888071760310e4df2": {
 		},
 		"52148d8eafe3426085e700e049662c07": {
 		},
-		"558811b752974eeeb2f2a982e4e86eac": {
-			"c3dMeshName": "hydraulics_front_13"
-		},
 		"5797b34a748c4027b41cb6268ca8e46e": {
 		},
 		"5dd4ee29dbdb44109cae7188b0c293eb": {
+		},
+		"5deed1d4d83543c583cfd12ed313164b": {
+			"c3dMeshName": "hydraulics_front_13"
 		},
 		"5def74de4d834ce99dfd285eea2009e5": {
 		},
@@ -1967,6 +1968,9 @@
 			"event": "onSelectStart"
 		},
 		"63e5054f5a4e47048f82b700194edc80": {
+		},
+		"67e6702d9cfb4647a36cb9c7be7f0e87": {
+			"c3dMeshName": "Forklift"
 		},
 		"6c47f2bcc9af45bd9b1d454c7b54f734": {
 		},
@@ -2037,11 +2041,11 @@
 		},
 		"c0fab61481a049308dda5b16858bb0fa": {
 		},
+		"c4253a9ac86046ffac86adfa7ddd5d0a": {
+			"c3dMeshName": "steering_wheel_25"
+		},
 		"c9f2ef39926d4567bcec05280a3efe3f": {
 			"event": "onSelectEnd"
-		},
-		"cca0da1d3564447983ff288052112055": {
-			"c3dMeshName": "Forklift"
 		},
 		"d4092dc46e964960a543c839cadc97b9": {
 			"source": "file://./Audio/ForkliftHorn.mp3"
@@ -2050,9 +2054,6 @@
 		},
 		"d7a800bebfee430c97d3869a1c84557e": {
 			"event": "onSelectStart"
-		},
-		"e6a71a533c7949f0907800ea97f09eba": {
-			"c3dMeshName": "steering_wheel_25"
 		},
 		"fa61216fea204276a5e3dd6e2a6206df": {
 		},
@@ -2251,10 +2252,6 @@
 		},
 		"2ce807645b8a4ade804d6c2467c0121c": {
 		},
-		"2e9367f3bdb4422381c0c87d6811b8d6": {
-			"triggerDynamicObjectsExport": true,
-			"triggerSceneExport": true
-		},
 		"2eb158feb565427084b28ea98fbf97c9": {
 		},
 		"375fe3890d23420aa1e0ebddfe6cf690": {
@@ -2343,11 +2340,11 @@
 		},
 		"4e9a9305b9f94fa4b769b71a24beb390": {
 		},
+		"5091ecc117b84bbaa2dada128efb87f9": {
+		},
 		"516eb13b036141e888071760310e4df2": {
 		},
 		"52148d8eafe3426085e700e049662c07": {
-		},
-		"558811b752974eeeb2f2a982e4e86eac": {
 		},
 		"5797b34a748c4027b41cb6268ca8e46e": {
 		},
@@ -2362,6 +2359,8 @@
 				0.3954447964103509,
 				0.3954447964103509
 			]
+		},
+		"5deed1d4d83543c583cfd12ed313164b": {
 		},
 		"5def74de4d834ce99dfd285eea2009e5": {
 			"color": [
@@ -2406,6 +2405,8 @@
 				"horn"
 			]
 		},
+		"67e6702d9cfb4647a36cb9c7be7f0e87": {
+		},
 		"6c47f2bcc9af45bd9b1d454c7b54f734": {
 			"color": [
 				0.038204371589236,
@@ -2419,7 +2420,7 @@
 		"6e279dbbf2034ef8b3f7676e766e8508": {
 			"position": [
 				1.6301497689395688,
-				0,
+				0.0543921834179697,
 				-4.323717608717249
 			]
 		},
@@ -2651,10 +2652,10 @@
 				0
 			]
 		},
+		"c4253a9ac86046ffac86adfa7ddd5d0a": {
+		},
 		"c9f2ef39926d4567bcec05280a3efe3f": {
 			"grabber": "94992da1e2444869ae30022d3a6863d2"
-		},
-		"cca0da1d3564447983ff288052112055": {
 		},
 		"d4092dc46e964960a543c839cadc97b9": {
 			"volume": 1
@@ -2670,8 +2671,6 @@
 		"d7a800bebfee430c97d3869a1c84557e": {
 			"grabber": "139d2a3cb9e943e0959c55a7553d4c3d",
 			"state": true
-		},
-		"e6a71a533c7949f0907800ea97f09eba": {
 		},
 		"fa61216fea204276a5e3dd6e2a6206df": {
 			"position": [

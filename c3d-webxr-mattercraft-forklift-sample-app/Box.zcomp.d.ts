@@ -2,8 +2,8 @@ import { ZComponent, ContextManager, Observable, Animation, Layer, LayerClip, Ev
 
 import { Collider as Collider_0 } from "@zcomponent/physics/lib/components/Colliders/Collider";
 import { GLTF as GLTF_1 } from "@zcomponent/three/lib/components/models/GLTF";
-import { RigidBody as RigidBody_2 } from "@zcomponent/physics/lib/behaviors/RigidBody";
-import { Cognitive3DDynamicObject as Cognitive3DDynamicObject_3 } from "./Cognitive3D";
+import { Cognitive3DDynamicObject as Cognitive3DDynamicObject_2 } from "@cognitive3d/three-mattercraft/lib/Cognitive3DDynamicObject";
+import { RigidBody as RigidBody_3 } from "@zcomponent/physics/lib/behaviors/RigidBody";
 
 interface ConstructorProps {
 
@@ -24,12 +24,12 @@ declare class Comp extends ZComponent {
 
 			}
 		},
-		warehouseBox_glb: GLTF_1 & {
+		WarehouseBox_centered_no_metallic_glb: GLTF_1 & {
 			behaviors: {
-				0: RigidBody_2,
-				RigidBody: RigidBody_2,
-				1: Cognitive3DDynamicObject_3,
-				Cognitive3DDynamicObject: Cognitive3DDynamicObject_3,
+				0: Cognitive3DDynamicObject_2,
+				Cognitive3DDynamicObject0: Cognitive3DDynamicObject_2,
+				1: RigidBody_3,
+				RigidBody: RigidBody_3,
 			}
 		},
 	};

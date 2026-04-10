@@ -29,14 +29,14 @@ import { Target as Target_25 } from "./Lever/Target";
 import { TeleportManager as TeleportManager_26 } from "@zcomponent/three-webxr/lib/components/TeleportManager";
 import { TurnManager as TurnManager_27 } from "@zcomponent/three-webxr/lib/components/TurnManager";
 import { XRRigVR as XRRigVR_28 } from "@zcomponent/three-webxr/lib/components/XRRigVR";
-import { Cognitive3D as Cognitive3D_29 } from "./Cognitive3D";
+import { Cognitive3D as Cognitive3D_29 } from "@cognitive3d/three-mattercraft/lib/Cognitive3D";
 import { XRCamera as XRCamera_30 } from "@zcomponent/three-webxr/lib/components/XRCamera";
 import { XRDefaultLoader as XRDefaultLoader_31 } from "@zcomponent/three-webxr/lib/components/XRDefaultLoader";
 import { XRManager as XRManager_32 } from "@zcomponent/three-webxr/lib/components/XRManager";
 import { Audio as Audio_33 } from "@zcomponent/core/lib/components/Audio";
 import { GLTF as GLTF_34 } from "@zcomponent/three/lib/components/models/GLTF";
 import { Animation as Animation_35 } from "@zcomponent/three/lib/behaviors/Animation";
-import { Cognitive3DDynamicObject as Cognitive3DDynamicObject_36 } from "./Cognitive3D";
+import { Cognitive3DDynamicObject as Cognitive3DDynamicObject_36 } from "@cognitive3d/three-mattercraft/lib/Cognitive3DDynamicObject";
 import { AttachmentPoint as AttachmentPoint_37 } from "@zcomponent/three/lib/components/AttachmentPoint";
 
 interface ConstructorProps {

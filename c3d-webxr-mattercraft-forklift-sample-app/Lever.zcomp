@@ -29,15 +29,15 @@
 			},
 			"type": "./Lever/Lever#Lever"
 		},
-		"aac9f652a86a42b49c391fd6471c3438": {
-			"id": "aac9f652a86a42b49c391fd6471c3438",
+		"43bc8647a49644e3a20a5ddc541dbf6c": {
+			"id": "43bc8647a49644e3a20a5ddc541dbf6c",
 			"label": "Cognitive3DDynamicObject",
 			"parent": {
-				"id": "aa90cb60283b49879f677864f4dbc9d5",
+				"id": "afe84926ff184459a4d9e703e77bec49",
 				"order": "a1",
-				"scriptName": "Cognitive3DDynamicObject"
+				"scriptName": "Cognitive3DDynamicObject0"
 			},
-			"type": "./Cognitive3D#Cognitive3DDynamicObject"
+			"type": "@cognitive3d/three-mattercraft/lib/Cognitive3DDynamicObject#Cognitive3DDynamicObject"
 		}
 	},
 	"behaviorsByNode": {
@@ -95,14 +95,14 @@
 		},
 		"0f4c04a69cdc4117bfc9eda80a878b07": {
 		},
+		"43bc8647a49644e3a20a5ddc541dbf6c": {
+			"c3dMeshName": "Lever"
+		},
 		"4b4147d909d54eb5a712644fae066a0a": {
 		},
 		"a0c258e7d1254b899308156f88b0f200": {
 		},
 		"aa90cb60283b49879f677864f4dbc9d5": {
-		},
-		"aac9f652a86a42b49c391fd6471c3438": {
-			"c3dMeshName": "Lever"
 		},
 		"afe84926ff184459a4d9e703e77bec49": {
 			"depth": 0.1,
@@ -192,6 +192,8 @@
 				0
 			]
 		},
+		"43bc8647a49644e3a20a5ddc541dbf6c": {
+		},
 		"4b4147d909d54eb5a712644fae066a0a": {
 			"position": [
 				0,
@@ -217,8 +219,6 @@
 			]
 		},
 		"aa90cb60283b49879f677864f4dbc9d5": {
-		},
-		"aac9f652a86a42b49c391fd6471c3438": {
 		},
 		"afe84926ff184459a4d9e703e77bec49": {
 			"position": [
