@@ -1,6 +1,6 @@
 # Mattercraft WebXR Forklift Training Demo
 
-This is an interactive forklift operator training simulation built with [Mattercraft](https://mattercraft.io/) and WebXR. It's integrated with the Cognitive3D SDK for WebXR, which provides detailed analytics and session playback.
+This is an interactive forklift operator training simulation built with [Mattercraft](https://mattercraft.io/) and WebXR. It's integrated with the using [`@cognitive3d/three-mattercraft`](https://github.com/CognitiveVR/mattercraft-cognitive3d) npm package, which provides detailed analytics and session playback.
 
 This project serves as a practical example of how to:
 * Build a guided, step-based XR training experience in Mattercraft.
@@ -9,9 +9,13 @@ This project serves as a practical example of how to:
 * Export scene assets and dynamic objects directly from a running application for upload to the Cognitive3D platform.
 
 ## Requirements
-- [Mattercraft](https://mattercraft.io/) editor
+- [Mattercraft](https://mattercraft.io/)
 - WebXR-capable device (Meta Quest recommended)
-- Cognitive3D Account
+- Cognitive3D Account with API keys
+
+## Quick Start 
+
+Once you have an account setup with Mattercraft. Create a new Mattercraft project, then when you’re on the template selection screen, select **import from ZIP** button (bottom left of the screen) and then select this zipped project. 
 
 ## Project Structure
 
@@ -21,7 +25,6 @@ This project serves as a practical example of how to:
 | `Lever.zcomp` | Reusable lever component with physical grab interaction |
 | `Box.zcomp` | Warehouse box component used as a dynamic tracked object |
 | `index.ts` | Entry point — initializes the Mattercraft scene with WebXR support |
-| `Cognitive3D.ts` | Cognitive3D integration: session tracking, gaze recording, and dynamic object registration |
 | `LeverBehavior.ts` | Reads lever rotation and seeks the forklift's up/down animation timeline |
 | `GameStepsContext.ts` | Manages the training step state machine (Step 1 → 4) |
 | `Audio/` | Narration and ambient audio clips for each training step |
@@ -58,8 +61,8 @@ The `Lever` behavior (in `Lever/Lever.ts`) detects when the user's hand/controll
 
 Create a new Mattercraft project, when you’re on the template selection screen, select **Import from ZIP**. You will need to zip this mattercraft project first. 
 
-### 2. Configure Cognitive3D Credentials
-In the Mattercraft scene editor, select the node that has the `Cognitive3D` behavior attached and fill in the following properties in the inspector:
+### 2. Configure Cognitive3D Credentials and Options
+In the Mattercraft scene editor, select the node that has the `Cognitive3D` behavior attached and fill in the following properties in the inspector. Note that you may not have access to properties such as `sceneId`, `sceneName` and `sceneVersion` until you upload scene data to Cognitive3D. 
 
 | Property | Description |
 |---|---|
@@ -67,13 +70,17 @@ In the Mattercraft scene editor, select the node that has the `Cognitive3D` beha
 | `sceneId` | The scene ID from the Cognitive3D dashboard |
 | `sceneName` | The scene name registered on the Cognitive3D dashboard |
 | `sceneVersion` | (Optional) Scene version number — defaults to `"1"` |
+| `AppVersion` | (Optional) App version — defaults to `"1.0"` |
+| `ExportToggle` | Toggle ON to enable scene and dynamic object export at runtime, save the project after changing this toggle |
+| `DebugToggle` | Toggle ON for verbose logging in browser console, save the project after changing this toggle |
+
 
 ### 3. Run / Publish
 Use the Mattercraft editor's built-in **Run** or **Publish** workflow to preview and deploy the experience to a WebXR device.
 
 ## Exporting Assets to Cognitive3D
 
-Before you can view analytics on the Cognitive3D dashboard, you need to upload scene and dynamic object representations.
+Before you can view analytics on the Cognitive3D dashboard, you need to upload scene and dynamic object representations. First ensure the **Export Toggle** is enabled under the Cognitive3D behaviour, save the project after make this change. 
 
 ### Export Dynamic Objects — `Shift + D`
 While the app is running in a browser, press **Shift + D** to export all registered dynamic objects. Each object is exported as a GLB file and saved/downloaded. These files are uploaded to the Cognitive3D dashboard to enable object-level heatmaps and tracking.
@@ -86,4 +93,4 @@ Press **Shift + E** to export the static scene geometry. This exports:
 - `screenshot.png` — scene thumbnail
 
 ### Uploading to the Dashboard
-Once you have the exported files, use the [c3d-upload-tools](https://github.com/CognitiveVR/c3d-upload-tools) to upload the scene and objects to your Cognitive3D account.
+Once you have the exported files, use [Cognitive3D's upload tool website](https://upload.cognitive3d.com/) to upload the scene and objects to Cognitive3D. You will then have access to your `sceneId`, `sceneName` and `sceneVersion`, enter these paramaters into the Cognitive3D behaviour in your Mattercraft Scene. 
