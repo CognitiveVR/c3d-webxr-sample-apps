@@ -8,6 +8,8 @@ This project serves as a practical example of how to:
 * Integrate Cognitive3D analytics to track user behavior and dynamic object movement.
 * Export scene assets and dynamic objects directly from a running application for upload to the Cognitive3D platform.
 
+![Screenshot of the Mattercraft editor interface showing a 3D warehouse scene with an orange forklift, floating VR controllers, and a Welcome UI panel. The left sidebar displays project files and the right sidebar shows the scene hierarchy.](mattercraft-editor-forklift-screenshot.png)
+
 ## Requirements
 - [Mattercraft](https://mattercraft.io/)
 - WebXR-capable device (Meta Quest recommended)
