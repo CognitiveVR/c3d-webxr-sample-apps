@@ -96,25 +96,25 @@
 		}
 	},
 	"behaviors": {
-		"78eb0b3574f84ce588e3630cfe868465": {
-			"id": "78eb0b3574f84ce588e3630cfe868465",
+		"0886def67a0c4cbba5f735ea1d08587f": {
+			"id": "0886def67a0c4cbba5f735ea1d08587f",
 			"label": "RigidBody",
 			"parent": {
 				"id": "32189b75ea2e4dd1a3d71d165ccc6f23",
-				"order": "a0",
+				"order": "a3",
 				"scriptName": "RigidBody"
 			},
 			"type": "@zcomponent/physics/lib/behaviors/RigidBody#RigidBody"
 		},
-		"c554fc377a6d430c87af452a5e1444f0": {
-			"id": "c554fc377a6d430c87af452a5e1444f0",
+		"44261270f27a49119bb62e0cb32bc4be": {
+			"id": "44261270f27a49119bb62e0cb32bc4be",
 			"label": "Cognitive3DDynamicObject",
 			"parent": {
 				"id": "32189b75ea2e4dd1a3d71d165ccc6f23",
-				"order": "a1",
-				"scriptName": "Cognitive3DDynamicObject"
+				"order": "a2",
+				"scriptName": "Cognitive3DDynamicObject0"
 			},
-			"type": "./Cognitive3D#Cognitive3DDynamicObject"
+			"type": "@cognitive3d/three-mattercraft/lib/Cognitive3DDynamicObject#Cognitive3DDynamicObject"
 		}
 	},
 	"behaviorsByNode": {
@@ -125,7 +125,7 @@
 		"Collider": {
 			"b9f46eecda4b430fb728f50a6ac43c09": true
 		},
-		"warehouseBox.glb": {
+		"WarehouseBox_centered_no_metallic.glb": {
 			"32189b75ea2e4dd1a3d71d165ccc6f23": true
 		}
 	},
@@ -133,20 +133,21 @@
 		"Collider": {
 			"b9f46eecda4b430fb728f50a6ac43c09": true
 		},
-		"warehouseBox_glb": {
+		"WarehouseBox_centered_no_metallic_glb": {
 			"32189b75ea2e4dd1a3d71d165ccc6f23": true
 		}
 	},
 	"entityConstructorProps": {
-		"32189b75ea2e4dd1a3d71d165ccc6f23": {
-			"source": "file://./warehouseBox.glb"
+		"0886def67a0c4cbba5f735ea1d08587f": {
 		},
-		"78eb0b3574f84ce588e3630cfe868465": {
+		"32189b75ea2e4dd1a3d71d165ccc6f23": {
+			"source": "file://./WarehouseBox_centered_no_metallic.glb"
+		},
+		"44261270f27a49119bb62e0cb32bc4be": {
+			"c3dMeshName": "WarehouseBox"
 		},
 		"b9f46eecda4b430fb728f50a6ac43c09": {
-		},
-		"c554fc377a6d430c87af452a5e1444f0": {
-			"c3dMeshName": "WarehouseBox"
+			"targetMesh": "32189b75ea2e4dd1a3d71d165ccc6f23"
 		}
 	},
 	"entityPropOverrides": {
@@ -196,6 +197,10 @@
 		}
 	},
 	"entityProps": {
+		"0886def67a0c4cbba5f735ea1d08587f": {
+			"gravityFactor": 0,
+			"mass": 0
+		},
 		"32189b75ea2e4dd1a3d71d165ccc6f23": {
 			"position": [
 				0,
@@ -208,34 +213,31 @@
 				0.7
 			]
 		},
-		"78eb0b3574f84ce588e3630cfe868465": {
-			"grabbable": true
+		"44261270f27a49119bb62e0cb32bc4be": {
 		},
 		"b9f46eecda4b430fb728f50a6ac43c09": {
 			"position": [
-				-5.514291612021271,
-				0.6026868531145373,
-				0.3825321924183198
+				0,
+				0.6088297604659335,
+				0.33314685845351244
 			],
 			"scale": [
 				1.211842133186658,
 				1.211842133186658,
 				1.211842133186658
 			]
-		},
-		"c554fc377a6d430c87af452a5e1444f0": {
 		}
 	},
 	"id": "c878b40b776941158a46c8b3de243fee",
 	"nodes": {
 		"32189b75ea2e4dd1a3d71d165ccc6f23": {
 			"id": "32189b75ea2e4dd1a3d71d165ccc6f23",
-			"label": "warehouseBox.glb",
+			"label": "WarehouseBox_centered_no_metallic.glb",
 			"parent": {
 				"id": "root",
 				"order": "Zy"
 			},
-			"scriptName": "warehouseBox_glb",
+			"scriptName": "WarehouseBox_centered_no_metallic_glb",
 			"type": "@zcomponent/three/lib/components/models/GLTF#GLTF"
 		},
 		"b9f46eecda4b430fb728f50a6ac43c09": {

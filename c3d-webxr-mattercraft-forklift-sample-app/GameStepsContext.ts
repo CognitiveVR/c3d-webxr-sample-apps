@@ -2,6 +2,7 @@ import { Component, Behavior, BehaviorConstructorProps, ContextManager, register
 import { XRContext } from "@zcomponent/three-webxr";
 import { Group as Group } from "@zcomponent/three/lib/components/Group";
 import { default as Scene} from "./Scene.zcomp";
+import { Cognitive3D } from "@cognitive3d/three-mattercraft";
 
 interface ConstructionProps {
 	// Add any constructor props you'd like for your behavior here
@@ -22,16 +23,19 @@ export class GameStepsContext extends Behavior<Group> {
 
 		this.zcomponent.animation.layers.Game_States.clips.Step_10.onPlaying.addListener(()=>{
 			this.gameSteps = 1;
+			Cognitive3D.sendEvent("StepCompleted", [0, 0, 0], { step: 1 });
 			console.log(this.gameSteps)
 		})
 
 		this.zcomponent.animation.layers.Game_States.clips.Step_20.onPlaying.addListener(()=>{
 			this.gameSteps = 2;
+			Cognitive3D.sendEvent("StepCompleted", [0, 0, 0], { step: 2 });
 			console.log(this.gameSteps)
 		})
 
 		this.zcomponent.animation.layers.Game_States.clips.Step_30.onPlaying.addListener(()=>{
 			this.gameSteps = 3;
+			Cognitive3D.sendEvent("StepCompleted", [0, 0, 0], { step: 3 });
 			console.log(this.gameSteps)
 		})
 
@@ -54,9 +58,7 @@ export class GameStepsContext extends Behavior<Group> {
 
 		})
 
-
 	}
-
 
 
 	dispose() {
