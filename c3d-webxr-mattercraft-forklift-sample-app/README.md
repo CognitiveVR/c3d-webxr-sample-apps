@@ -1,6 +1,6 @@
 # Mattercraft WebXR Forklift Training Demo
 
-This is an interactive forklift operator training simulation built with [Mattercraft](https://mattercraft.io/) and WebXR. It's integrated with the using [`@cognitive3d/three-mattercraft`](https://github.com/CognitiveVR/mattercraft-cognitive3d) npm package, which provides detailed analytics and session playback.
+This is an interactive forklift operator training simulation built with [Mattercraft](https://mattercraft.io/) and WebXR. It's integrated with the [`@cognitive3d/three-mattercraft`](https://github.com/CognitiveVR/mattercraft-cognitive3d) npm package, which provides detailed analytics and session replay.
 
 This project serves as a practical example of how to:
 * Build a guided, step-based XR training experience in Mattercraft.
@@ -11,7 +11,7 @@ This project serves as a practical example of how to:
 ## Requirements
 - [Mattercraft](https://mattercraft.io/)
 - WebXR-capable device (Meta Quest recommended)
-- Cognitive3D Account with API keys
+- [Cognitive3D Account](https://get.cognitive3d.com/) with API Keys (Developer and Application Key)
 
 ## Quick Start 
 
