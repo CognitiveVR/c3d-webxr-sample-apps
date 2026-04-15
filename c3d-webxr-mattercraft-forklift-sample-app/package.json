@@ -14,7 +14,7 @@
     "@zcomponent/three": "1.35.0-beta.1",
     "@zcomponent/physics": "1.x || ^1.0.0-0",
     "@zcomponent/three-webxr": "^1.1.2",
-    "@cognitive3d/three-mattercraft": "1.0.4-dev.d79747d"
+    "@cognitive3d/three-mattercraft": "1.0.6"
   },
   "devDependencies": {
     "@types/three": "0.150.1",
