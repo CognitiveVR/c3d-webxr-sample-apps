@@ -12,11 +12,14 @@
   "license": "ISC",
   "devDependencies": {
     "vite": "^7.1.9",
-    "vite-plugin-pwa": "^1.0.0"
+    "vite-plugin-pwa": "^1.2.0"
+  },
+  "overrides": {
+    "serialize-javascript": ">=7.0.5"
   },
   "description": "",
   "dependencies": {
-    "@cognitive3d/analytics": "dev",
+    "@cognitive3d/analytics": "../../c3d-sdk-webxr",
     "three": "^0.180.0",
     "webxr-polyfill": "^2.0.3"
   }
